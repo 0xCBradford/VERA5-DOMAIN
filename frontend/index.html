@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vera5 &mdash; Local-first IOC enrichment for analysts</title>
+<meta name="description" content="Vera5 is an open-source, local-first IOC enrichment tool for SOC analysts, CTI researchers, DFIR operators, malware analysts, and threat hunters. Currently in active development.">
+<meta name="theme-color" content="#0B0E11">
+
+<meta property="og:title" content="Vera5 &mdash; Local-first IOC enrichment for analysts">
+<meta property="og:description" content="Open-source browser-based IOC enrichment. Local-first. Bring your own keys. No required Vera5 cloud service.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vera5.io">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a class="brand" href="#" aria-label="Vera5 home">
+      <span class="brand-mark">Vera5</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#principles">Principles</a>
+      <a href="#status">Status</a>
+      <a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-marker" aria-hidden="true"></div>
+      <h1 class="hero-title">Vera5</h1>
+      <p class="hero-tagline">Local-first IOC enrichment for analysts.</p>
+      <p class="hero-description">
+        Vera5 brings indicator context directly into analyst workflows without requiring a Vera5 cloud service. Detect indicators on the page you are already on. Enrich them with the sources you choose. Keep the investigation in one place.
+      </p>
+      <p class="status-line">
+        <span class="status-dot" aria-hidden="true"></span>
+        In active development
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/0xCBradford/Vera5" rel="noopener">
+          View GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn-secondary" href="#">Read Product Vision</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="problem">
+    <div class="container">
+      <p class="section-eyebrow">The friction</p>
+      <h2 class="section-title">Investigations lose flow when context is scattered.</h2>
+      <div class="section-body">
+        <p>Analysts copy indicators between tabs, paste them into enrichment portals, switch back to the alert, re-orient, then repeat. Each lookup is small. The cumulative cost is not.</p>
+        <p>Context fragments across tools. Pivots interrupt focus. The original page &mdash; the alert, the report, the ticket &mdash; becomes one of many windows competing for attention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="product">
+    <div class="container">
+      <p class="section-eyebrow">What Vera5 does</p>
+      <h2 class="section-title">Context where the analyst already works.</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
+          </span>
+          <h3>Detect indicators on webpages</h3>
+          <p>Indicators of compromise &mdash; IPs, domains, URLs, hashes, CVEs &mdash; surfaced where they appear in alerts, tickets, dashboards, and reports.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+          </span>
+          <h3>Show contextual enrichment</h3>
+          <p>Aggregate context from analyst-configured threat intelligence sources into a compact hover card. No tab-switching, no manual lookup loop.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>Preserve source attribution</h3>
+          <p>Every enrichment field shows the source that produced it. Disagreement between sources stays visible &mdash; never collapsed into a single opaque score.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+          </span>
+          <h3>Support local-first workflows</h3>
+          <p>Enrichment runs from the browser using your own API keys. No required Vera5 backend, no maintainer-operated proxy, no shared quota pool.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+          </span>
+          <h3>Keep analysts in control</h3>
+          <p>Toggle sources, IOC types, and automatic scanning. Manual-only mode is supported. Cache behavior is visible and clearable.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="trust">
+    <div class="container">
+      <p class="section-eyebrow">Trust model</p>
+      <h2 class="section-title">Privacy is a product requirement, not a setting.</h2>
+      <ul class="trust-list">
+
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div class="trust-content">
+            <h3>Bring your own keys</h3>
+            <p>API credentials for enrichment sources stay in browser local storage. Vera5 does not proxy or pool them.</p>
+          </div>
+        </li>
+
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div class="trust-content">
+            <h3>No required Vera5 cloud</h3>
+            <p>The extension operates locally. There is no Vera5-managed account, no shared backend, and no required hosted service to run enrichment.</p>
+          </div>
+        </li>
+
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div class="trust-content">
+            <h3>No default telemetry</h3>
+            <p>Vera5 does not collect usage metrics, error reports, browsing history, or analyst identity by default.</p>
+          </div>
+        </li>
+
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div class="trust-content">
+            <h3>No silent page uploads</h3>
+            <p>Full page content is never transmitted. Only indicators an analyst chooses to enrich leave the machine.</p>
+          </div>
+        </li>
+
+        <li class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div class="trust-content">
+            <h3>Indicators only, by choice</h3>
+            <p>External APIs receive only the specific indicators selected for enrichment &mdash; nothing else from the page or session.</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="audience">
+    <div class="container">
+      <p class="section-eyebrow">Built for</p>
+      <h2 class="section-title">Analyst workflows, not demo environments.</h2>
+      <dl class="audience-list">
+        <div class="audience-row">
+          <dt>SOC triage</dt>
+          <dd>Faster context on alerts inside SIEM, EDR, and ticketing dashboards.</dd>
+        </div>
+        <div class="audience-row">
+          <dt>CTI research</dt>
+          <dd>Inline pivots while reading threat reports, OSINT, and infrastructure write-ups.</dd>
+        </div>
+        <div class="audience-row">
+          <dt>DFIR review</dt>
+          <dd>Enrichment for indicators in timelines, logs, CSV exports, and HTML reports.</dd>
+        </div>
+        <div class="audience-row">
+          <dt>Malware analysis</dt>
+          <dd>Pivot extracted strings and infrastructure references without leaving the report.</dd>
+        </div>
+        <div class="audience-row">
+          <dt>Threat hunting</dt>
+          <dd>Lightweight context layer for investigative browsing and pivot work.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="status">
+    <div class="container">
+      <p class="section-eyebrow">Current status</p>
+      <h2 class="section-title">In active development.</h2>
+      <div class="status-grid">
+        <div class="section-body">
+          <p>The current focus is the browser extension scaffold, indicator detection, and the first enrichment connectors. CLI support and an optional local backend are planned for later releases.</p>
+          <p>Initial integration targets &mdash; AbuseIPDB, AlienVault OTX, URLScan, GreyNoise Community, and RDAP &mdash; are in development. Additional sources, an optional self-hosted backend, and an opt-in local LLM summary layer are part of the longer-term direction outlined in the product vision.</p>
+          <p>Public documentation and source code are being prepared alongside the extension.</p>
+        </div>
+        <aside class="status-panel" aria-label="Surface status">
+          <h3 class="status-panel-title">Tracked surfaces</h3>
+          <ul>
+            <li><span class="surface">Browser extension</span><span class="state state-active">In development</span></li>
+            <li><span class="surface">IOC detector</span><span class="state state-active">In development</span></li>
+            <li><span class="surface">First connectors</span><span class="state state-active">In development</span></li>
+            <li><span class="surface">Local backend</span><span class="state state-planned">Planned</span></li>
+            <li><span class="surface">Local LLM summary</span><span class="state state-planned">Planned</span></li>
+            <li><span class="surface">CLI</span><span class="state state-planned">Planned</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="principles">
+    <div class="container">
+      <p class="section-eyebrow">Design principles</p>
+      <h2 class="section-title">Decisions that shape every part of the tool.</h2>
+      <ol class="principles-list">
+        <li class="principle">
+          <span class="principle-num" aria-hidden="true">01</span>
+          <div class="principle-body">
+            <h3>Precision over spectacle.</h3>
+            <p>Readability and speed before visual gimmicks.</p>
+          </div>
+        </li>
+        <li class="principle">
+          <span class="principle-num" aria-hidden="true">02</span>
+          <div class="principle-body">
+            <h3>Analyst control over automation.</h3>
+            <p>Decisions about what gets queried, cached, and shown stay with the operator.</p>
+          </div>
+        </li>
+        <li class="principle">
+          <span class="principle-num" aria-hidden="true">03</span>
+          <div class="principle-body">
+            <h3>Attribution over black-box scoring.</h3>
+            <p>Sources are always visible. Disagreement is surfaced, not averaged away.</p>
+          </div>
+        </li>
+        <li class="principle">
+          <span class="principle-num" aria-hidden="true">04</span>
+          <div class="principle-body">
+            <h3>Local-first over forced cloud.</h3>
+            <p>Cloud dependency is opt-in, never required.</p>
+          </div>
+        </li>
+        <li class="principle">
+          <span class="principle-num" aria-hidden="true">05</span>
+          <div class="principle-body">
+            <h3>Open-source over hidden behavior.</h3>
+            <p>The code is auditable. The trust model is documented, not assumed.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Vera5</h3>
+        <p>Open-source analyst tooling for IOC enrichment.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a></li>
+          <li><a href="#">Main project repo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="#">Product Vision</a></li>
+          <li><a href="#">Security Model</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#principles">Principles</a></li>
+          <li><a href="#status">Status</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>vera5.io</span>
+      <span>Open source &middot; MIT</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
