@@ -6,7 +6,7 @@ Purpose: Primary visual identity and UI color governance for Vera5.
 
 # Design Direction
 
-Vera5 should feel:
+Vera5 should Always feel:
 
 - operational
 - modern

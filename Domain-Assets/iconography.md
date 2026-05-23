@@ -5,7 +5,7 @@ Version: 1.0
 
 # Icon Philosophy
 
-Vera5 iconography should feel:
+Vera5 iconography should Always feel:
 
 - technical
 - modern
