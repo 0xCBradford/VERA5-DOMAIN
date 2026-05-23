@@ -183,8 +183,8 @@ button:focus-visible {
   gap: 10px;
 }
 .brand-logo {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--r-sm);
   flex-shrink: 0;
 }
@@ -603,8 +603,8 @@ button:focus-visible {
   margin-bottom: var(--s-sm);
 }
 .footer-logo {
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--r-sm);
   flex-shrink: 0;
 }
