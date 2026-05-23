@@ -180,16 +180,13 @@ button:focus-visible {
   color: var(--text-primary);
   display: inline-flex;
   align-items: center;
+  gap: 10px;
 }
-.brand-mark::after {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--electric-amber);
-  margin-left: 6px;
-  border-radius: 1px;
-  vertical-align: 4px;
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  flex-shrink: 0;
 }
 
 .primary-nav {
@@ -599,11 +596,22 @@ button:focus-visible {
   gap: var(--s-xl);
   margin-bottom: var(--s-2xl);
 }
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--s-sm);
+}
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  flex-shrink: 0;
+}
 .footer-brand h3 {
   font-family: var(--font-hero);
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: var(--s-sm);
   letter-spacing: -0.01em;
 }
 .footer-brand p {

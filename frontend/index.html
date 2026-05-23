@@ -16,6 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,6 +29,7 @@
 <header class="site-header">
   <div class="container nav-container">
     <a class="brand" href="#" aria-label="Vera5 home">
+      <img class="brand-logo" src="assets/logo.svg" alt="" width="32" height="32">
       <span class="brand-mark">Vera5</span>
     </a>
     <nav class="primary-nav" aria-label="Primary">
@@ -285,7 +290,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Vera5</h3>
+        <div class="footer-brand-row">
+          <img class="footer-logo" src="assets/logo.svg" alt="" width="36" height="36">
+          <h3>Vera5</h3>
+        </div>
         <p>Open-source analyst tooling for IOC enrichment.</p>
       </div>
       <div class="footer-col">
