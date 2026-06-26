@@ -294,10 +294,40 @@ button:focus-visible {
   font-size: clamp(56px, 9vw, 104px);
   line-height: 1;
   letter-spacing: -0.04em;
+  position: relative;
+  display: inline-block;
 }
 .hero-title-mark {
   color: var(--accent);
   text-shadow: 0 0 26px rgba(255, 178, 36, 0.22);
+}
+/* Occasional light "sheen" glint that sweeps across the wordmark.
+   An overlay copy of the text, clipped to the glyphs, carries a moving
+   highlight band. The two-tone Vera/5 underneath shows through unchanged. */
+.hero-title::after {
+  content: "Vera5";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 38%,
+    rgba(255, 226, 170, 0.85) 50%,
+    transparent 62%
+  );
+  background-size: 220% 100%;
+  background-position: 150% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: wordmark-sheen 7s ease-in-out infinite;
+}
+@keyframes wordmark-sheen {
+  /* glint sweeps across in the first ~1.1s, then rests off-screen */
+  0%   { background-position: 150% 0; }
+  16%  { background-position: -50% 0; }
+  100% { background-position: -50% 0; }
 }
 .hero-tagline {
   font-family: var(--font-ui);
