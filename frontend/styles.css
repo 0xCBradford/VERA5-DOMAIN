@@ -321,12 +321,12 @@ button:focus-visible {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: wordmark-sheen 7s ease-in-out infinite;
+  animation: wordmark-sheen 2.5s ease-in-out infinite;
 }
 @keyframes wordmark-sheen {
   /* glint sweeps across in the first ~1.1s, then rests off-screen */
   0%   { background-position: 150% 0; }
-  16%  { background-position: -50% 0; }
+  44%  { background-position: -50% 0; }
   100% { background-position: -50% 0; }
 }
 .hero-tagline {
