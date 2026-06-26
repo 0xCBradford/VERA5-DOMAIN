@@ -166,7 +166,7 @@ Color:
 Electric Amber
 
 HEX:
-#F5A524
+#FFB224
 
 Suggested icons:
 - alert-triangle

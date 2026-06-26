@@ -122,10 +122,10 @@ Used for:
 - key interactive actions
 
 HEX:
-#F5A524
+#FFB224
 
 RGB:
-245, 165, 36
+255, 178, 36
 
 Notes:
 This becomes the emotional “signature” color.
@@ -277,7 +277,7 @@ HEX:
 ## SUSPICIOUS / MEDIUM
 
 HEX:
-#F5A524
+#FFB224
 
 ---
 

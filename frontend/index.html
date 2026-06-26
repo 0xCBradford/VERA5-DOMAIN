@@ -29,8 +29,8 @@
 <header class="site-header">
   <div class="container nav-container">
     <a class="brand" href="#" aria-label="Vera5 home">
-      <img class="brand-logo" src="assets/logo.svg" alt="" width="40" height="40">
-      <span class="brand-mark">Vera5</span>
+      <img class="brand-logo" src="assets/logo-mark.svg" alt="" width="40" height="40">
+      <span class="brand-mark">Vera<span class="brand-5">5</span></span>
     </a>
     <nav class="primary-nav" aria-label="Primary">
       <a href="#product">Product</a>
@@ -45,22 +45,59 @@
 
   <section class="hero">
     <div class="container hero-container">
-      <div class="hero-marker" aria-hidden="true"></div>
-      <h1 class="hero-title">Vera5</h1>
-      <p class="hero-tagline">Local-first IOC enrichment for analysts.</p>
-      <p class="hero-description">
-        Vera5 brings indicator context directly into analyst workflows without requiring a Vera5 cloud service. Detect indicators on the page you are already on. Enrich them with the sources you choose. Keep the investigation in one place.
-      </p>
-      <p class="status-line">
-        <span class="status-dot" aria-hidden="true"></span>
-        In active development
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://github.com/0xCBradford/Vera5" rel="noopener">
-          View GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a class="btn btn-secondary" href="#">Read Product Vision</a>
+      <div class="hero-copy">
+        <div class="hero-marker" aria-hidden="true"></div>
+        <h1 class="hero-title">Vera<span class="hero-title-mark">5</span></h1>
+        <p class="hero-tagline">Local-first IOC enrichment for analysts.</p>
+        <p class="hero-description">
+          Vera5 brings indicator context directly into analyst workflows without requiring a Vera5 cloud service. Detect indicators on the page you are already on. Enrich them with the sources you choose. Keep the investigation in one place.
+        </p>
+        <p class="status-line">
+          <span class="status-dot" aria-hidden="true"></span>
+          In active development
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/0xCBradford/Vera5" rel="noopener">
+            View GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="#">Read Product Vision</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-stage">
+          <div class="hv-page">
+            <div class="hv-page-head">
+              <span class="hv-dot"></span>
+              <span class="hv-dot"></span>
+              <span class="hv-dot"></span>
+            </div>
+            <div class="hv-line"></div>
+            <div class="hv-line short"></div>
+            <p class="hv-text">Outbound beaconing to <span class="hv-ioc">203.0.113.42</span> observed in the session timeline.</p>
+            <div class="hv-line"></div>
+            <div class="hv-line shorter"></div>
+          </div>
+          <div class="hv-card">
+            <div class="hv-card-head">
+              <span class="hv-type">IP</span>
+              <span class="hv-value">203.0.113.42</span>
+              <span class="hv-verdict hv-verdict-amber">Suspicious</span>
+            </div>
+            <ul class="hv-sources">
+              <li><span class="hv-src">AbuseIPDB</span><span class="hv-val">18% abuse</span><span class="hv-flag hv-amber"></span></li>
+              <li><span class="hv-src">GreyNoise</span><span class="hv-val">Benign</span><span class="hv-flag hv-teal"></span></li>
+              <li><span class="hv-src">AlienVault OTX</span><span class="hv-val">1 pulse</span><span class="hv-flag hv-amber"></span></li>
+              <li><span class="hv-src">URLScan</span><span class="hv-val">No results</span><span class="hv-flag hv-muted"></span></li>
+              <li><span class="hv-src">RDAP</span><span class="hv-val">IANA-reserved</span><span class="hv-flag hv-teal"></span></li>
+            </ul>
+            <div class="hv-card-foot">
+              <span class="hv-foot-dot"></span>
+              Local &middot; your keys
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -90,7 +127,7 @@
           <p>Indicators of compromise &mdash; IPs, domains, URLs, hashes, CVEs &mdash; surfaced where they appear in alerts, tickets, dashboards, and reports.</p>
         </article>
 
-        <article class="card">
+        <article class="card card-feature">
           <span class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
           </span>
@@ -128,61 +165,75 @@
 
   <section class="section" id="trust">
     <div class="container">
-      <p class="section-eyebrow">Trust model</p>
-      <h2 class="section-title">Privacy is a product requirement, not a setting.</h2>
-      <ul class="trust-list">
-
-        <li class="trust-item">
-          <span class="trust-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <div class="trust-content">
-            <h3>Bring your own keys</h3>
-            <p>API credentials for enrichment sources stay in browser local storage. Vera5 does not proxy or pool them.</p>
+      <div class="trust-layout">
+        <div class="trust-head">
+          <p class="section-eyebrow">Trust model</p>
+          <h2 class="section-title">Privacy is a product requirement, not a setting.</h2>
+          <div class="trust-actions">
+            <a class="trust-link" href="https://github.com/0xCBradford/Vera5" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              View the source
+            </a>
+            <a class="trust-link" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              Read the security model
+            </a>
           </div>
-        </li>
+        </div>
+        <ul class="trust-list">
 
-        <li class="trust-item">
-          <span class="trust-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <div class="trust-content">
-            <h3>No required Vera5 cloud</h3>
-            <p>The extension operates locally. There is no Vera5-managed account, no shared backend, and no required hosted service to run enrichment.</p>
-          </div>
-        </li>
+          <li class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div class="trust-content">
+              <h3>Bring your own keys</h3>
+              <p>API credentials for enrichment sources stay in browser local storage. Vera5 does not proxy or pool them.</p>
+            </div>
+          </li>
 
-        <li class="trust-item">
-          <span class="trust-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <div class="trust-content">
-            <h3>No default telemetry</h3>
-            <p>Vera5 does not collect usage metrics, error reports, browsing history, or analyst identity by default.</p>
-          </div>
-        </li>
+          <li class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div class="trust-content">
+              <h3>No required Vera5 cloud</h3>
+              <p>The extension operates locally. There is no Vera5-managed account, no shared backend, and no required hosted service to run enrichment.</p>
+            </div>
+          </li>
 
-        <li class="trust-item">
-          <span class="trust-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <div class="trust-content">
-            <h3>No silent page uploads</h3>
-            <p>Full page content is never transmitted. Only indicators an analyst chooses to enrich leave the machine.</p>
-          </div>
-        </li>
+          <li class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div class="trust-content">
+              <h3>No default telemetry</h3>
+              <p>Vera5 does not collect usage metrics, error reports, browsing history, or analyst identity by default.</p>
+            </div>
+          </li>
 
-        <li class="trust-item">
-          <span class="trust-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <div class="trust-content">
-            <h3>Indicators only, by choice</h3>
-            <p>External APIs receive only the specific indicators selected for enrichment &mdash; nothing else from the page or session.</p>
-          </div>
-        </li>
+          <li class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div class="trust-content">
+              <h3>No silent page uploads</h3>
+              <p>Full page content is never transmitted. Only indicators an analyst chooses to enrich leave the machine.</p>
+            </div>
+          </li>
 
-      </ul>
+          <li class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div class="trust-content">
+              <h3>Indicators only, by choice</h3>
+              <p>External APIs receive only the specific indicators selected for enrichment &mdash; nothing else from the page or session.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -192,22 +243,37 @@
       <h2 class="section-title">Analyst workflows, not demo environments.</h2>
       <dl class="audience-list">
         <div class="audience-row">
+          <span class="audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span>
           <dt>SOC triage</dt>
           <dd>Faster context on alerts inside SIEM, EDR, and ticketing dashboards.</dd>
         </div>
         <div class="audience-row">
+          <span class="audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
           <dt>CTI research</dt>
           <dd>Inline pivots while reading threat reports, OSINT, and infrastructure write-ups.</dd>
         </div>
         <div class="audience-row">
+          <span class="audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </span>
           <dt>DFIR review</dt>
           <dd>Enrichment for indicators in timelines, logs, CSV exports, and HTML reports.</dd>
         </div>
         <div class="audience-row">
+          <span class="audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5a2 2 0 0 0-4 0"/><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 7v11"/><path d="M5 9h3"/><path d="M16 9h3"/><path d="M5 14h3"/><path d="M16 14h3"/><path d="m6 5 2 2"/><path d="m18 5-2 2"/></svg>
+          </span>
           <dt>Malware analysis</dt>
           <dd>Pivot extracted strings and infrastructure references without leaving the report.</dd>
         </div>
         <div class="audience-row">
+          <span class="audience-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="22" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2" y2="12"/><line x1="12" y1="5" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="19"/></svg>
+          </span>
           <dt>Threat hunting</dt>
           <dd>Lightweight context layer for investigative browsing and pivot work.</dd>
         </div>
@@ -291,8 +357,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-brand-row">
-          <img class="footer-logo" src="assets/logo.svg" alt="" width="56" height="56">
-          <h3>Vera5</h3>
+          <img class="footer-logo" src="assets/logo-mark.svg" alt="" width="56" height="56">
+          <h3>Vera<span class="brand-5">5</span></h3>
         </div>
         <p>Open-source analyst tooling for IOC enrichment.</p>
       </div>

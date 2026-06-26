@@ -110,7 +110,7 @@ Glow should NEVER:
 ## Electric Amber
 
 HEX:
-#F5A524
+#FFB224
 
 Used for:
 - active hover states
