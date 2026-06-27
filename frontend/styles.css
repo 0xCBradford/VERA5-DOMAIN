@@ -195,10 +195,29 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 14, 17, 0.82);
+  background: rgba(11, 14, 17, 0.72);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+/* Scroll-aware elevation: airy at the top, firmer once scrolled.
+   Script-free (same animation-timeline pattern used for reveals). */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .site-header {
+      animation: header-elevate linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 110px;
+    }
+    @keyframes header-elevate {
+      to {
+        background: rgba(11, 14, 17, 0.92);
+        border-bottom-color: var(--border-hard);
+        box-shadow: var(--shadow-med);
+      }
+    }
+  }
 }
 
 .nav-container {
@@ -206,23 +225,23 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: var(--s-lg);
-  padding-top: var(--s-md);
-  padding-bottom: var(--s-md);
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .brand {
   font-family: var(--font-hero);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 18px;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .brand-logo {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
 }
 .brand-5 { color: var(--accent); }
@@ -231,15 +250,68 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: var(--s-lg);
-  flex-wrap: wrap;
   font-size: 14px;
   font-weight: 500;
 }
-.primary-nav a {
+.primary-nav a:not(.nav-github) {
+  position: relative;
   color: var(--text-secondary);
+  padding: 6px 0;
+  transition: color var(--t-hover) var(--ease-out);
 }
-.primary-nav a:hover {
+.primary-nav a:not(.nav-github)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--t-hover) var(--ease-out);
+}
+.primary-nav a:not(.nav-github):hover {
   color: var(--text-primary);
+}
+.primary-nav a:not(.nav-github):hover::after {
+  transform: scaleX(1);
+}
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-hard);
+  flex-shrink: 0;
+}
+
+.nav-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border-hard);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: var(--highlight-top);
+  transition:
+    border-color var(--t-hover) var(--ease-out),
+    background var(--t-hover) var(--ease-out),
+    box-shadow var(--t-hover) var(--ease-out),
+    transform var(--t-hover) var(--ease-out);
+}
+.nav-github svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.nav-github:hover {
+  border-color: var(--border-accent);
+  background: var(--surface-2);
+  box-shadow: 0 0 18px var(--accent-glow), var(--highlight-top);
+  transform: translateY(-1px);
 }
 
 /* ============================================================
@@ -403,14 +475,24 @@ button:focus-visible {
 }
 .hv-page-head {
   display: flex;
+  align-items: center;
   gap: 7px;
-  margin-bottom: var(--s-xs);
+  margin-bottom: var(--s-sm);
 }
 .hv-dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background: var(--border-strong);
+  flex-shrink: 0;
+}
+.hv-omnibox {
+  flex: 1;
+  height: 14px;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: var(--surface-page);
+  border: 1px solid var(--border-hairline);
 }
 .hv-line {
   height: 9px;
@@ -422,13 +504,31 @@ button:focus-visible {
 .hv-text {
   font-family: var(--font-mono);
   font-size: 12.5px;
-  line-height: 1.7;
-  color: var(--text-low);
+  line-height: 1.9;
+  color: var(--text-secondary);
 }
 .hv-ioc {
+  position: relative;
   color: var(--accent);
-  border-bottom: 1px dashed rgba(255, 178, 36, 0.55);
-  padding-bottom: 1px;
+  font-weight: 500;
+  background: var(--accent-weak);
+  border-bottom: 1px dashed rgba(255, 178, 36, 0.6);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.hv-cursor {
+  position: absolute;
+  right: -11px;
+  bottom: -13px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.hv-cursor svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--text-primary);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
 }
 .hv-card {
   position: absolute;
@@ -442,6 +542,25 @@ button:focus-visible {
   border: 1px solid var(--border-strong);
   border-radius: var(--r-md);
   box-shadow: var(--shadow-high), 0 0 44px rgba(255, 178, 36, 0.06);
+}
+/* Tooltip tail — anchors the card back to the indicator above-left. */
+.hv-card::before,
+.hv-card::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.hv-card::before {
+  top: -9px;
+  border-bottom: 9px solid var(--border-strong);
+}
+.hv-card::after {
+  top: -7px;
+  border-bottom: 9px solid rgba(34, 43, 54, 0.92);
 }
 .hv-card-head {
   display: flex;
@@ -639,6 +758,106 @@ main { counter-reset: vera-section; }
 .section-body p + p { margin-top: var(--s-md); }
 
 /* ============================================================
+   The friction — two-column with lookup-loop visual
+   ============================================================ */
+
+.problem-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--s-2xl);
+  align-items: start;
+}
+.problem-copy { min-width: 0; }
+.problem-copy .section-title,
+.problem-copy .section-body { max-width: 560px; }
+
+/* The dagger sentence, pulled out of the paragraph */
+.friction-punch {
+  display: block;
+  margin-top: var(--s-sm);
+  padding-left: var(--s-md);
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.friction-visual {
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-xl);
+  box-shadow: var(--highlight-top), var(--shadow-low);
+}
+.floop-cap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: var(--s-lg);
+}
+.floop {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-md);
+}
+.floop::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 22px;
+  bottom: 38px;
+  width: 2px;
+  background: var(--border-strong);
+}
+.floop li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--s-md);
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.floop-num {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--surface-page);
+  border: 1px solid var(--border-strong);
+}
+.floop-num svg {
+  width: 16px;
+  height: 16px;
+}
+.floop-repeat {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.floop-repeat .floop-num {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-weak);
+}
+
+/* ============================================================
    Card grid — “What Vera5 does” (bento)
    ============================================================ */
 
@@ -685,14 +904,19 @@ main { counter-reset: vera-section; }
   line-height: 1.65;
 }
 
-/* Feature card — spans two columns, carries the focal weight */
+/* Feature card — spans two columns; copy left, product motif right */
 .card-feature {
   grid-column: span 2;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: var(--s-xl);
   background:
-    radial-gradient(100% 130% at 100% 0%, var(--accent-weak), transparent 58%),
+    radial-gradient(110% 130% at 100% 0%, var(--accent-weak), transparent 60%),
     var(--surface-2);
 }
+.card-feature-body { min-width: 0; }
 .card-feature .card-icon svg { width: 26px; height: 26px; }
 .card-feature h3 {
   font-size: 20px;
@@ -700,8 +924,86 @@ main { counter-reset: vera-section; }
 }
 .card-feature p {
   font-size: 15.5px;
-  max-width: 52ch;
+  max-width: 46ch;
 }
+
+/* Feature motif — sources aggregating into one compact card */
+.card-feature-visual {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+.cfv-card {
+  width: 100%;
+  max-width: 232px;
+  padding: 12px 14px;
+  background: rgba(11, 14, 17, 0.55);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  box-shadow: var(--highlight-top), var(--shadow-low);
+}
+.cfv-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+.cfv-type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-sm);
+  padding: 2px 6px;
+}
+.cfv-verdict {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cfv-verdict::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+.cfv-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.cfv-rows li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.cfv-flag {
+  margin-left: auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cfv-flag.amber { background: var(--accent); }
+.cfv-flag.teal { background: var(--status-connected); }
+.cfv-flag.muted { background: var(--text-low); }
 
 /* ============================================================
    Trust model — two-column
@@ -998,6 +1300,9 @@ main { counter-reset: vera-section; }
 }
 
 @media (max-width: 900px) {
+  .problem-layout { grid-template-columns: 1fr; gap: var(--s-xl); }
+  .problem-copy .section-title,
+  .problem-copy .section-body { max-width: 720px; }
   .card-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-layout { grid-template-columns: 1fr; gap: var(--s-xl); }
   .trust-head .section-title { margin-bottom: 0; }
@@ -1015,6 +1320,8 @@ main { counter-reset: vera-section; }
   .container { padding: 0 var(--s-md); }
   .nav-container { gap: var(--s-md); }
   .primary-nav { gap: var(--s-md); font-size: 13.5px; }
+  .nav-github { padding: 7px 12px; }
+  .nav-divider { display: none; }
   .hero-actions { width: 100%; }
   .btn-primary { flex: 1 1 auto; justify-content: center; min-width: 140px; }
   .principle { flex-direction: column; gap: var(--s-sm); }
@@ -1024,7 +1331,13 @@ main { counter-reset: vera-section; }
 
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; }
-  .card-feature { grid-column: span 1; }
+  .card-feature {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    gap: var(--s-lg);
+  }
+  .card-feature-visual { justify-content: flex-start; }
+  .cfv-card { max-width: none; }
   .audience-row {
     grid-template-columns: 24px 1fr;
     row-gap: 6px;
@@ -1040,6 +1353,8 @@ main { counter-reset: vera-section; }
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
+  .hv-card::before,
+  .hv-card::after { display: none; }
 }
 
 @media (max-width: 480px) {
@@ -1078,6 +1393,7 @@ main { counter-reset: vera-section; }
     .section-eyebrow,
     .section-title,
     .section-body,
+    .friction-visual,
     .card-grid,
     .trust-list,
     .audience-list,
