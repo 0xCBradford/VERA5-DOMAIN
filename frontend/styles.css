@@ -857,6 +857,48 @@ main { counter-reset: vera-section; }
   background: var(--accent-weak);
 }
 
+/* Loop comes alive: a glow pulse travels 1 -> 2 -> 3 -> repeat, forever */
+@media (prefers-reduced-motion: no-preference) {
+  .floop li .floop-num {
+    animation: floop-step 3.6s var(--ease-out) infinite;
+  }
+  .floop li:nth-child(1) .floop-num { animation-delay: 0s; }
+  .floop li:nth-child(2) .floop-num { animation-delay: 0.5s; }
+  .floop li:nth-child(3) .floop-num { animation-delay: 1s; }
+  .floop li:nth-child(4) .floop-num { animation-delay: 1.5s; }
+  .floop-repeat .floop-num svg {
+    animation: floop-spin 4s linear infinite;
+  }
+}
+@keyframes floop-step {
+  0%, 65%, 100% {
+    box-shadow: none;
+    border-color: var(--border-strong);
+    transform: scale(1);
+  }
+  18%, 40% {
+    box-shadow: 0 0 0 4px var(--accent-weak), 0 0 16px var(--accent-glow);
+    border-color: var(--border-accent);
+    transform: scale(1.06);
+  }
+}
+.floop-repeat .floop-num { animation-name: floop-step-repeat; }
+@keyframes floop-step-repeat {
+  0%, 65%, 100% {
+    box-shadow: none;
+    border-color: var(--border-accent);
+    transform: scale(1);
+  }
+  18%, 40% {
+    box-shadow: 0 0 0 4px var(--accent-weak), 0 0 18px var(--accent-glow);
+    border-color: var(--accent);
+    transform: scale(1.08);
+  }
+}
+@keyframes floop-spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ============================================================
    Card grid — “What Vera5 does” (bento)
    ============================================================ */
@@ -1004,6 +1046,56 @@ main { counter-reset: vera-section; }
 .cfv-flag.amber { background: var(--accent); }
 .cfv-flag.teal { background: var(--status-connected); }
 .cfv-flag.muted { background: var(--text-low); }
+
+/* Per-card flourishes — distinct in kind, hover-only, restrained */
+
+/* Detect — an accent scan sweeps down the card */
+.card--scan { overflow: hidden; }
+.card--scan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 45%;
+  background: linear-gradient(180deg, var(--accent-weak), transparent);
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+.card--scan:hover::after { animation: card-scan 1s var(--ease-out); }
+@keyframes card-scan {
+  0% { opacity: 0; transform: translateY(-100%); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(230%); }
+}
+
+/* Preserve attribution — icon stamps in with a glow */
+.card--attest .card-icon {
+  transition:
+    transform var(--t-card) var(--ease-out),
+    color var(--t-hover) var(--ease-out),
+    filter var(--t-card) var(--ease-out);
+}
+.card--attest:hover .card-icon {
+  transform: scale(1.12) rotate(-5deg);
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+/* Local-first — icon breathes */
+.card--local:hover .card-icon { animation: icon-breathe 1.6s var(--ease-out) infinite; }
+@keyframes icon-breathe {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 11px var(--accent-glow)); transform: scale(1.05); }
+}
+
+/* Keep in control — icon nudges like a slider */
+.card--control:hover .card-icon { animation: icon-nudge 0.6s var(--ease-out); }
+@keyframes icon-nudge {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+}
 
 /* ============================================================
    Trust model — two-column
