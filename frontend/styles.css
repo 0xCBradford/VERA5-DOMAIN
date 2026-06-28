@@ -496,9 +496,11 @@ button:focus-visible {
   pointer-events: none;
   background: linear-gradient(
     110deg,
-    transparent 38%,
-    rgba(255, 226, 170, 0.85) 50%,
-    transparent 62%
+    transparent 34%,
+    rgba(255, 236, 190, 0.7) 44%,
+    rgba(255, 252, 240, 1) 50%,
+    rgba(255, 236, 190, 0.7) 56%,
+    transparent 66%
   );
   background-size: 220% 100%;
   background-position: 150% 0;
@@ -506,12 +508,12 @@ button:focus-visible {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: wordmark-sheen 7s ease-in-out infinite;
+  animation: wordmark-sheen 3.4s ease-in-out infinite;
 }
 @keyframes wordmark-sheen {
-  /* quick glint (~1.1s) then a long rest off-screen — occasional, not shimmery */
+  /* quick bright glint (~0.7s) then a short rest off-screen */
   0%   { background-position: 150% 0; }
-  16%  { background-position: -50% 0; }
+  20%  { background-position: -50% 0; }
   100% { background-position: -50% 0; }
 }
 .hero-tagline {
