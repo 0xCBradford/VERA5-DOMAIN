@@ -179,65 +179,70 @@
     <div class="container">
       <p class="section-eyebrow" data-index="02">What Vera5 does</p>
       <h2 class="section-title">Context where the analyst already works.</h2>
-      <div class="card-grid">
+      <p class="product-lead">Designed for real investigations. Fast context, clear attribution, and control that stays with the analyst.</p>
+      <div class="product-layout">
+        <div class="feature-list">
 
-        <article class="card card--scan">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
-          </span>
-          <h3>Detect indicators on webpages</h3>
-          <p>Indicators of compromise &mdash; IPs, domains, URLs, hashes, CVEs &mdash; surfaced where they appear in alerts, tickets, dashboards, and reports.</p>
-        </article>
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
+            </span>
+            <h3 class="feature-name">Detect indicators on webpages</h3>
+            <p class="feature-desc">Indicators of compromise &mdash; IPs, domains, URLs, hashes, CVEs &mdash; surfaced where they appear in alerts, tickets, dashboards, and reports.</p>
+          </div>
 
-        <article class="card card-feature">
-          <div class="card-feature-body">
-            <span class="card-icon" aria-hidden="true">
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
             </span>
-            <h3>Show contextual enrichment</h3>
-            <p>Aggregate context from analyst-configured threat intelligence sources into a compact hover card. No tab-switching, no manual lookup loop.</p>
+            <h3 class="feature-name">Show contextual enrichment</h3>
+            <p class="feature-desc">Aggregate context from analyst-configured threat intelligence sources into a compact hover card. No tab-switching, no manual lookup loop.</p>
           </div>
-          <div class="card-feature-visual" aria-hidden="true">
-            <div class="cfv-card">
-              <div class="cfv-head">
-                <span class="cfv-type">IP</span>
-                <span class="cfv-verdict">Suspicious</span>
-              </div>
-              <ul class="cfv-rows">
-                <li>AbuseIPDB<span class="cfv-flag amber"></span></li>
-                <li>GreyNoise<span class="cfv-flag teal"></span></li>
-                <li>AlienVault OTX<span class="cfv-flag amber"></span></li>
-                <li>URLScan<span class="cfv-flag muted"></span></li>
-                <li>RDAP<span class="cfv-flag teal"></span></li>
-              </ul>
-            </div>
+
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <h3 class="feature-name">Preserve source attribution</h3>
+            <p class="feature-desc">Every enrichment field shows the source that produced it. Disagreement between sources stays visible &mdash; never collapsed into a single opaque score.</p>
           </div>
-        </article>
 
-        <article class="card card--attest">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <h3>Preserve source attribution</h3>
-          <p>Every enrichment field shows the source that produced it. Disagreement between sources stays visible &mdash; never collapsed into a single opaque score.</p>
-        </article>
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+            </span>
+            <h3 class="feature-name">Support local-first workflows</h3>
+            <p class="feature-desc">Enrichment runs from the browser using your own API keys. No required Vera5 backend, no maintainer-operated proxy, no shared quota pool.</p>
+          </div>
 
-        <article class="card card--local">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-          </span>
-          <h3>Support local-first workflows</h3>
-          <p>Enrichment runs from the browser using your own API keys. No required Vera5 backend, no maintainer-operated proxy, no shared quota pool.</p>
-        </article>
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+            </span>
+            <h3 class="feature-name">Keep analysts in control</h3>
+            <p class="feature-desc">Toggle sources, IOC types, and automatic scanning. Manual-only mode is supported. Cache behavior is visible and clearable.</p>
+          </div>
 
-        <article class="card card--control">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
-          </span>
-          <h3>Keep analysts in control</h3>
-          <p>Toggle sources, IOC types, and automatic scanning. Manual-only mode is supported. Cache behavior is visible and clearable.</p>
-        </article>
+        </div>
 
+        <aside class="product-panel" aria-hidden="true">
+          <div class="pp-head">
+            <span class="pp-type">IP</span>
+            <span class="pp-sources-label">Sources</span>
+          </div>
+          <ul class="pp-rows">
+            <li><span class="pp-src">AbuseIPDB</span><span class="pp-verdict amber"><span class="pp-dot"></span>Suspicious</span></li>
+            <li><span class="pp-src">GreyNoise</span><span class="pp-verdict teal"><span class="pp-dot"></span>Clean</span></li>
+            <li><span class="pp-src">AlienVault OTX</span><span class="pp-verdict amber"><span class="pp-dot"></span>Suspicious</span></li>
+            <li><span class="pp-src">URLScan</span><span class="pp-verdict muted"><span class="pp-dot"></span>Unknown</span></li>
+            <li><span class="pp-src">RDAP</span><span class="pp-verdict teal"><span class="pp-dot"></span>Clean</span></li>
+          </ul>
+          <div class="pp-legend">
+            <span><span class="pp-dot amber"></span>Suspicious</span>
+            <span><span class="pp-dot teal"></span>Clean</span>
+            <span><span class="pp-dot muted"></span>Unknown</span>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
