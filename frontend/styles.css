@@ -761,11 +761,26 @@ main { counter-reset: vera-section; }
    The friction — two-column with lookup-loop visual
    ============================================================ */
 
+#problem {
+  position: relative;
+  overflow: hidden;
+}
+#problem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(46% 58% at 82% 34%, var(--accent-glow), transparent 70%);
+}
+
 .problem-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: var(--s-2xl);
-  align-items: start;
+  align-items: center;
 }
 .problem-copy { min-width: 0; }
 .problem-copy .section-title,
@@ -774,23 +789,62 @@ main { counter-reset: vera-section; }
 /* The dagger sentence, pulled out of the paragraph */
 .friction-punch {
   display: block;
-  margin-top: var(--s-sm);
+  margin-top: var(--s-md);
   padding-left: var(--s-md);
   border-left: 2px solid var(--accent);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.2;
+  font-size: clamp(22px, 2.8vw, 30px);
+  line-height: 1.18;
   letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
 .friction-visual {
+  position: relative;
+  isolation: isolate;
   background: var(--surface-2);
   border: 1px solid var(--border-hairline);
   border-radius: var(--r-lg);
   padding: var(--s-xl);
-  box-shadow: var(--highlight-top), var(--shadow-low);
+  box-shadow: var(--highlight-top), var(--shadow-low), 0 0 60px -24px var(--accent-glow);
+}
+
+/* Sweeping accent light around the panel edge — the loop, made ambient */
+@property --loop-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.friction-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--loop-angle, 0deg),
+    transparent 0 62%,
+    var(--accent-glow) 74%,
+    var(--accent) 84%,
+    var(--accent-glow) 90%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .friction-visual::before { animation: loop-rotate 5s linear infinite; }
+}
+@keyframes loop-rotate {
+  to { --loop-angle: 360deg; }
 }
 .floop-cap {
   font-family: var(--font-mono);
