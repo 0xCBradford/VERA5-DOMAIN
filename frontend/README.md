@@ -23,6 +23,7 @@ npx serve .
 
 - `index.html` &mdash; page markup (includes JSON-LD, Open Graph / Twitter, and canonical meta)
 - `styles.css` &mdash; design tokens and component styles
+- `main.js` &mdash; deferred first-party progressive enhancement (scrollspy active-nav, `⌘K` command palette, live hero enrichment demo, magnetic CTAs + accent cursor)
 - `404.html` &mdash; branded not-found page (`noindex`)
 - `robots.txt`, `sitemap.xml` &mdash; crawler directives and single-URL sitemap
 - `assets/og-cover.png` &mdash; 1200&times;630 social share card referenced by OG/Twitter meta
@@ -30,7 +31,7 @@ npx serve .
 
 ## External dependencies
 
-The page loads three font families from Google Fonts: **Inter**, **JetBrains Mono**, and **Space Grotesk**. No other external assets, no scripts, no analytics, no trackers.
+The page loads three font families from Google Fonts: **Inter**, **JetBrains Mono**, and **Space Grotesk**. The only script is `main.js` &mdash; a small, deferred, first-party progressive enhancement (scrollspy active-nav and a `⌘K` / `/` command palette); the page is fully functional without it. No other external assets, no third-party scripts, no analytics, no trackers.
 
 ## Deployment
 
