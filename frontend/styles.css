@@ -888,17 +888,18 @@ button:focus-visible {
   bottom: 0;
   transform: translateX(-50%);
   width: min(1080px, 88%);
-  height: 1px;
+  height: 2px;
+  border-radius: 2px;
   pointer-events: none;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(34, 211, 238, 0.4) 28%,
-    rgba(96, 165, 250, 0.55) 50%,
-    rgba(168, 85, 247, 0.42) 72%,
+    rgba(34, 211, 238, 0.55) 22%,
+    rgba(96, 165, 250, 0.85) 50%,
+    rgba(168, 85, 247, 0.6) 78%,
     transparent 100%
   );
-  box-shadow: 0 0 16px rgba(96, 165, 250, 0.18);
+  box-shadow: 0 0 18px 1px rgba(96, 165, 250, 0.32);
 }
 .section-alt {
   background: var(--surface-1);
@@ -2047,10 +2048,6 @@ button:focus-visible {
    after first paint, so scroll position stays stable.
    ============================================================ */
 @supports (content-visibility: auto) {
-  .section {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 720px;
-  }
   .site-footer {
     content-visibility: auto;
     contain-intrinsic-size: auto 360px;
