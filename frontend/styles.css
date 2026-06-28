@@ -1309,6 +1309,15 @@ main { counter-reset: vera-section; }
   padding: var(--s-lg);
   box-shadow: var(--highlight-top), var(--shadow-low);
 }
+.status-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-md);
+  margin-bottom: var(--s-md);
+  padding-bottom: var(--s-md);
+  border-bottom: 1px solid var(--border-soft);
+}
 .status-panel-title {
   font-family: var(--font-mono);
   font-size: 11.5px;
@@ -1316,35 +1325,104 @@ main { counter-reset: vera-section; }
   text-transform: uppercase;
   color: var(--text-low);
   font-weight: 500;
-  margin-bottom: var(--s-md);
+  margin: 0;
 }
-.status-panel ul {
+.status-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.status-count-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* Roadmap timeline — momentum from "now" to "planned" */
+.status-track {
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
-.status-panel li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.status-track::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    rgba(255, 178, 36, 0.3) 46%,
+    var(--border-strong) 62%
+  );
+}
+.status-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
   gap: var(--s-md);
   padding: 12px 0;
-  border-bottom: 1px solid var(--border-soft);
   font-size: 14px;
 }
-.status-panel li:last-child { border-bottom: 0; }
-.status-panel .surface {
+.status-node {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--surface-page);
+  border: 2px solid var(--border-strong);
+}
+.is-active .status-node {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+.surface {
   color: var(--text-primary);
   font-weight: 500;
 }
-.status-panel .state {
+.is-planned .surface { color: var(--text-secondary); }
+.state {
   font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.1em;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
 }
-.state-active { color: var(--accent); }
-.state-planned { color: var(--text-low); }
+.state-active {
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-color: var(--border-accent);
+}
+.state-planned {
+  color: var(--text-low);
+  background: transparent;
+  border-color: var(--border-soft);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status-count-dot { animation: status-pulse 2.4s var(--ease-out) infinite; }
+  .is-active .status-node { animation: status-pulse 2.4s var(--ease-out) infinite; }
+  .status-item:nth-child(2) .status-node { animation-delay: 0.4s; }
+  .status-item:nth-child(3) .status-node { animation-delay: 0.8s; }
+}
 
 /* ============================================================
    Principles
