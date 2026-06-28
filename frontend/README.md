@@ -21,9 +21,12 @@ npx serve .
 
 ## Files
 
-- `index.html` &mdash; page markup
+- `index.html` &mdash; page markup (includes JSON-LD, Open Graph / Twitter, and canonical meta)
 - `styles.css` &mdash; design tokens and component styles
-- `assets/`, `public/`, `screenshots/` &mdash; reserved for future static assets
+- `404.html` &mdash; branded not-found page (`noindex`)
+- `robots.txt`, `sitemap.xml` &mdash; crawler directives and single-URL sitemap
+- `assets/og-cover.png` &mdash; 1200&times;630 social share card referenced by OG/Twitter meta
+- `assets/`, `public/`, `screenshots/` &mdash; static assets (logos, share card)
 
 ## External dependencies
 
