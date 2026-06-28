@@ -82,8 +82,8 @@
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-copy">
-        <p class="hero-eyebrow"><span class="hero-eyebrow-tick" aria-hidden="true"></span>Open-source analyst tooling</p>
         <h1 class="hero-title">Vera<span class="hero-title-mark">5</span></h1>
+        <p class="hero-eyebrow"><span class="hero-eyebrow-tick" aria-hidden="true"></span>Open-source analyst tooling</p>
         <p class="hero-tagline">Local-first IOC enrichment for analysts.</p>
         <p class="hero-description">
           Vera5 brings indicator context directly into analyst workflows without requiring a Vera5 cloud service. Detect indicators on the page you are already on. Enrich them with the sources you choose. Keep the investigation in one place.
@@ -100,10 +100,10 @@
           <a class="btn btn-secondary" href="#">Read Product Vision</a>
         </div>
         <ul class="hero-creds" aria-label="Project facts">
-          <li>Open source</li>
-          <li>MIT licensed</li>
-          <li>Local-first</li>
-          <li>No telemetry</li>
+          <li><span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>Open source</li>
+          <li><span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-3 6.6-7 8-4-1.4-7-3.8-7-8V6z"/></svg></span>MIT licensed</li>
+          <li><span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="11" rx="1.5"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>Local-first</li>
+          <li><span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></span>No telemetry</li>
         </ul>
       </div>
 
@@ -149,7 +149,7 @@
     <div class="container">
       <div class="problem-layout">
         <div class="problem-copy">
-          <p class="section-eyebrow">The friction</p>
+          <p class="section-eyebrow" data-index="01">The friction</p>
           <h2 class="section-title">Investigations lose flow when context is scattered.</h2>
           <div class="section-body">
             <p>Analysts copy indicators between tabs, paste them into enrichment portals, switch back to the alert, re-orient, then repeat. Each lookup is small. <strong class="friction-punch">The cumulative cost is not.</strong></p>
@@ -177,7 +177,7 @@
 
   <section class="section section-alt" id="product">
     <div class="container">
-      <p class="section-eyebrow">What Vera5 does</p>
+      <p class="section-eyebrow" data-index="02">What Vera5 does</p>
       <h2 class="section-title">Context where the analyst already works.</h2>
       <div class="card-grid">
 
@@ -246,7 +246,7 @@
     <div class="container">
       <div class="trust-layout">
         <div class="trust-head">
-          <p class="section-eyebrow">Trust model</p>
+          <p class="section-eyebrow" data-index="03">Trust model</p>
           <h2 class="section-title">Privacy is a product requirement, not a setting.</h2>
           <div class="trust-actions">
             <a class="trust-link" href="https://github.com/0xCBradford/Vera5" rel="noopener">
@@ -318,51 +318,85 @@
 
   <section class="section section-alt" id="audience">
     <div class="container">
-      <p class="section-eyebrow">Built for</p>
+      <p class="section-eyebrow" data-index="04">Built for</p>
       <h2 class="section-title">Analyst workflows, not demo environments.</h2>
-      <dl class="audience-list">
-        <div class="audience-row">
-          <span class="audience-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </span>
-          <dt>SOC triage</dt>
-          <dd>Faster context on alerts inside SIEM, EDR, and ticketing dashboards.</dd>
+      <div class="workflows">
+        <div class="wf-nav" role="radiogroup" aria-label="Analyst workflows">
+          <label class="wf-tab">
+            <input type="radio" name="workflow" value="soc" checked>
+            <span class="wf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            <span class="wf-name">SOC Triage</span>
+            <svg class="wf-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </label>
+          <label class="wf-tab">
+            <input type="radio" name="workflow" value="cti">
+            <span class="wf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <span class="wf-name">CTI Research</span>
+            <svg class="wf-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </label>
+          <label class="wf-tab">
+            <input type="radio" name="workflow" value="dfir">
+            <span class="wf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>
+            <span class="wf-name">DFIR Review</span>
+            <svg class="wf-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </label>
+          <label class="wf-tab">
+            <input type="radio" name="workflow" value="malware">
+            <span class="wf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5a2 2 0 0 0-4 0"/><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 7v11"/><path d="M5 9h3"/><path d="M16 9h3"/><path d="M5 14h3"/><path d="M16 14h3"/><path d="m6 5 2 2"/><path d="m18 5-2 2"/></svg></span>
+            <span class="wf-name">Malware Analysis</span>
+            <svg class="wf-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </label>
+          <label class="wf-tab">
+            <input type="radio" name="workflow" value="hunt">
+            <span class="wf-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="22" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2" y2="12"/><line x1="12" y1="5" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="19"/></svg></span>
+            <span class="wf-name">Threat Hunting</span>
+            <svg class="wf-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </label>
         </div>
-        <div class="audience-row">
-          <span class="audience-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          </span>
-          <dt>CTI research</dt>
-          <dd>Inline pivots while reading threat reports, OSINT, and infrastructure write-ups.</dd>
+        <div class="wf-panels">
+          <article class="wf-panel" data-wf="soc">
+            <h3 class="wf-panel-title">SOC Triage</h3>
+            <p class="wf-panel-desc">Faster context on alerts inside SIEM, EDR, and ticketing dashboards &mdash; without breaking out of the console you already live in.</p>
+            <ul class="wf-surfaces">
+              <li>SIEM</li><li>EDR</li><li>Ticketing</li>
+            </ul>
+          </article>
+          <article class="wf-panel" data-wf="cti">
+            <h3 class="wf-panel-title">CTI Research</h3>
+            <p class="wf-panel-desc">Inline pivots while reading threat reports, OSINT, and infrastructure write-ups, so indicators resolve in place as you read.</p>
+            <ul class="wf-surfaces">
+              <li>Threat reports</li><li>OSINT</li><li>Infra write-ups</li>
+            </ul>
+          </article>
+          <article class="wf-panel" data-wf="dfir">
+            <h3 class="wf-panel-title">DFIR Review</h3>
+            <p class="wf-panel-desc">Enrichment for indicators in timelines, logs, CSV exports, and HTML reports during incident review and reconstruction.</p>
+            <ul class="wf-surfaces">
+              <li>Timelines</li><li>Logs</li><li>CSV</li><li>HTML reports</li>
+            </ul>
+          </article>
+          <article class="wf-panel" data-wf="malware">
+            <h3 class="wf-panel-title">Malware Analysis</h3>
+            <p class="wf-panel-desc">Pivot extracted strings and infrastructure references without leaving the report &mdash; keeping the analysis and its context in one place.</p>
+            <ul class="wf-surfaces">
+              <li>Strings</li><li>Infra references</li><li>Reports</li>
+            </ul>
+          </article>
+          <article class="wf-panel" data-wf="hunt">
+            <h3 class="wf-panel-title">Threat Hunting</h3>
+            <p class="wf-panel-desc">A lightweight context layer for investigative browsing and pivot work, surfacing what matters as hypotheses take shape.</p>
+            <ul class="wf-surfaces">
+              <li>Browsing</li><li>Pivots</li><li>Hypotheses</li>
+            </ul>
+          </article>
         </div>
-        <div class="audience-row">
-          <span class="audience-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
-          </span>
-          <dt>DFIR review</dt>
-          <dd>Enrichment for indicators in timelines, logs, CSV exports, and HTML reports.</dd>
-        </div>
-        <div class="audience-row">
-          <span class="audience-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5a2 2 0 0 0-4 0"/><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 7v11"/><path d="M5 9h3"/><path d="M16 9h3"/><path d="M5 14h3"/><path d="M16 14h3"/><path d="m6 5 2 2"/><path d="m18 5-2 2"/></svg>
-          </span>
-          <dt>Malware analysis</dt>
-          <dd>Pivot extracted strings and infrastructure references without leaving the report.</dd>
-        </div>
-        <div class="audience-row">
-          <span class="audience-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="22" y1="12" x2="19" y2="12"/><line x1="5" y1="12" x2="2" y2="12"/><line x1="12" y1="5" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="19"/></svg>
-          </span>
-          <dt>Threat hunting</dt>
-          <dd>Lightweight context layer for investigative browsing and pivot work.</dd>
-        </div>
-      </dl>
+      </div>
     </div>
   </section>
 
   <section class="section" id="status">
     <div class="container">
-      <p class="section-eyebrow">Current status</p>
+      <p class="section-eyebrow" data-index="05">Current status</p>
       <h2 class="section-title">In active development.</h2>
       <div class="status-grid">
         <div class="section-body">
@@ -414,7 +448,7 @@
 
   <section class="section section-alt" id="principles">
     <div class="container">
-      <p class="section-eyebrow">Design principles</p>
+      <p class="section-eyebrow" data-index="06">Design principles</p>
       <h2 class="section-title">Decisions that shape every part of the tool.</h2>
       <ol class="principles-list">
         <li class="principle">
