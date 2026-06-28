@@ -300,41 +300,12 @@ button:focus-visible {
   font-size: 14px;
   font-weight: 500;
 }
-.primary-nav a:not(.nav-github) {
-  position: relative;
-  color: var(--text-secondary);
-  padding: 6px 0;
-  transition: color var(--t-hover) var(--ease-out);
-}
-.primary-nav a:not(.nav-github)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1.5px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--t-hover) var(--ease-out);
-}
-.primary-nav a:not(.nav-github):hover {
-  color: var(--text-primary);
-}
-.primary-nav a:not(.nav-github):hover::after {
-  transform: scaleX(1);
-}
-.primary-nav a.is-active:not(.nav-github) {
-  color: var(--text-primary);
-}
-.primary-nav a.is-active:not(.nav-github)::after {
-  transform: scaleX(1);
-}
-
 .nav-divider {
-  width: 1px;
+  width: 2px;
   height: 20px;
-  background: var(--border-hard);
+  border-radius: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
   flex-shrink: 0;
 }
 
