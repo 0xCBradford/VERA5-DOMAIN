@@ -70,6 +70,19 @@
   /* Surface depth — inner top highlight on raised surfaces */
   --highlight-top: inset 0 1px 0 rgba(245, 247, 250, 0.045);
 
+  /* Product-chrome depth — physical bevels for mock-UI surfaces ONLY.
+     Recessed = sunk display; raised = extruded control face.
+     Content/editorial layers stay flat and never use these. */
+  --bezel-edge: inset 0 1px 0 rgba(245, 247, 250, 0.07), inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  --chrome-recessed:
+    inset 0 2px 7px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(0, 0, 0, 0.55),
+    inset 0 -1px 0 rgba(245, 247, 250, 0.05);
+  --chrome-raised: var(--highlight-top), 0 1px 0 rgba(0, 0, 0, 0.5), var(--shadow-low);
+  /* LED — lens sheen overlaid on the indicator color; socket for unlit ports */
+  --led-sheen: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 55%);
+  --led-socket: inset 0 1px 2px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+
   /* Film grain — kills banding on dark surfaces */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
@@ -518,7 +531,8 @@ button:focus-visible {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: var(--led-sheen);
   box-shadow: 0 0 10px rgba(255, 178, 36, 0.5);
   flex-shrink: 0;
   animation: status-pulse var(--t-pulse) var(--ease-out) infinite;
@@ -547,6 +561,7 @@ button:focus-visible {
   position: relative;
   width: 100%;
   max-width: 440px;
+  perspective: 1500px;
 }
 .hv-page {
   position: relative;
@@ -554,10 +569,10 @@ button:focus-visible {
   flex-direction: column;
   gap: 14px;
   padding: var(--s-lg);
-  background: linear-gradient(180deg, var(--surface-1), var(--surface-page));
-  border: 1px solid var(--border-hairline);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface-1));
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-lg);
-  box-shadow: var(--highlight-top), var(--shadow-med);
+  box-shadow: var(--bezel-edge), var(--shadow-high);
 }
 .hv-page-head {
   display: flex;
@@ -569,7 +584,8 @@ button:focus-visible {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--border-strong);
+  background: linear-gradient(180deg, var(--surface-raised), var(--border-strong));
+  box-shadow: var(--bezel-edge);
   flex-shrink: 0;
 }
 .hv-omnibox {
@@ -579,6 +595,7 @@ button:focus-visible {
   border-radius: 999px;
   background: var(--surface-page);
   border: 1px solid var(--border-hairline);
+  box-shadow: var(--chrome-recessed);
 }
 .hv-line {
   height: 9px;
@@ -685,7 +702,8 @@ button:focus-visible {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: currentColor;
+  background-color: currentColor;
+  background-image: var(--led-sheen);
   box-shadow: 0 0 8px currentColor;
 }
 .hv-verdict-amber { color: var(--accent); }
@@ -719,10 +737,11 @@ button:focus-visible {
   height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
+  background-image: var(--led-sheen);
 }
-.hv-amber { background: var(--accent); }
-.hv-teal { background: var(--status-connected); }
-.hv-muted { background: var(--text-low); }
+.hv-amber { background-color: var(--accent); }
+.hv-teal { background-color: var(--status-connected); }
+.hv-muted { background-color: var(--text-low); }
 .hv-card-foot {
   display: flex;
   align-items: center;
@@ -737,7 +756,8 @@ button:focus-visible {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--status-connected);
+  background-color: var(--status-connected);
+  background-image: var(--led-sheen);
   box-shadow: 0 0 8px rgba(34, 199, 169, 0.5);
 }
 
@@ -752,6 +772,8 @@ button:focus-visible {
   100% { box-shadow: 0 0 8px rgba(34, 199, 169, 0.6), 0 0 0 0 rgba(34, 199, 169, 0); }
 }
 @media (prefers-reduced-motion: no-preference) {
+  /* Whisper of perspective — the report face sits back behind the card. */
+  .hv-page { transform: rotateX(2.5deg) rotateY(-2.2deg); transform-origin: 50% 0%; }
   .hv-card { animation: hv-float var(--t-ambient) ease-in-out infinite; }
   .hv-verdict::before { animation: status-pulse var(--t-pulse) var(--ease-out) infinite; }
   .hv-foot-dot { animation: status-pulse-teal var(--t-pulse) var(--ease-out) infinite; }
@@ -989,10 +1011,10 @@ button:focus-visible {
   padding: var(--s-lg);
   background:
     radial-gradient(120% 100% at 100% 0%, rgba(255, 178, 36, 0.05), transparent 55%),
-    var(--surface-1);
+    var(--surface-page);
   border: 1px solid var(--border-strong);
   border-radius: var(--r-lg);
-  box-shadow: var(--highlight-top), var(--shadow-med);
+  box-shadow: var(--chrome-recessed);
 }
 .pp-head {
   display: flex;
@@ -1048,7 +1070,8 @@ button:focus-visible {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: currentColor;
+  background-color: currentColor;
+  background-image: var(--led-sheen);
   box-shadow: 0 0 8px currentColor;
 }
 .pp-verdict.amber { color: var(--accent); }
@@ -1599,7 +1622,8 @@ button:focus-visible {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: var(--led-sheen);
   box-shadow: 0 0 10px var(--accent);
 }
 
@@ -1643,9 +1667,11 @@ button:focus-visible {
   border-radius: 50%;
   background: var(--surface-page);
   border: 2px solid var(--border-strong);
+  box-shadow: var(--led-socket);
 }
 .is-active .status-node {
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: var(--led-sheen);
   border-color: var(--accent);
   box-shadow: 0 0 10px var(--accent-glow);
 }
@@ -1834,7 +1860,8 @@ button:focus-visible {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--status-connected);
+  background-color: var(--status-connected);
+  background-image: var(--led-sheen);
   box-shadow: 0 0 8px rgba(34, 199, 169, 0.5);
 }
 
@@ -1892,6 +1919,7 @@ button:focus-visible {
   .feature-name { grid-column: 2; }
   .feature-desc { grid-column: 2; }
   .hv-stage { max-width: none; }
+  .hv-page { transform: none; }
   .hv-card {
     position: static;
     width: 100%;
