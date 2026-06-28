@@ -496,24 +496,24 @@ button:focus-visible {
   pointer-events: none;
   background: linear-gradient(
     110deg,
-    transparent 34%,
-    rgba(255, 236, 190, 0.7) 44%,
-    rgba(255, 252, 240, 1) 50%,
-    rgba(255, 236, 190, 0.7) 56%,
-    transparent 66%
+    transparent 28%,
+    rgba(255, 240, 205, 0.92) 41%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 240, 205, 0.92) 59%,
+    transparent 72%
   );
-  background-size: 220% 100%;
+  background-size: 200% 100%;
   background-position: 150% 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: wordmark-sheen 3.4s ease-in-out infinite;
+  animation: wordmark-sheen 2.6s ease-in-out infinite;
 }
 @keyframes wordmark-sheen {
-  /* quick bright glint (~0.7s) then a short rest off-screen */
+  /* slow glint sweep (~1.5s across the glyphs) then a brief rest, repeated often */
   0%   { background-position: 150% 0; }
-  20%  { background-position: -50% 0; }
+  58%  { background-position: -50% 0; }
   100% { background-position: -50% 0; }
 }
 .hero-tagline {
