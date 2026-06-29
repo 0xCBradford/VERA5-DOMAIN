@@ -1,0 +1,645 @@
+# Vera5 Privacy Policy
+
+**Effective Date:** June 29, 2026
+**Last Updated:** June 29, 2026
+
+Vera5 is an open-source browser extension and cybersecurity analysis tool designed to detect and enrich security-related indicators within webpages and browser-based analyst workflows.
+
+This Privacy Policy explains how Vera5 handles information when you:
+
+* visit the Vera5 website at **https://vera5.io**;
+* install or use the Vera5 browser extension;
+* interact with Vera5 documentation, repositories, support channels, or related services; or
+* use third-party threat-intelligence services through Vera5.
+
+In this Privacy Policy, “Vera5,” “we,” “us,” and “our” refer to **[LEGAL OWNER OR ENTITY NAME]**, the operator and publisher of Vera5.
+
+## 1. Summary of Vera5’s Privacy Approach
+
+Vera5 is designed around the following principles:
+
+* local-first operation;
+* no Vera5 user account required for core functionality;
+* no default telemetry or behavioral analytics;
+* no Vera5-operated enrichment cloud required for core functionality;
+* bring-your-own API keys;
+* local storage of settings, credentials, preferences, and cached results;
+* no sale of personal information;
+* no sale or sharing of browsing history;
+* no advertising profiles;
+* no silent upload of full webpages;
+* no transmission of API keys to Vera5-operated servers; and
+* user control over which third-party intelligence sources receive queries.
+
+When you choose to enrich an indicator, the selected indicator may be transmitted directly from your browser to the third-party provider or endpoint you enabled. Those providers process the indicator under their own terms and privacy policies.
+
+## 2. Scope of This Privacy Policy
+
+This Privacy Policy applies to:
+
+1. the Vera5 informational website;
+2. the official Vera5 browser extension;
+3. official Vera5 documentation and support channels operated by us; and
+4. any future Vera5-operated service that expressly links to this Privacy Policy.
+
+This Privacy Policy does not govern:
+
+* independent forks or modified versions of Vera5;
+* unofficial builds;
+* third-party extensions based on Vera5 source code;
+* websites or services operated by threat-intelligence providers;
+* GitHub, the Chrome Web Store, social-media platforms, or other external websites;
+* a local AI model, local backend, or self-hosted service that you independently configure; or
+* an organization’s internal deployment of Vera5 where that organization controls the deployment and data processing.
+
+## 3. Information Handled by the Vera5 Website
+
+### 3.1 Information We Do Not Intentionally Collect
+
+The current Vera5 website is an informational website. Unless this Privacy Policy is updated to state otherwise, the website does not intentionally:
+
+* create user accounts;
+* require authentication;
+* accept payment information;
+* use advertising trackers;
+* use behavioral advertising;
+* create marketing profiles;
+* sell or share personal information;
+* collect browser history;
+* collect the contents of webpages you visit;
+* collect API keys;
+* collect extension settings;
+* collect investigation data; or
+* use Vera5-operated analytics or telemetry.
+
+### 3.2 Basic Hosting and Security Logs
+
+The infrastructure provider that hosts or delivers the website may automatically process limited technical information needed to deliver and secure the website. Depending on the provider, this may include:
+
+* IP address;
+* request date and time;
+* requested page or file;
+* browser type;
+* operating system;
+* referring page;
+* approximate geographic region;
+* response status;
+* device or network information; and
+* security or abuse-detection signals.
+
+We do not use this information to build advertising profiles or track users across unrelated websites.
+
+Hosting providers may retain these records according to their own operational, security, and legal requirements.
+
+**Current hosting provider:** [HOSTING PROVIDER NAME]
+
+## 4. Cookies and Similar Technologies
+
+The Vera5 website does not intentionally set cookies or use tracking pixels, advertising identifiers, fingerprinting scripts, or similar tracking technologies.
+
+A cookie-consent banner is therefore not displayed.
+
+External services reached through links on the Vera5 website may use their own cookies or tracking technologies. Their practices are governed by their own privacy policies.
+
+If Vera5 later introduces cookies, analytics, authentication, payments, embedded content, or similar technologies, this Privacy Policy will be updated and any legally required consent controls will be implemented.
+
+## 5. Information Handled by the Vera5 Extension
+
+### 5.1 Local Page Analysis
+
+When activated or configured to scan automatically, Vera5 may inspect permitted webpage content within your browser to identify supported cybersecurity artifacts, such as:
+
+* IP addresses;
+* domains;
+* URLs;
+* file hashes;
+* vulnerability identifiers;
+* email addresses;
+* autonomous system numbers;
+* certificate or cryptographic information; and
+* other supported security indicators.
+
+This inspection is performed locally within your browser.
+
+Vera5 does not transmit the complete webpage, browser tab contents, ticket contents, email body, dashboard contents, or browsing history to Vera5-operated infrastructure.
+
+Detection does not necessarily cause an external network request. External enrichment occurs only according to your settings and actions.
+
+### 5.2 Information Stored Locally
+
+Vera5 may store information in browser extension storage on your device, including:
+
+* extension preferences;
+* enabled or disabled features;
+* enabled intelligence sources;
+* API keys supplied by you;
+* domain policies or allowlists and denylists;
+* cached enrichment results;
+* cache timestamps;
+* selected or detected indicators;
+* investigation sessions;
+* collections;
+* notes;
+* labels;
+* watchlists;
+* export settings;
+* local workflow history;
+* local AI endpoint settings; and
+* other locally configured operational data.
+
+This information remains on your device unless you:
+
+* export it;
+* copy it to the clipboard;
+* save it to a file;
+* transmit an indicator to an enabled provider;
+* configure a local or self-hosted endpoint;
+* install a browser-sync mechanism outside Vera5’s control; or
+* use a future optional service that clearly discloses different handling.
+
+Removing the extension may not automatically remove every exported file, copied item, browser backup, or data stored outside the extension’s local storage.
+
+### 5.3 API Keys and Credentials
+
+Vera5 uses a bring-your-own-key model.
+
+API keys you provide are intended to be stored locally in browser extension storage or in a user-controlled local or self-hosted backend.
+
+Vera5 does not intentionally:
+
+* transmit your API keys to Vera5-operated servers;
+* pool your API credentials with other users;
+* resell access to your credentials;
+* use your credentials for another user;
+* publish your credentials;
+* include your credentials in exported settings by default; or
+* knowingly include credentials in logs or public reports.
+
+API keys are necessarily transmitted to the applicable third-party provider when required to authenticate a request to that provider.
+
+Although Vera5 applies safeguards such as masking and export exclusions, browser-local storage is not equivalent to dedicated hardware-backed secret storage. You are responsible for protecting access to your browser profile, device, backups, and API-provider accounts.
+
+## 6. Third-Party Enrichment Requests
+
+Vera5 may connect directly to third-party threat-intelligence, infrastructure, reputation, or security services that you enable.
+
+Examples may include:
+
+* AlienVault OTX;
+* AbuseIPDB;
+* VirusTotal;
+* URLScan.io;
+* GreyNoise;
+* Shodan;
+* Censys;
+* ThreatFox;
+* MalwareBazaar;
+* URLhaus;
+* RDAP or WHOIS services;
+* MISP;
+* OpenCTI;
+* TheHive; and
+* other user-configured providers.
+
+When you request enrichment, Vera5 may send the selected indicator and technical request metadata directly to the enabled provider. The provider may consequently receive information such as:
+
+* the indicator value;
+* your IP address;
+* request time;
+* API credential;
+* browser or network metadata;
+* service-specific request parameters; and
+* other information ordinarily transmitted during an HTTPS request.
+
+The provider may log, retain, analyze, correlate, or disclose that information according to its own terms, privacy policy, account agreement, and legal obligations.
+
+Vera5 does not control the provider’s data practices.
+
+You should not submit a confidential, internal, classified, regulated, privileged, or otherwise sensitive indicator to a third-party provider unless you are authorized to do so and understand the provider’s handling practices.
+
+## 7. Manual-Only Mode, Source Controls, and Domain Controls
+
+Vera5 may provide controls that allow you to:
+
+* disable automatic enrichment;
+* require manual enrichment;
+* enable or disable individual providers;
+* restrict operation on particular websites;
+* block external queries for internal assets;
+* use cached results;
+* operate in a quiet or offline-oriented mode;
+* preview or approve outbound requests; or
+* use a local or self-hosted endpoint.
+
+These controls are intended to reduce unintended disclosure, but they do not replace your responsibility to evaluate whether an indicator may be sent to a third party.
+
+## 8. Local AI and Self-Hosted Services
+
+Vera5 may support optional connections to user-controlled local AI models, localhost services, or self-hosted backends.
+
+When you configure such a service:
+
+* Vera5 may transmit the information necessary to perform the requested operation to the endpoint you configured;
+* the endpoint may process or retain information according to its own configuration;
+* the endpoint is not operated by Vera5 unless expressly identified otherwise; and
+* you are responsible for securing, configuring, and maintaining that endpoint.
+
+Vera5 does not intentionally send API keys, full webpage contents, browser cookies, authentication tokens, or unrelated browsing history to a local AI model.
+
+The information sent to a local model should ordinarily be limited to selected indicators, normalized enrichment results, analyst-provided notes, or other information required for the requested local function.
+
+## 9. Browser Permissions
+
+Vera5 may request browser permissions necessary to provide its functions. These may include permission to:
+
+* access browser-local storage;
+* interact with the active tab;
+* inject or execute extension components;
+* detect supported artifacts in permitted webpage content;
+* communicate with approved external intelligence providers;
+* display the Vera5 interface; and
+* perform user-requested extension operations.
+
+Vera5 uses browser permissions only for disclosed functionality.
+
+Current permission details are available in the Vera5 source repository and security documentation.
+
+## 10. Chrome Web Store Limited Use Disclosure
+
+Vera5’s use and transfer of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
+
+Vera5 uses information accessed through browser permissions only to provide or improve prominent, user-facing Vera5 functionality.
+
+Vera5 does not use browser-accessed information for:
+
+* personalized advertising;
+* general advertising;
+* creditworthiness determinations;
+* lending decisions;
+* selling information to data brokers;
+* creating unrelated user profiles;
+* surveillance unrelated to Vera5’s disclosed purpose; or
+* purposes materially unrelated to cybersecurity analysis and user-requested Vera5 functionality.
+
+Vera5 does not sell browser-accessed information.
+
+Human access to locally processed information is not permitted except when:
+
+1. you expressly request support and voluntarily provide the information;
+2. access is required for security, fraud, abuse, or legal compliance;
+3. access is necessary to provide an optional service you knowingly request; or
+4. the information has been aggregated and anonymized so that it cannot reasonably identify an individual.
+
+## 11. Information You Voluntarily Provide
+
+You may voluntarily provide information when you:
+
+* contact us by email;
+* submit a GitHub issue;
+* open a pull request;
+* participate in a discussion;
+* submit a security report;
+* request support;
+* complete a survey;
+* provide feedback; or
+* communicate through an official Vera5 community channel.
+
+This information may include:
+
+* name;
+* username;
+* email address;
+* organization;
+* message contents;
+* technical logs;
+* screenshots;
+* browser and device information;
+* extension configuration;
+* sample indicators; and
+* other information you choose to provide.
+
+Do not include API keys, passwords, session tokens, classified information, proprietary case data, confidential customer data, or unnecessary personal information in public issues, discussions, screenshots, or support requests.
+
+We use voluntarily submitted information to:
+
+* respond to communications;
+* investigate bugs;
+* provide support;
+* address security issues;
+* evaluate feature requests;
+* improve Vera5;
+* enforce project rules;
+* protect the project and its users; and
+* comply with legal obligations.
+
+Public submissions to GitHub or other public forums may remain publicly available and may be copied, indexed, archived, or redistributed by others.
+
+## 12. Information We Do Not Sell or Share for Advertising
+
+Vera5 does not sell personal information.
+
+Vera5 does not share personal information for cross-context behavioral advertising.
+
+Vera5 does not operate an advertising network.
+
+Vera5 does not use detected indicators, browser activity, investigation records, API keys, or enrichment results to build advertising profiles.
+
+## 13. How Information May Be Disclosed
+
+Information under our control may be disclosed in the following limited circumstances:
+
+### 13.1 At Your Direction
+
+We may disclose information when you request or authorize the disclosure.
+
+### 13.2 Service Providers
+
+Limited information may be processed by providers supporting website hosting, email, source-code hosting, security, or other operational functions.
+
+These providers process information under their own contractual and legal obligations.
+
+### 13.3 Legal Requirements
+
+We may disclose information when we reasonably believe disclosure is required to:
+
+* comply with applicable law, regulation, legal process, or governmental request;
+* protect the rights, property, security, or safety of Vera5, users, or the public;
+* investigate fraud, abuse, security incidents, or violations;
+* establish, exercise, or defend legal claims; or
+* enforce applicable agreements.
+
+### 13.4 Business Transactions
+
+If Vera5 or its controlling assets are involved in a merger, acquisition, financing, reorganization, bankruptcy, or asset transfer, information under our control may be reviewed or transferred as part of that transaction.
+
+Any successor’s handling of personal information will remain subject to applicable law and any privacy commitments that continue to apply.
+
+Because most Vera5 extension information is stored locally and is not held by us, such locally stored information would not ordinarily be available for transfer by us.
+
+## 14. Data Retention
+
+We retain information under our control only for as long as reasonably necessary for the purposes described in this Privacy Policy, including support, security, dispute resolution, project administration, and legal compliance.
+
+Retention periods may vary depending on the information:
+
+* Website infrastructure logs may be retained by the hosting provider for operational and security purposes.
+* Support communications may be retained while relevant to the request and for reasonable recordkeeping.
+* Security reports may be retained to document vulnerabilities and remediation.
+* Public GitHub contributions may remain available indefinitely as part of the project history.
+* Locally stored extension information remains on your device until deleted, expired, cleared, overwritten, or removed through browser or operating-system controls.
+* Information processed by third-party providers is retained according to those providers’ policies.
+
+## 15. Security
+
+Vera5 uses reasonable technical and organizational safeguards appropriate to the nature of the information under our control.
+
+Measures may include:
+
+* local-first processing;
+* minimized collection;
+* masked credential fields;
+* exclusion of credentials from exports by default;
+* HTTPS requests to supported providers;
+* source attribution;
+* restricted browser permissions;
+* no remote executable code;
+* dependency and secret scanning;
+* redaction controls;
+* cache controls; and
+* open-source review.
+
+No method of storage, transmission, or software operation is completely secure. We cannot guarantee absolute security.
+
+You are responsible for:
+
+* securing your device;
+* securing your browser profile;
+* protecting your API keys;
+* configuring third-party services;
+* reviewing extension permissions;
+* keeping software updated;
+* avoiding disclosure of sensitive investigation information; and
+* reporting suspected security issues responsibly.
+
+Security reports should be submitted to:
+
+**[SECURITY CONTACT EMAIL]**
+
+Do not disclose an unpatched vulnerability publicly before coordinated disclosure has occurred.
+
+## 16. Your Choices and Controls
+
+Depending on the installed version, you may be able to:
+
+* disable Vera5;
+* uninstall the extension;
+* turn highlighting on or off;
+* disable automatic scanning;
+* use manual-only enrichment;
+* disable individual intelligence sources;
+* remove stored API keys;
+* clear cached enrichment;
+* delete local investigation data;
+* delete collections or notes;
+* restrict operation by domain;
+* export or import selected settings;
+* disable local AI;
+* revoke API keys through the provider;
+* delete locally exported files; and
+* clear extension storage through browser settings.
+
+Because Vera5 does not ordinarily maintain user accounts or a centralized user database, we may be unable to identify or access information stored only on your device.
+
+## 17. Privacy Rights
+
+Depending on where you live and whether applicable legal thresholds are met, you may have rights regarding personal information under our control, including rights to:
+
+* request access;
+* request correction;
+* request deletion;
+* obtain a copy;
+* restrict or object to processing;
+* withdraw consent;
+* opt out of certain sales, sharing, targeted advertising, or profiling;
+* appeal the denial of a request; and
+* lodge a complaint with a regulator.
+
+Vera5 does not currently sell personal information, share personal information for cross-context behavioral advertising, or conduct targeted advertising.
+
+To submit a privacy request, contact:
+
+**[PRIVACY CONTACT EMAIL]**
+
+Your request should identify:
+
+* your name;
+* the nature of your request;
+* the communication or service involved; and
+* sufficient information for us to locate any relevant records.
+
+We may need to verify your identity and authority before acting on a request. We will not discriminate against you for exercising an applicable privacy right.
+
+Information stored only in your browser, device, self-hosted service, or third-party account must ordinarily be managed through that system because we do not possess or control it.
+
+## 18. California Privacy Notice
+
+This section supplements the Privacy Policy for California residents.
+
+To the extent the California Consumer Privacy Act, as amended, applies to Vera5, California residents may have rights to:
+
+* know the categories and specific pieces of personal information collected;
+* know the sources and business purposes for collection;
+* know the categories of recipients;
+* request deletion;
+* request correction;
+* obtain information in a portable format;
+* opt out of the sale or sharing of personal information;
+* limit certain uses of sensitive personal information; and
+* receive equal service and pricing when exercising privacy rights.
+
+Vera5 does not sell personal information and does not share personal information for cross-context behavioral advertising.
+
+During the preceding twelve months, Vera5 has not knowingly sold or shared personal information for cross-context behavioral advertising.
+
+Because Vera5 does not currently engage in those activities, Vera5 does not provide a “Do Not Sell or Share My Personal Information” link.
+
+Categories of personal information that may be processed are limited to information described in this Privacy Policy, such as basic website request records and information voluntarily provided through support or public project channels.
+
+## 19. Florida Residents
+
+To the extent the Florida Digital Bill of Rights or another Florida privacy law applies to Vera5, eligible Florida residents may exercise the rights provided by applicable law by contacting:
+
+**[PRIVACY CONTACT EMAIL]**
+
+Vera5 does not sell personal information, engage in targeted advertising, or operate a large-scale consumer-data business.
+
+## 20. European Economic Area, United Kingdom, and Switzerland
+
+Where applicable law requires a lawful basis for processing personal information, we rely on one or more of the following:
+
+* **Consent:** when you voluntarily provide information or request an optional function.
+* **Contractual necessity:** when processing is required to provide a service you request.
+* **Legitimate interests:** to operate, secure, maintain, support, and improve Vera5, where those interests are not overridden by your rights.
+* **Legal obligation:** when processing is required by law.
+* **Protection of rights:** when necessary to establish, exercise, or defend legal claims.
+
+If information is transferred internationally, appropriate safeguards will be used where required by applicable law.
+
+You may have the right to lodge a complaint with your local supervisory authority.
+
+## 21. Children’s Privacy
+
+Vera5 is a professional cybersecurity tool and is not directed to children under 13 years of age or to children under the minimum age required by applicable local law.
+
+Vera5 does not knowingly collect personal information from children through its website or extension.
+
+If you believe a child has provided personal information to us, contact **[PRIVACY CONTACT EMAIL]** so we can evaluate and, where appropriate, delete it.
+
+## 22. Sensitive, Confidential, and Regulated Information
+
+Vera5 is not intended to serve as a repository for:
+
+* passwords;
+* authentication tokens;
+* financial-account information;
+* protected health information;
+* classified information;
+* export-controlled technical data;
+* privileged legal communications;
+* government identification numbers;
+* biometric information;
+* confidential customer records; or
+* other regulated or highly sensitive personal information.
+
+Do not knowingly send such information to third-party intelligence providers through Vera5 unless you are authorized to do so and have determined that the transmission is lawful and appropriate.
+
+## 23. Automated Decision-Making
+
+Vera5 may calculate local scores, labels, confidence indicators, or summaries from security information.
+
+These outputs are intended to assist human analysis. They are not used by Vera5 to make decisions about:
+
+* employment;
+* credit;
+* housing;
+* insurance;
+* education;
+* healthcare;
+* legal rights; or
+* access to essential services.
+
+Vera5 outputs should not be treated as definitive evidence or a substitute for professional judgment.
+
+## 24. External Links
+
+The website and extension may link to third-party websites, including:
+
+* GitHub;
+* the Chrome Web Store;
+* intelligence providers;
+* documentation;
+* social-media services; and
+* external security resources.
+
+We are not responsible for the content, security, availability, or privacy practices of external services.
+
+Opening a pivot link may disclose your IP address, browser information, referring information, and the indicator embedded in the link to the destination service.
+
+## 25. Open-Source Software and Independent Deployments
+
+Vera5 source code may be used, copied, modified, or distributed under its applicable open-source license.
+
+A person or organization that modifies, redistributes, hosts, or independently deploys Vera5 may have privacy practices different from those described here.
+
+This Privacy Policy applies only to official Vera5 websites, builds, and services operated by us unless expressly stated otherwise.
+
+The open-source license governs permission to use and distribute the software. This Privacy Policy governs information practices for official Vera5 operations.
+
+## 26. Changes to This Privacy Policy
+
+We may update this Privacy Policy to reflect:
+
+* changes to Vera5 functionality;
+* new providers or integrations;
+* new optional services;
+* legal or regulatory developments;
+* security changes;
+* business changes; or
+* corrections and clarifications.
+
+The revised policy will be posted with an updated “Last Updated” date.
+
+If a change materially alters how we collect, use, or disclose personal information, we will provide notice appropriate to the circumstances, which may include notice on the website, in the extension, in release notes, or through another reasonable channel.
+
+Continued use after an updated policy becomes effective constitutes acknowledgment of the revised policy to the extent permitted by law.
+
+## 27. Contact Information
+
+Questions, requests, or concerns regarding this Privacy Policy may be directed to:
+
+**Vera5**
+**Legal owner:** [LEGAL OWNER OR ENTITY NAME]
+**Email:** [PRIVACY CONTACT EMAIL]
+**Security reports:** [SECURITY CONTACT EMAIL]
+**Website:** https://vera5.io
+**Mailing address:** [BUSINESS MAILING ADDRESS, IF PUBLISHED]
+
+For privacy requests, use the subject line:
+
+**Privacy Request – Vera5**
+
+## 28. Chrome Web Store and Extension Support
+
+For extension-related support:
+
+**Support email:** [SUPPORT EMAIL]
+**Support page:** [SUPPORT PAGE URL]
+**Source repository:** [OFFICIAL GITHUB REPOSITORY URL]
+
+This Privacy Policy should be linked from:
+
+* the Vera5 website footer;
+* the Chrome Web Store listing;
+* the official source repository;
+* the extension settings or about page; and
+* any future Vera5 service that handles user information.
