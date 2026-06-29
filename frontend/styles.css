@@ -99,6 +99,7 @@
 
   /* Layout */
   --content-max: 1200px;
+  --nav-inset: 22px;
 }
 
 /* ============================================================
@@ -230,7 +231,8 @@ button:focus-visible {
   background: rgba(11, 14, 17, 0.72);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid var(--border-hairline);
+  border: 1px solid transparent;
+  border-bottom-color: var(--border-hairline);
 }
 
 /* Scroll-progress line — pure CSS, scroll-driven (same pattern as header elevation).
@@ -261,19 +263,34 @@ button:focus-visible {
   to { transform: scaleX(1); }
 }
 
-/* Scroll-aware elevation: airy at the top, firmer once scrolled.
-   Script-free (same animation-timeline pattern used for reveals). */
+/* Scroll-aware header: a floating curved pill at the top that expands into a
+   full-width bar on scroll. Script-free (same animation-timeline pattern used
+   for reveals/progress). Falls back to the static full-width bar where
+   scroll-timeline is unsupported or reduced motion is requested. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
     .site-header {
       animation: header-elevate linear both;
       animation-timeline: scroll(root);
-      animation-range: 0 110px;
+      animation-range: 0 96px;
     }
     @keyframes header-elevate {
+      from {
+        margin: 12px var(--nav-inset) 0;
+        border-radius: 18px;
+        border-color: rgba(255, 178, 36, 0.22);
+        background: rgba(16, 20, 26, 0.8);
+        box-shadow:
+          var(--highlight-top),
+          0 12px 30px -12px rgba(0, 0, 0, 0.55),
+          0 0 22px -4px var(--accent-glow);
+      }
       to {
-        background: rgba(11, 14, 17, 0.92);
+        margin: 0;
+        border-radius: 0;
+        border-color: transparent;
         border-bottom-color: var(--border-hard);
+        background: rgba(11, 14, 17, 0.92);
         box-shadow: var(--shadow-med);
       }
     }
@@ -1900,6 +1917,7 @@ button:focus-visible {
     --s-hero: 64px;
     --s-section: 56px;
     --s-2xl: 36px;
+    --nav-inset: 12px;
   }
   .container { padding: 0 var(--s-md); }
   .workflows { grid-template-columns: 1fr; gap: var(--s-lg); }
