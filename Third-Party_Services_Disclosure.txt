@@ -1,0 +1,791 @@
+# Vera5 Third-Party Services Disclosure
+
+**Effective Date:** June 29, 2026
+**Last Updated:** June 29, 2026
+
+Vera5 is an open-source, local-first browser extension that detects and enriches cybersecurity-related indicators within browser-based workflows.
+
+This Third-Party Services Disclosure explains:
+
+* when Vera5 communicates with external services;
+* what information may be transmitted;
+* which parties may receive that information;
+* how third-party enrichment providers operate;
+* how local and self-hosted services are treated;
+* what responsibilities remain with the user; and
+* which third-party activities Vera5 and Detektr LLC do not control.
+
+In this disclosure, **“Vera5,” “we,” “us,” and “our”** refer to **Vera5, operated by Detektr LLC**.
+
+This disclosure supplements the Vera5 Privacy Policy and Vera5 Terms of Service. If there is a conflict concerning privacy practices, the Privacy Policy controls. If there is a conflict concerning contractual use of Vera5-operated services, the Terms of Service control.
+
+## 1. Summary
+
+Vera5 may communicate with third-party services when you:
+
+* request enrichment for an indicator;
+* enable automatic enrichment;
+* open an external pivot or provider page;
+* configure a local AI model;
+* configure a self-hosted service;
+* install or update Vera5 through a browser store;
+* access the Vera5 website;
+* access documentation or source code hosted by another platform; or
+* voluntarily contact Vera5 through email, GitHub, or another external platform.
+
+Vera5 does not operate or control most of these third-party services.
+
+Your use of a third-party service is subject to that service’s own:
+
+* privacy policy;
+* terms of service;
+* API terms;
+* acceptable-use policy;
+* licensing rules;
+* account agreement;
+* rate limits;
+* retention practices;
+* security controls; and
+* applicable fees.
+
+You should review the applicable third-party terms before enabling or using a service through Vera5.
+
+## 2. Local Detection Versus External Enrichment
+
+Vera5 separates local detection from external enrichment.
+
+### 2.1 Local Detection
+
+Vera5 may inspect permitted webpage content within your browser to identify supported cybersecurity artifacts, including:
+
+* IP addresses;
+* domains;
+* URLs;
+* file hashes;
+* vulnerability identifiers;
+* email addresses;
+* autonomous system numbers;
+* certificate or cryptographic information; and
+* other supported security-related artifacts.
+
+This detection process is intended to occur locally within the browser.
+
+Detection alone does not necessarily transmit information to a third-party provider.
+
+### 2.2 External Enrichment
+
+When enrichment is requested or enabled, Vera5 may transmit a selected indicator to one or more third-party services.
+
+Examples include:
+
+* sending an IP address to an IP reputation service;
+* sending a domain to a threat-intelligence provider;
+* sending a file hash to a malware intelligence service;
+* sending a URL to a URL-analysis provider;
+* sending an autonomous system number to an infrastructure intelligence source; or
+* sending normalized findings to a user-configured local AI endpoint.
+
+The specific services contacted depend on:
+
+* the Vera5 version;
+* the indicator type;
+* the user’s settings;
+* the providers enabled by the user;
+* the user’s API credentials;
+* provider availability; and
+* whether the requested function requires an external request.
+
+## 3. Information That May Be Sent to a Third Party
+
+When Vera5 connects to a third-party service, the service may receive information including:
+
+* the selected indicator;
+* the indicator type;
+* the request date and time;
+* your IP address;
+* your API key or authentication credential;
+* HTTP headers;
+* browser or extension-related metadata;
+* network metadata;
+* service-specific query parameters;
+* provider account information associated with your API key; and
+* information normally transmitted as part of an HTTPS or network request.
+
+Depending on the feature and provider, Vera5 may also transmit:
+
+* normalized enrichment results;
+* a user-selected note;
+* a user-selected investigation summary;
+* a user-selected export;
+* a selected portion of text;
+* a selected security artifact;
+* locally generated analytical context; or
+* other information necessary to perform a user-requested function.
+
+Vera5 is not intended to transmit unrelated complete webpage contents, browser cookies, session tokens, account passwords, unrelated browsing history, or unrelated investigation data to a third-party enrichment provider.
+
+## 4. Information Vera5 Does Not Intentionally Send to Third-Party Enrichment Providers
+
+Unless a user knowingly configures or initiates a function requiring otherwise, Vera5 does not intend to send the following to third-party enrichment providers:
+
+* complete webpage contents;
+* complete email messages;
+* complete support tickets;
+* complete dashboards;
+* browser history;
+* browser cookies;
+* account passwords;
+* session tokens;
+* authentication cookies;
+* unrelated indicators;
+* unrelated analyst notes;
+* locally stored API keys for other providers;
+* complete investigation collections; or
+* information unrelated to the requested enrichment.
+
+Vera5 attempts to minimize outbound information by limiting provider requests to the information required for the selected function.
+
+## 5. Third-Party Threat-Intelligence and Security Providers
+
+Vera5 may support integrations with external threat-intelligence, reputation, infrastructure, malware-analysis, vulnerability, or cybersecurity services.
+
+Depending on the installed Vera5 version, supported, planned, optional, or user-configured providers may include:
+
+* AlienVault Open Threat Exchange;
+* AbuseIPDB;
+* VirusTotal;
+* URLScan.io;
+* GreyNoise;
+* Shodan;
+* Censys;
+* ThreatFox;
+* MalwareBazaar;
+* URLhaus;
+* RDAP services;
+* WHOIS services;
+* MISP;
+* OpenCTI;
+* TheHive; and
+* other compatible providers or endpoints.
+
+Inclusion in this disclosure does not mean that every listed provider is currently enabled, implemented, endorsed, sponsored, or available in every Vera5 release.
+
+Provider support may be:
+
+* added;
+* changed;
+* disabled;
+* removed;
+* limited to particular indicator types;
+* limited to users with eligible accounts;
+* limited by provider terms; or
+* unavailable due to technical or policy changes.
+
+## 6. Provider-Specific Data Practices
+
+Each third-party provider determines how it handles requests submitted to its service.
+
+A provider may:
+
+* log submitted indicators;
+* retain search queries;
+* associate queries with your account;
+* associate queries with your IP address;
+* use queries for fraud or abuse prevention;
+* use queries to improve its services;
+* share information with affiliated services;
+* disclose information when legally required;
+* impose rate limits;
+* restrict commercial use;
+* restrict automated use;
+* prohibit certain submissions;
+* make submitted content visible to other users;
+* retain uploaded files or URLs;
+* classify submitted artifacts; or
+* suspend an account for suspected misuse.
+
+Vera5 does not control these practices.
+
+The user is responsible for reviewing each provider’s current documentation, terms, privacy policy, and account settings before using the provider through Vera5.
+
+## 7. Public Versus Private Provider Submissions
+
+Some providers distinguish between:
+
+* public submissions;
+* community submissions;
+* private submissions;
+* enterprise submissions;
+* premium submissions;
+* restricted submissions; and
+* ephemeral or temporary analysis.
+
+A public or community submission may become visible to:
+
+* the provider;
+* provider customers;
+* researchers;
+* security vendors;
+* community members;
+* automated systems; or
+* other authorized parties.
+
+A provider’s standard or free API should not be assumed to provide private handling.
+
+You must confirm whether a provider treats submitted indicators, URLs, files, comments, or metadata as:
+
+* private;
+* public;
+* shared;
+* retained;
+* searchable; or
+* redistributable.
+
+Do not submit confidential or sensitive information unless you understand and accept the provider’s handling model.
+
+## 8. File and URL Submission Warning
+
+Submitting a file, URL, domain, hash, or related artifact to a third-party analysis service may disclose sensitive information.
+
+Examples include:
+
+* internal hostnames;
+* private URLs;
+* authentication tokens contained in URLs;
+* customer names;
+* ticket identifiers;
+* document names;
+* internal file names;
+* malware samples from a restricted investigation;
+* confidential documents;
+* proprietary software;
+* personally identifiable information;
+* classified information;
+* controlled unclassified information;
+* export-controlled data; or
+* privileged investigation material.
+
+Vera5 should not be used to submit an actual file or complete URL containing sensitive information unless:
+
+* the user is authorized to submit it;
+* the submission is lawful;
+* the provider is approved for that data;
+* the provider’s privacy model is understood;
+* the user’s organization permits the submission; and
+* the user has removed unnecessary secrets or sensitive parameters.
+
+A hash lookup may be less revealing than uploading the underlying file, but a hash can still disclose that the user is investigating or possesses a particular artifact.
+
+## 9. API Keys and Provider Accounts
+
+Vera5 may allow users to supply their own API keys.
+
+When you enter a provider API key:
+
+* the key is intended to be stored locally or in a user-controlled service;
+* the key may be transmitted to the applicable provider for authentication;
+* the provider may associate requests with your account;
+* requests may count against your provider quota;
+* provider charges may apply;
+* provider account restrictions may apply; and
+* the provider may suspend or revoke the key.
+
+Vera5 does not own or control user-supplied provider accounts.
+
+You are responsible for:
+
+* obtaining API keys lawfully;
+* protecting API keys;
+* complying with provider terms;
+* monitoring account usage;
+* reviewing usage charges;
+* rotating compromised credentials;
+* revoking unused credentials;
+* limiting key permissions where possible; and
+* avoiding unauthorized sharing.
+
+You must not enter a credential that you are not authorized to use.
+
+## 10. Rate Limits, Quotas, and Service Availability
+
+Third-party providers may impose:
+
+* daily quotas;
+* monthly quotas;
+* per-minute limits;
+* concurrent-request limits;
+* data-access limitations;
+* commercial-use restrictions;
+* geographic restrictions;
+* subscription requirements; or
+* account-specific limitations.
+
+Vera5 may use:
+
+* local caching;
+* request deduplication;
+* retry controls;
+* manual refresh controls;
+* provider backoff;
+* timeout handling; or
+* request sequencing
+
+to reduce unnecessary requests and improve reliability.
+
+These measures do not guarantee that a provider request will succeed.
+
+Vera5 is not responsible for:
+
+* quota exhaustion;
+* rate limiting;
+* provider downtime;
+* account suspension;
+* unexpected charges;
+* API changes;
+* delayed results;
+* incomplete results; or
+* provider discontinuation.
+
+## 11. Accuracy of Third-Party Information
+
+Third-party intelligence may be:
+
+* incomplete;
+* outdated;
+* contradictory;
+* incorrectly classified;
+* delayed;
+* based on automated analysis;
+* based on community reports;
+* missing relevant context; or
+* subject to provider-specific confidence levels.
+
+A provider result does not independently establish that an indicator, person, organization, device, or activity is:
+
+* malicious;
+* benign;
+* compromised;
+* trustworthy;
+* criminal;
+* affiliated with a threat actor; or
+* responsible for a security event.
+
+Vera5 may normalize or summarize provider results, but Vera5 does not independently guarantee the accuracy of the underlying provider data.
+
+Users should:
+
+* review original provider records;
+* compare multiple sources;
+* consider the age of the result;
+* evaluate environmental context;
+* verify indicators through authorized internal evidence; and
+* apply professional judgment.
+
+## 12. Provider Attribution
+
+Vera5 may display:
+
+* provider names;
+* provider logos;
+* source labels;
+* timestamps;
+* scores;
+* summaries;
+* links;
+* classifications; or
+* excerpts of provider data.
+
+Provider names, logos, trademarks, and service marks remain the property of their respective owners.
+
+Displaying a provider within Vera5 does not imply:
+
+* sponsorship;
+* endorsement;
+* partnership;
+* certification;
+* approval;
+* affiliation; or
+* warranty.
+
+Vera5 may modify attribution displays to comply with provider requirements or improve source transparency.
+
+## 13. External Pivot Links
+
+Vera5 may provide links that open an indicator or related context in an external service.
+
+When you open an external link, the destination service may receive:
+
+* your IP address;
+* browser information;
+* request time;
+* referral information;
+* the indicator included in the URL;
+* URL parameters; and
+* information associated with your existing account or cookies on that service.
+
+External pivot links are provided for convenience.
+
+Opening a link leaves the Vera5 environment and subjects the user to the destination service’s terms and privacy practices.
+
+Vera5 does not control:
+
+* destination content;
+* destination security;
+* tracking by the destination;
+* provider account behavior;
+* provider cookies;
+* provider availability; or
+* changes to the destination.
+
+## 14. Local AI Models
+
+Vera5 may support connections to user-controlled local AI models or local inference servers, including services operating through:
+
+* localhost;
+* a private network;
+* llama.cpp;
+* another local language-model runtime; or
+* a user-configured compatible API.
+
+A local endpoint is considered user-controlled unless Vera5 expressly states that it is operated by Vera5 or Detektr LLC.
+
+When a local AI feature is used, Vera5 may send information such as:
+
+* a selected indicator;
+* normalized enrichment results;
+* source findings;
+* analyst notes selected by the user;
+* a requested summary;
+* a requested report format;
+* a user prompt; or
+* other data required for the requested operation.
+
+Even when an endpoint is local, it may:
+
+* write logs;
+* retain prompts;
+* retain outputs;
+* communicate with external services;
+* load remote resources;
+* expose a network port;
+* be accessible to other users on the device;
+* be accessible to other devices on the network; or
+* have vulnerabilities.
+
+Users are responsible for reviewing and securing local AI services.
+
+## 15. Self-Hosted and Organizational Services
+
+Vera5 may support connections to self-hosted or organizational services, including:
+
+* internal threat-intelligence platforms;
+* MISP deployments;
+* OpenCTI deployments;
+* TheHive deployments;
+* internal APIs;
+* internal case-management systems;
+* private model servers;
+* security orchestration platforms; or
+* custom connectors.
+
+The organization or individual operating the endpoint controls the associated processing.
+
+Vera5 and Detektr LLC are not responsible for:
+
+* endpoint security;
+* endpoint retention;
+* access controls;
+* authentication;
+* organizational monitoring;
+* data residency;
+* organizational policies;
+* endpoint logs;
+* administrator access; or
+* downstream sharing.
+
+Users should obtain organizational approval before connecting Vera5 to an internal service.
+
+## 16. Browser Stores
+
+Official Vera5 builds may be distributed through browser stores, including the Chrome Web Store.
+
+Browser stores may independently process information such as:
+
+* installation events;
+* update events;
+* browser version;
+* extension version;
+* account information;
+* device information;
+* geographic information;
+* diagnostic information;
+* crash information;
+* store interactions; and
+* review or support activity.
+
+Browser-store handling is governed by the store operator’s own terms and privacy policies.
+
+Vera5 does not control browser-store collection or retention.
+
+A browser store may:
+
+* review Vera5;
+* delay publication;
+* reject a release;
+* remove a release;
+* disable an extension;
+* distribute updates;
+* display user reviews; or
+* impose new technical or policy requirements.
+
+## 17. GitHub and Source-Code Hosting
+
+Vera5 source code, documentation, issues, releases, and project discussions may be hosted through GitHub or another source-code platform.
+
+When you use such a platform, the platform may process:
+
+* account information;
+* usernames;
+* email addresses;
+* IP addresses;
+* repository activity;
+* issue submissions;
+* pull requests;
+* comments;
+* reactions;
+* downloads;
+* security reports; and
+* other platform interactions.
+
+Public contributions may remain visible indefinitely and may be indexed, copied, archived, or redistributed.
+
+The source-code platform’s own terms and privacy policy govern its handling.
+
+## 18. Website Hosting and Infrastructure
+
+The Vera5 website may rely on third-party hosting, content-delivery, domain, certificate, security, or infrastructure providers.
+
+Our website hosting and infrastructure providers may process limited technical information necessary to deliver and secure the website.
+
+This may include:
+
+* IP address;
+* request time;
+* requested page;
+* browser type;
+* operating system;
+* response status;
+* approximate geographic information;
+* network information; and
+* abuse or security signals.
+
+These providers operate under their own terms, retention practices, and legal obligations.
+
+## 19. Email Provider
+
+Communications sent to **[Vera5io@proton.me](mailto:Vera5io@proton.me)** are processed through Vera5’s email provider.
+
+The email provider may process:
+
+* sender and recipient addresses;
+* message contents;
+* subject lines;
+* timestamps;
+* attachments;
+* delivery metadata;
+* IP-related metadata; and
+* security or spam signals.
+
+Do not send:
+
+* API keys;
+* passwords;
+* session tokens;
+* classified information;
+* confidential customer information;
+* regulated data;
+* proprietary investigation evidence; or
+* unnecessary personal information
+
+unless you have determined that email is an appropriate and authorized method of transmission.
+
+## 20. Social Media and Community Platforms
+
+Vera5 may maintain official accounts or communities on third-party platforms.
+
+Those platforms may process:
+
+* account information;
+* messages;
+* posts;
+* reactions;
+* profile data;
+* IP addresses;
+* device information;
+* behavioral information; and
+* advertising or analytics information.
+
+Participation in a third-party platform is voluntary and governed by the platform’s own policies.
+
+Vera5 does not control the platform’s data practices.
+
+## 21. No Responsibility for Independent Forks or Unofficial Builds
+
+Vera5 is open-source software.
+
+Third parties may:
+
+* copy the source code;
+* modify it;
+* redistribute it;
+* publish unofficial builds;
+* add external services;
+* change data handling;
+* change requested permissions; or
+* operate their own infrastructure.
+
+This disclosure applies only to official Vera5 websites, official Vera5 builds, and services operated by Vera5 or Detektr LLC.
+
+It does not apply to:
+
+* forks;
+* unofficial builds;
+* modified versions;
+* repackaged extensions;
+* independently hosted deployments; or
+* third-party distributions.
+
+Users should verify the publisher and source before installing Vera5.
+
+## 22. User Responsibility for Sensitive Indicators
+
+Users are responsible for determining whether an indicator is appropriate to submit to a third-party service.
+
+Before enrichment, users should consider whether the indicator may reveal:
+
+* internal infrastructure;
+* an active investigation;
+* customer information;
+* a confidential incident;
+* a private hostname;
+* a restricted URL;
+* authentication data;
+* law-enforcement activity;
+* legal strategy;
+* proprietary research;
+* government information;
+* classified information; or
+* regulated data.
+
+The presence of an enrichment button does not establish that submission is appropriate.
+
+When uncertain, users should:
+
+* use local detection only;
+* disable external providers;
+* use manual-only mode;
+* remove sensitive URL parameters;
+* use an approved private provider;
+* consult organizational policy; or
+* obtain authorization.
+
+## 23. User Controls
+
+Depending on the installed version, Vera5 may provide controls to:
+
+* enable or disable providers;
+* require manual enrichment;
+* disable automatic enrichment;
+* clear stored API keys;
+* clear cached results;
+* restrict operation by domain;
+* prevent enrichment of private indicators;
+* use local-only functionality;
+* configure a self-hosted endpoint;
+* disable local AI;
+* review source attribution;
+* open original provider records; or
+* uninstall the extension.
+
+Feature availability may vary by release.
+
+These controls reduce risk but do not replace appropriate user judgment and organizational approval.
+
+## 24. Changes to Third-Party Services
+
+Third-party providers may change their:
+
+* APIs;
+* authentication methods;
+* privacy policies;
+* terms;
+* pricing;
+* rate limits;
+* supported data;
+* response formats;
+* retention practices;
+* branding requirements;
+* availability; or
+* ownership.
+
+Vera5 may update, suspend, or remove an integration in response to such changes.
+
+Vera5 does not guarantee continued support for any provider.
+
+## 25. Changes to This Disclosure
+
+Vera5 may update this Third-Party Services Disclosure when:
+
+* integrations are added or removed;
+* provider behavior changes;
+* Vera5 introduces new functionality;
+* local AI functionality changes;
+* hosted services are introduced;
+* paid services are introduced;
+* legal requirements change;
+* browser-store requirements change; or
+* clarification is necessary.
+
+The updated version will be published with a revised **Last Updated** date.
+
+Material changes may also be communicated through:
+
+* the Vera5 website;
+* extension release notes;
+* the extension interface;
+* the official repository;
+* the Chrome Web Store listing; or
+* another reasonable channel.
+
+## 26. Contact Information
+
+Questions or concerns regarding Vera5’s third-party integrations may be directed to:
+
+**Vera5**
+**Operated by:** Detektr LLC
+**Email:** [Vera5io@proton.me](mailto:Vera5io@proton.me)
+**Website:** https://vera5.io
+
+For privacy-related questions, use the subject line:
+
+**Privacy Request – Vera5**
+
+For security-related questions, use the subject line:
+
+**Security Report – Vera5**
+
+For questions about third-party integrations, use the subject line:
+
+**Third-Party Services Question – Vera5**
+
+## 27. Publication and Accessibility
+
+This Third-Party Services Disclosure should remain reasonably accessible through:
+
+* the Vera5 website footer;
+* the Vera5 Privacy Policy;
+* the Vera5 Terms of Service;
+* the official Vera5 repository;
+* the extension settings or About interface;
+* the Chrome Web Store listing; and
+* documentation describing supported integrations.

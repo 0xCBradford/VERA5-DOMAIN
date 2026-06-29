@@ -1,0 +1,527 @@
+# Security & Privacy
+
+Vera5 is built for cybersecurity analysts who routinely work with sensitive information.
+
+That means privacy and security are not secondary features. They are part of the design.
+
+This page explains, in plain language, what Vera5 accesses, what stays on your device, what may be sent to third parties, and what control you have over that process.
+
+For the formal legal details, review the:
+
+* Privacy Policy
+* Terms of Service
+* Third-Party Services Disclosure
+* Cookie Policy
+
+## The Short Version
+
+Vera5 is designed to be:
+
+* open source;
+* local-first;
+* transparent;
+* user-controlled;
+* bring-your-own-key;
+* free from advertising;
+* free from behavioral tracking;
+* free from default Vera5 telemetry; and
+* usable without a Vera5 account or cloud service.
+
+Vera5 does not require you to send your browsing activity, investigation history, or threat-intelligence data to Vera5-operated servers.
+
+When you request enrichment, the selected indicator may be sent directly to the third-party intelligence provider you enabled.
+
+## What Vera5 Does Locally
+
+Vera5 can inspect permitted webpage content to identify cybersecurity artifacts such as:
+
+* IP addresses;
+* domains;
+* URLs;
+* file hashes;
+* vulnerability identifiers;
+* email addresses;
+* autonomous system numbers; and
+* other supported security indicators.
+
+This detection occurs locally within your browser.
+
+For example, if a webpage contains:
+
+```text
+185.220.101.4
+```
+
+Vera5 may recognize that value as an IP address and highlight it.
+
+That local detection does not require Vera5 to upload the entire webpage.
+
+## What Vera5 Does Not Intentionally Collect
+
+Vera5 does not intentionally collect or maintain a centralized record of:
+
+* your browsing history;
+* complete webpage contents;
+* email messages;
+* support tickets;
+* SIEM dashboards;
+* investigation collections;
+* API keys;
+* locally stored notes;
+* locally stored enrichment results;
+* browser cookies;
+* passwords;
+* authentication tokens; or
+* local AI prompts and responses.
+
+Vera5 does not operate an advertising network and does not sell personal information.
+
+## Enrichment Is Different From Detection
+
+Detection answers:
+
+> What type of security artifact is this?
+
+Enrichment answers:
+
+> What do external intelligence sources know about it?
+
+When you request enrichment, Vera5 may send the selected indicator to one or more providers that you enabled.
+
+For example:
+
+```text
+Selected indicator:
+185.220.101.4
+```
+
+Vera5 may send that IP address to an enabled provider such as an IP reputation or threat-intelligence service.
+
+Vera5 is not intended to send the entire webpage along with that request.
+
+## What May Leave Your Device
+
+Depending on the feature you use, the following information may leave your device:
+
+| Action                   | Information that may be transmitted                                             |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| Enrich an IP address     | The selected IP address                                                         |
+| Enrich a domain          | The selected domain                                                             |
+| Enrich a URL             | The selected URL                                                                |
+| Look up a file hash      | The selected hash                                                               |
+| Open a provider pivot    | The indicator included in the external link                                     |
+| Use a provider API       | The applicable API key and request metadata                                     |
+| Use a local AI endpoint  | The selected indicator, normalized enrichment results, or user-selected context |
+| Send a support email     | The information you voluntarily include                                         |
+| Open an external website | Standard browser and network information received by that website               |
+
+Normal network requests may also expose information such as:
+
+* your IP address;
+* request time;
+* browser or extension metadata;
+* HTTP headers; and
+* provider account information associated with your API key.
+
+## What Vera5 Does Not Intentionally Send During Enrichment
+
+Vera5 is not intended to send unrelated information such as:
+
+* complete webpage contents;
+* complete email messages;
+* complete support tickets;
+* complete browser history;
+* browser cookies;
+* passwords;
+* session tokens;
+* unrelated analyst notes;
+* unrelated indicators;
+* API keys belonging to other providers; or
+* complete investigation collections.
+
+The goal is to transmit only the information needed to complete the requested action.
+
+## Bring Your Own API Keys
+
+Vera5 uses a bring-your-own-key model for supported providers.
+
+This means:
+
+* you obtain the API key;
+* you decide which provider to enable;
+* the key is associated with your provider account;
+* requests count against your provider quota; and
+* the provider’s terms apply to your usage.
+
+API keys are intended to remain in extension-specific browser storage or another user-controlled environment.
+
+They are not intended to be transmitted to Vera5-operated servers.
+
+Your API key must still be sent to the applicable provider when authentication is required.
+
+## Third-Party Providers
+
+Third-party intelligence providers operate independently from Vera5.
+
+They may log:
+
+* submitted indicators;
+* request timestamps;
+* your IP address;
+* your API account;
+* query history;
+* request metadata; and
+* provider-specific information.
+
+Some providers may treat submissions as:
+
+* private;
+* public;
+* community-visible;
+* searchable;
+* retained;
+* redistributable; or
+* available to other customers.
+
+Do not assume that a free or public API provides private handling.
+
+Before sending a sensitive indicator, review the provider’s:
+
+* privacy policy;
+* terms of service;
+* API terms;
+* submission rules;
+* retention practices; and
+* account settings.
+
+## Sensitive Indicators
+
+A security indicator may reveal more than it appears to.
+
+Examples include:
+
+* an internal hostname;
+* a private IP address;
+* a customer domain;
+* a confidential investigation target;
+* an internal URL;
+* a URL containing authentication parameters;
+* a file hash associated with a restricted investigation;
+* a government or defense-related asset;
+* an active law-enforcement matter; or
+* proprietary infrastructure.
+
+The presence of an enrichment button does not mean an indicator is safe or authorized to submit.
+
+When an indicator may be sensitive:
+
+* use local detection only;
+* disable external enrichment;
+* use manual-only mode;
+* remove sensitive URL parameters;
+* use an approved private provider;
+* consult organizational policy; or
+* obtain authorization before submitting it.
+
+## Local Storage
+
+Vera5 may store operational information locally in your browser, including:
+
+* settings;
+* enabled providers;
+* API keys;
+* cached enrichment results;
+* timestamps;
+* selected indicators;
+* notes;
+* collections;
+* workflow preferences;
+* domain controls; and
+* local AI endpoint settings.
+
+Local storage means Vera5 does not need to maintain a centralized database containing this information.
+
+However, local storage still depends on the security of your:
+
+* device;
+* browser profile;
+* operating-system account;
+* browser synchronization settings;
+* backups; and
+* exported files.
+
+Anyone with access to your device or browser profile may potentially access locally stored information.
+
+## Browser Synchronization
+
+Browser vendors may offer synchronization features that copy extension settings or storage between devices.
+
+That synchronization is controlled by the browser vendor and your browser account settings, not by Vera5.
+
+Review your browser synchronization configuration if you do not want extension-related information copied between devices.
+
+## Local AI
+
+Vera5 may support optional local AI or user-controlled inference endpoints, including compatible llama.cpp servers.
+
+A typical local AI workflow may look like:
+
+```text
+Indicator
+    ↓
+Third-party enrichment results
+    ↓
+Vera5 normalization
+    ↓
+Local AI summary
+```
+
+The local AI model may receive:
+
+* the selected indicator;
+* normalized enrichment findings;
+* source attribution;
+* analyst-selected notes;
+* a requested summary format; or
+* other context required for the requested operation.
+
+A properly configured local model can keep AI processing on your own machine.
+
+However, a local endpoint may still:
+
+* create logs;
+* retain prompts;
+* retain responses;
+* expose a network port;
+* accept connections from other devices;
+* communicate with external services; or
+* contain its own vulnerabilities.
+
+You are responsible for securing and configuring your local AI environment.
+
+## Vera5 Does Not Treat AI as Evidence
+
+AI-generated summaries may be useful, but they can still be:
+
+* incorrect;
+* incomplete;
+* misleading;
+* inconsistent;
+* unsupported by the source data; or
+* overly confident.
+
+Vera5 AI features are intended to summarize and explain existing information.
+
+They should not replace:
+
+* original provider records;
+* analyst verification;
+* organizational procedures;
+* professional judgment; or
+* authoritative evidence.
+
+## Website Privacy
+
+The Vera5 website at **https://vera5.io** is currently a static informational website.
+
+It does not intentionally use:
+
+* advertising cookies;
+* behavioral analytics;
+* tracking pixels;
+* session replay;
+* browser fingerprinting;
+* user accounts;
+* authentication cookies;
+* payment cookies; or
+* cross-site tracking.
+
+Because the website does not intentionally use nonessential cookies, Vera5 does not currently display a cookie banner.
+
+Website hosting and infrastructure providers may still process limited technical information required to deliver and protect the website, such as:
+
+* IP address;
+* request time;
+* requested page;
+* browser type;
+* operating system;
+* response status; and
+* security or abuse-detection signals.
+
+## External Links
+
+Vera5 may link to:
+
+* GitHub;
+* the Chrome Web Store;
+* threat-intelligence providers;
+* documentation;
+* social-media platforms; and
+* other external resources.
+
+When you open an external website, that service may receive:
+
+* your IP address;
+* browser information;
+* request time;
+* existing account cookies;
+* referral information; and
+* any indicator included in the link.
+
+External services operate under their own privacy and security practices.
+
+## Browser Permissions
+
+Vera5 requests browser permissions only when they are needed to provide its disclosed functionality.
+
+Permissions may be used to:
+
+* access extension storage;
+* interact with the active tab;
+* detect supported artifacts;
+* display highlights and Vera5 interfaces;
+* communicate with enabled providers; and
+* perform user-requested operations.
+
+The official source code and extension manifest are available for review so users can inspect how permissions are used.
+
+## Open Source and Transparency
+
+Vera5 is open source.
+
+That allows analysts, developers, researchers, and organizations to review:
+
+* requested browser permissions;
+* network destinations;
+* API integrations;
+* local storage behavior;
+* detection logic;
+* enrichment logic;
+* security controls; and
+* changes introduced through updates.
+
+Open source does not automatically guarantee security, but it makes Vera5’s behavior inspectable and independently reviewable.
+
+## Official Builds and Independent Forks
+
+This page applies to official Vera5 builds and services operated by Vera5 or Detektr LLC.
+
+Because Vera5 is open source, other people may create:
+
+* forks;
+* modified versions;
+* unofficial browser extensions;
+* repackaged builds;
+* custom integrations; or
+* independently hosted deployments.
+
+Those versions may request different permissions, communicate with different services, or handle data differently.
+
+Always verify the publisher and source before installing Vera5.
+
+## Security Practices
+
+Vera5’s security approach may include:
+
+* local-first processing;
+* data minimization;
+* limited outbound requests;
+* provider-specific permissions;
+* credential masking;
+* exclusion of credentials from exports;
+* HTTPS connections;
+* dependency scanning;
+* secret scanning;
+* source attribution;
+* cache controls;
+* redaction controls; and
+* open-source review.
+
+No browser extension, software application, storage system, or network connection can be guaranteed completely secure.
+
+Users should keep Vera5, their browser, operating system, and local services updated.
+
+## Reporting a Security Issue
+
+Security reports may be sent to:
+
+**[Vera5io@proton.me](mailto:Vera5io@proton.me)**
+
+Use the subject line:
+
+```text
+Security Report – Vera5
+```
+
+A useful report should include:
+
+* the affected Vera5 version;
+* the browser and browser version;
+* a clear description of the issue;
+* reproduction steps;
+* expected behavior;
+* observed behavior; and
+* supporting screenshots or logs with sensitive information removed.
+
+Do not include:
+
+* API keys;
+* passwords;
+* authentication tokens;
+* confidential customer information;
+* classified information;
+* active investigation records; or
+* unnecessary personal information.
+
+Please provide Vera5 with a reasonable opportunity to investigate and address the issue before publicly disclosing an unpatched vulnerability.
+
+## Your Control
+
+Vera5 is designed to give the analyst control.
+
+Depending on the installed version, you may be able to:
+
+* disable the extension;
+* disable automatic scanning;
+* disable highlighting;
+* use manual-only enrichment;
+* enable or disable individual providers;
+* remove API keys;
+* clear cached results;
+* delete local notes and collections;
+* restrict Vera5 on selected domains;
+* disable local AI;
+* use a self-hosted endpoint;
+* use local-only functionality; or
+* uninstall Vera5 entirely.
+
+## Our Commitment
+
+Vera5’s privacy model is built around a straightforward principle:
+
+> The analyst should remain in control of their data, providers, credentials, and workflow.
+
+Vera5 will not intentionally turn browsing activity, investigation data, API credentials, or analyst behavior into an advertising product.
+
+If Vera5’s architecture or data practices materially change, the public documentation and policies will be updated to explain those changes.
+
+## Contact
+
+Questions about Vera5 security or privacy may be directed to:
+
+**Vera5**
+**Operated by:** Detektr LLC
+**Email:** [Vera5io@proton.me](mailto:Vera5io@proton.me)
+**Website:** https://vera5.io
+
+For security reports, use:
+
+```text
+Security Report – Vera5
+```
+
+For privacy questions, use:
+
+```text
+Privacy Request – Vera5
+```

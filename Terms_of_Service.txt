@@ -1,0 +1,1079 @@
+# Vera5 Terms of Service
+
+**Effective Date:** June 29, 2026
+**Last Updated:** June 29, 2026
+
+These Terms of Service govern your access to and use of:
+
+* the Vera5 website located at **https://vera5.io**;
+* official Vera5 browser extension builds;
+* official Vera5 documentation;
+* official Vera5 support and community channels;
+* official Vera5 repositories and project resources; and
+* any other Vera5-operated service that expressly links to these Terms.
+
+Vera5 is an open-source cybersecurity analysis tool designed to detect, analyze, and enrich cybersecurity-related indicators within webpages and browser-based workflows.
+
+In these Terms, **“Vera5,” “we,” “us,” and “our”** refer to **Vera5, operated by Detektr LLC**.
+
+## 1. Acceptance of These Terms
+
+By accessing the Vera5 website, installing or using an official Vera5 browser extension build, or using another Vera5-operated service, you acknowledge that you have read, understood, and agree to these Terms.
+
+If you do not agree to these Terms, do not access or use Vera5-operated services.
+
+If you use Vera5 on behalf of a company, government agency, educational institution, or other organization, you represent that:
+
+* you have authority to act on behalf of that organization;
+* you have authority to accept these Terms for that organization; and
+* the organization agrees to be bound by these Terms.
+
+If you do not have that authority, you may not accept these Terms on the organization’s behalf.
+
+## 2. Eligibility
+
+You must be legally capable of entering into a binding agreement in your jurisdiction to use Vera5-operated services.
+
+If you are under the age of legal majority where you live, you may use Vera5 only with the involvement and permission of a parent, legal guardian, employer, school, or other authorized responsible party.
+
+Vera5 is designed primarily for cybersecurity professionals, researchers, developers, students, administrators, and other technically qualified users.
+
+## 3. Open-Source Software License
+
+The Vera5 source code and distributed software components are made available under the open-source license identified in the official Vera5 repository.
+
+Unless otherwise stated in the applicable repository or component, Vera5 is distributed under the **MIT License**.
+
+The applicable open-source license governs your rights to:
+
+* access source code;
+* copy the software;
+* modify the software;
+* merge the software;
+* publish the software;
+* distribute the software;
+* sublicense the software; and
+* use the software in source or binary form.
+
+These Terms do not replace, restrict, or modify rights expressly granted under the applicable open-source license.
+
+If a conflict exists between these Terms and an applicable open-source license regarding the copying, modification, or distribution of open-source code, the open-source license controls for those activities.
+
+These Terms separately govern:
+
+* use of the official Vera5 website;
+* use of official Vera5-hosted services;
+* use of Vera5 support channels;
+* use of Vera5 trademarks and branding;
+* communications with Vera5;
+* official browser-store distributions; and
+* any functionality not governed by the open-source license.
+
+Third-party components included with or used by Vera5 may be governed by separate licenses.
+
+You are responsible for reviewing and complying with all applicable third-party license terms.
+
+## 4. Vera5’s Purpose
+
+Vera5 is designed to assist users with cybersecurity analysis by providing functions that may include:
+
+* detecting cybersecurity artifacts within permitted webpage content;
+* identifying IP addresses, domains, URLs, file hashes, vulnerability identifiers, and related indicators;
+* requesting information from user-selected third-party intelligence providers;
+* normalizing intelligence results;
+* calculating local scores or labels;
+* displaying source attribution;
+* organizing investigation information;
+* generating exports;
+* connecting to local AI models;
+* connecting to self-hosted services; and
+* assisting with cybersecurity research and analyst workflows.
+
+Vera5 is an analytical aid.
+
+Vera5 is not:
+
+* a substitute for professional judgment;
+* a guarantee that an indicator is malicious or benign;
+* a complete security monitoring platform;
+* a substitute for incident-response procedures;
+* a substitute for legal advice;
+* a substitute for compliance review;
+* a substitute for authorization to conduct security testing;
+* an emergency response service; or
+* a guarantee of detection, prevention, remediation, or attribution.
+
+## 5. Local-First Operation
+
+Vera5 is designed primarily as a local-first tool.
+
+Depending on the version and configuration, Vera5 may process and store information locally within your browser or device, including:
+
+* extension settings;
+* API-provider selections;
+* API keys;
+* cached intelligence results;
+* investigation records;
+* notes;
+* collections;
+* workflow preferences;
+* local AI configuration; and
+* selected or detected indicators.
+
+You are responsible for:
+
+* securing your device;
+* securing your browser profile;
+* protecting locally stored information;
+* backing up information you wish to preserve;
+* deleting information you no longer require;
+* securing exported files; and
+* controlling who has access to your browser or device.
+
+Vera5 does not guarantee that local information can be restored if it is deleted, corrupted, lost, overwritten, or made inaccessible.
+
+## 6. Third-Party Intelligence Providers
+
+Vera5 may allow you to connect directly to third-party threat-intelligence, reputation, infrastructure, vulnerability, or cybersecurity services.
+
+These providers may include services such as:
+
+* AlienVault OTX;
+* AbuseIPDB;
+* VirusTotal;
+* URLScan.io;
+* GreyNoise;
+* Shodan;
+* Censys;
+* ThreatFox;
+* MalwareBazaar;
+* URLhaus;
+* RDAP or WHOIS providers;
+* MISP;
+* OpenCTI;
+* TheHive; and
+* other user-configured providers.
+
+Provider availability may differ by Vera5 version.
+
+Third-party services are not controlled by Vera5.
+
+Your use of a third-party provider is subject to that provider’s:
+
+* terms of service;
+* privacy policy;
+* acceptable-use policy;
+* API terms;
+* account restrictions;
+* licensing restrictions;
+* rate limits;
+* retention practices; and
+* applicable fees.
+
+You are responsible for confirming that your use of a provider is authorized and compliant with its terms.
+
+Vera5 is not responsible for:
+
+* provider availability;
+* provider downtime;
+* inaccurate provider information;
+* provider rate limiting;
+* provider account suspension;
+* provider pricing changes;
+* provider API changes;
+* provider data retention;
+* provider security incidents;
+* provider use of submitted indicators; or
+* actions taken by a provider.
+
+## 7. Bring-Your-Own API Keys
+
+Vera5 may require you to supply your own API keys or credentials for third-party services.
+
+You represent that:
+
+* you are authorized to use the credentials you provide;
+* your use complies with the provider’s terms;
+* you will not provide credentials belonging to another person without authorization;
+* you will protect the credentials against unauthorized use; and
+* you will revoke credentials if you believe they have been compromised.
+
+You are solely responsible for:
+
+* charges incurred through your provider account;
+* usage limits;
+* account permissions;
+* account configuration;
+* credential rotation;
+* provider-side logs; and
+* consequences resulting from use of your credentials.
+
+Vera5 does not guarantee that browser-local credential storage provides the same security protections as dedicated enterprise secret-management systems.
+
+## 8. Third-Party Data Submission
+
+When you request enrichment, the selected indicator may be transmitted directly to one or more enabled third-party providers.
+
+You must not submit information to a third-party provider unless you are authorized to do so.
+
+This includes indicators or information that may be:
+
+* confidential;
+* proprietary;
+* classified;
+* export controlled;
+* legally privileged;
+* subject to contractual restrictions;
+* associated with an active investigation;
+* associated with an internal network;
+* associated with a customer;
+* regulated by privacy or security laws; or
+* otherwise restricted.
+
+You are responsible for determining whether transmission of an indicator is legally, contractually, professionally, and operationally appropriate.
+
+Vera5 is not responsible for unauthorized disclosure caused by:
+
+* your provider selections;
+* your enrichment request;
+* your configuration;
+* your failure to use available controls;
+* your submission of restricted information; or
+* a third party’s processing practices.
+
+## 9. Local AI and Self-Hosted Endpoints
+
+Vera5 may support optional connections to:
+
+* local AI models;
+* llama.cpp servers;
+* localhost APIs;
+* private language-model runtimes;
+* organizational services;
+* self-hosted backends; and
+* other user-configured endpoints.
+
+You are responsible for selecting, configuring, securing, maintaining, and operating any such endpoint.
+
+Vera5 does not control user-configured endpoints and does not guarantee:
+
+* endpoint availability;
+* endpoint security;
+* model accuracy;
+* model behavior;
+* confidentiality;
+* data retention;
+* output quality;
+* compatibility; or
+* regulatory compliance.
+
+AI-generated or AI-assisted output may be:
+
+* incorrect;
+* incomplete;
+* misleading;
+* outdated;
+* internally inconsistent; or
+* unsupported by the source data.
+
+You must independently review and verify AI-generated output before relying on it.
+
+You must not use Vera5-generated AI output as the sole basis for decisions involving:
+
+* legal rights;
+* employment;
+* disciplinary action;
+* access control;
+* attribution of malicious conduct;
+* law-enforcement action;
+* healthcare;
+* credit;
+* housing;
+* insurance; or
+* other decisions with significant effects on an individual.
+
+## 10. Accuracy and Analyst Responsibility
+
+Vera5 may display or generate:
+
+* threat-intelligence findings;
+* reputation data;
+* classifications;
+* confidence values;
+* risk scores;
+* severity labels;
+* correlations;
+* summaries;
+* recommendations;
+* suggested pivots;
+* AI-generated explanations; and
+* other analytical output.
+
+Such output may contain errors or may be based on incomplete, delayed, conflicting, or inaccurate third-party information.
+
+A score, label, detection, or provider result does not establish that an indicator, person, organization, system, or activity is malicious, compromised, trustworthy, lawful, or unlawful.
+
+You are responsible for:
+
+* verifying relevant findings;
+* reviewing original provider records;
+* comparing multiple sources;
+* evaluating context;
+* following organizational procedures;
+* preserving appropriate evidence;
+* documenting analytical decisions; and
+* applying professional judgment.
+
+You assume responsibility for actions taken based on Vera5 output.
+
+## 11. Authorized and Lawful Use
+
+You may use Vera5 only in compliance with applicable law and with authorization appropriate to the activity being conducted.
+
+You may not use Vera5-operated services to:
+
+* gain unauthorized access to systems or accounts;
+* interfere with networks, devices, or services;
+* distribute malware;
+* deliver phishing content;
+* facilitate fraud;
+* stalk, harass, or threaten another person;
+* unlawfully collect personal information;
+* violate intellectual-property rights;
+* impersonate Vera5, Detektr LLC, or another person;
+* circumvent access controls;
+* abuse third-party APIs;
+* exceed provider rate limits through deceptive means;
+* conceal unlawful activity;
+* submit intentionally false security reports;
+* attack Vera5 infrastructure;
+* interfere with other users;
+* distribute credentials without authorization; or
+* violate applicable sanctions, export controls, or regulatory restrictions.
+
+This section governs use of Vera5-operated websites, services, infrastructure, support channels, and official distribution channels.
+
+It does not impose a field-of-use restriction on open-source code beyond restrictions imposed by applicable law and the applicable open-source license.
+
+## 12. Security Research
+
+Vera5 may be used for legitimate and authorized cybersecurity research.
+
+You are responsible for ensuring that your research activities are:
+
+* authorized;
+* lawful;
+* appropriately scoped;
+* performed on systems you own or are permitted to test;
+* consistent with applicable rules of engagement; and
+* compliant with applicable provider terms.
+
+Vera5 does not grant permission to test, scan, access, analyze, or interfere with any third-party system.
+
+Possession or use of Vera5 does not establish authorization.
+
+## 13. Browser Permissions
+
+Official Vera5 browser extension builds may request permissions necessary to provide disclosed functionality.
+
+These permissions may include the ability to:
+
+* access extension storage;
+* interact with active browser tabs;
+* inspect permitted webpage content;
+* inject extension interface components;
+* detect supported cybersecurity artifacts;
+* communicate with configured external providers; and
+* display extension interfaces.
+
+You are responsible for reviewing requested permissions before installation.
+
+You may disable or uninstall Vera5 through your browser.
+
+Vera5 may not function correctly if required permissions are denied, revoked, or restricted.
+
+## 14. Browser Stores and Distribution Platforms
+
+Official Vera5 builds may be distributed through third-party platforms such as the Chrome Web Store.
+
+Your use of those platforms is subject to the platform’s own terms and policies.
+
+The platform may independently:
+
+* review Vera5;
+* delay publication;
+* reject a release;
+* remove a listing;
+* disable an extension;
+* process technical information;
+* manage updates; or
+* impose additional requirements.
+
+Vera5 is not responsible for decisions, outages, actions, or omissions of a browser store or distribution platform.
+
+## 15. Updates and Changes to Vera5
+
+Vera5 may be updated, modified, suspended, replaced, or discontinued at any time.
+
+Updates may:
+
+* add functionality;
+* remove functionality;
+* change provider support;
+* change permissions;
+* change storage formats;
+* change compatibility;
+* correct security issues;
+* correct errors;
+* alter interfaces; or
+* require configuration changes.
+
+We do not guarantee that:
+
+* every feature will remain available;
+* every provider will remain supported;
+* previous data formats will remain compatible;
+* every browser version will remain supported;
+* an update will preserve all local information; or
+* development will continue indefinitely.
+
+You are responsible for maintaining backups of information you wish to preserve.
+
+## 16. Beta, Preview, and Experimental Features
+
+Vera5 may provide features labeled:
+
+* beta;
+* preview;
+* experimental;
+* early access;
+* development;
+* unstable; or
+* test.
+
+These features may:
+
+* contain defects;
+* change without notice;
+* produce inaccurate output;
+* be incomplete;
+* be removed;
+* cause data loss;
+* have limited documentation; or
+* be unsuitable for production environments.
+
+You use beta, preview, and experimental features at your own risk.
+
+## 17. User Content and Submissions
+
+You may voluntarily submit information to Vera5 through:
+
+* GitHub issues;
+* pull requests;
+* discussions;
+* feature requests;
+* support email;
+* security reports;
+* documentation contributions;
+* community channels; or
+* other official project channels.
+
+You retain ownership of content you submit, subject to any license or terms presented by the platform through which you submit it.
+
+By submitting content directly to Vera5 for inclusion in the project, you grant Vera5 and Detektr LLC a worldwide, nonexclusive, royalty-free license to:
+
+* review;
+* reproduce;
+* modify;
+* adapt;
+* publish;
+* distribute;
+* display;
+* test;
+* incorporate; and
+* otherwise use
+
+the submission for operating, securing, maintaining, documenting, and improving Vera5.
+
+This license does not transfer ownership of your submission.
+
+You represent that:
+
+* you have the right to submit the content;
+* the submission does not violate another person’s rights;
+* the submission does not contain unlawfully disclosed information;
+* the submission does not contain malicious code;
+* the submission does not contain credentials or secrets; and
+* Vera5’s permitted use of the submission will not violate applicable law.
+
+Do not submit:
+
+* classified information;
+* confidential investigation data;
+* API keys;
+* passwords;
+* access tokens;
+* customer information;
+* proprietary code you lack authority to disclose;
+* personal information that is unnecessary for the submission; or
+* content subject to restrictions that prevent the requested use.
+
+## 18. Public Contributions
+
+Public contributions may be visible indefinitely.
+
+GitHub issues, pull requests, commit history, discussions, usernames, and submitted content may be:
+
+* publicly displayed;
+* indexed by search engines;
+* copied;
+* archived;
+* redistributed;
+* referenced in release notes; or
+* retained as part of the project history.
+
+Removing or modifying a public contribution may not eliminate all copies or historical records.
+
+Code contributions may be governed by:
+
+* the repository’s open-source license;
+* contribution guidelines;
+* a contributor agreement, if introduced;
+* a Developer Certificate of Origin, if introduced; and
+* the terms of the hosting platform.
+
+## 19. Feedback
+
+You may provide suggestions, concepts, ideas, improvements, or other feedback concerning Vera5.
+
+Unless otherwise agreed in writing, feedback is provided voluntarily and without restriction.
+
+You grant Vera5 and Detektr LLC the right to use, modify, implement, commercialize, publish, or decline to use feedback without payment, attribution, or obligation to you.
+
+Do not provide feedback containing information you are not authorized to disclose.
+
+## 20. Intellectual Property
+
+Except for open-source components and third-party materials, Vera5-operated websites, documentation, visual designs, original graphics, and other project materials may be protected by copyright, trademark, and other intellectual-property laws.
+
+The open-source license grants rights to covered software code.
+
+It does not necessarily grant rights to:
+
+* Vera5 trademarks;
+* Vera5 logos;
+* Vera5 trade dress;
+* domain names;
+* social-media identities;
+* endorsement claims;
+* misleading representations of affiliation; or
+* materials expressly excluded from the applicable license.
+
+All third-party names, trademarks, logos, and service marks belong to their respective owners.
+
+Reference to a third-party provider does not imply sponsorship, endorsement, partnership, or affiliation.
+
+## 21. Vera5 Name and Branding
+
+You may accurately state that:
+
+* your software is based on Vera5;
+* you use Vera5;
+* you contribute to Vera5; or
+* your work interoperates with Vera5,
+
+provided the statement is truthful and does not imply official endorsement.
+
+You may not:
+
+* falsely claim to be the official Vera5 project;
+* falsely claim endorsement by Vera5 or Detektr LLC;
+* impersonate Vera5;
+* use Vera5 branding in a misleading manner;
+* publish an unofficial build in a way that is likely to be confused with an official build;
+* register confusingly similar domains or marketplace listings for deceptive purposes; or
+* use Vera5 branding in connection with unlawful or fraudulent activity.
+
+Modified or redistributed builds should be clearly identified as unofficial unless expressly authorized by Vera5 or Detektr LLC.
+
+## 22. Privacy
+
+Use of Vera5 is also governed by the Vera5 Privacy Policy.
+
+The Privacy Policy explains how information may be handled through:
+
+* the Vera5 website;
+* official Vera5 extension builds;
+* third-party enrichment requests;
+* local storage;
+* local AI integrations;
+* self-hosted endpoints;
+* support channels; and
+* official project resources.
+
+The Privacy Policy is incorporated into these Terms by reference.
+
+## 23. External Websites and Services
+
+Vera5 may link to or interact with external websites and services.
+
+External services are provided independently.
+
+Vera5 does not control and is not responsible for:
+
+* external content;
+* external security;
+* external privacy practices;
+* external accuracy;
+* external availability;
+* external pricing;
+* external malware;
+* external terms; or
+* external actions.
+
+Your use of an external service is at your own risk and subject to that service’s terms.
+
+## 24. No Professional Advice
+
+Vera5 provides software-generated cybersecurity information.
+
+Nothing provided through Vera5 constitutes:
+
+* legal advice;
+* compliance advice;
+* financial advice;
+* investment advice;
+* medical advice;
+* employment advice;
+* insurance advice;
+* governmental guidance; or
+* a formal forensic conclusion.
+
+You should consult a qualified professional where professional advice is required.
+
+## 25. No Support Obligation
+
+Vera5 may provide documentation, issue tracking, community discussion, or informal support.
+
+Unless Vera5 and the user enter into a separate written agreement, Vera5 and Detektr LLC have no obligation to provide:
+
+* technical support;
+* response times;
+* service-level guarantees;
+* custom integrations;
+* training;
+* maintenance;
+* compatibility assistance;
+* incident response;
+* data recovery; or
+* security remediation.
+
+Support may be delayed, limited, declined, or discontinued.
+
+## 26. No Service-Level Agreement
+
+Unless expressly agreed in a separate written contract, Vera5 is provided without a service-level agreement.
+
+Vera5 does not guarantee:
+
+* availability;
+* uptime;
+* response time;
+* processing time;
+* provider access;
+* release frequency;
+* correction time;
+* support response;
+* data retention;
+* performance; or
+* uninterrupted operation.
+
+## 27. Disclaimer of Warranties
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERA5, THE WEBSITE, THE OFFICIAL EXTENSION, DOCUMENTATION, OUTPUTS, SERVICES, AND RELATED MATERIALS ARE PROVIDED **“AS IS”** AND **“AS AVAILABLE.”**
+
+VERA5 AND DETEKTR LLC DISCLAIM ALL WARRANTIES, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WARRANTIES OF:
+
+* MERCHANTABILITY;
+* FITNESS FOR A PARTICULAR PURPOSE;
+* TITLE;
+* NON-INFRINGEMENT;
+* ACCURACY;
+* RELIABILITY;
+* SECURITY;
+* AVAILABILITY;
+* QUIET ENJOYMENT;
+* COMPATIBILITY;
+* DATA PRESERVATION; and
+* ERROR-FREE OPERATION.
+
+VERA5 AND DETEKTR LLC DO NOT WARRANT THAT:
+
+* VERA5 WILL IDENTIFY EVERY INDICATOR;
+* VERA5 WILL IDENTIFY EVERY THREAT;
+* VERA5 WILL PREVENT AN INCIDENT;
+* RESULTS WILL BE ACCURATE;
+* THIRD-PARTY DATA WILL BE ACCURATE;
+* SCORES OR LABELS WILL BE CORRECT;
+* AI OUTPUT WILL BE CORRECT;
+* VERA5 WILL BE AVAILABLE WITHOUT INTERRUPTION;
+* DEFECTS WILL BE CORRECTED;
+* VERA5 WILL BE FREE FROM VULNERABILITIES;
+* VERA5 WILL BE COMPATIBLE WITH EVERY WEBSITE OR BROWSER;
+* LOCALLY STORED DATA WILL NOT BE LOST; or
+* VERA5 WILL MEET YOUR ORGANIZATIONAL, LEGAL, REGULATORY, OR OPERATIONAL REQUIREMENTS.
+
+Some jurisdictions do not allow certain warranty disclaimers. In those jurisdictions, disclaimers apply only to the extent permitted by law.
+
+## 28. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERA5, DETEKTR LLC, AND THEIR OWNERS, MEMBERS, MANAGERS, OFFICERS, EMPLOYEES, CONTRACTORS, CONTRIBUTORS, MAINTAINERS, LICENSORS, AND SERVICE PROVIDERS WILL NOT BE LIABLE FOR ANY:
+
+* INDIRECT DAMAGES;
+* INCIDENTAL DAMAGES;
+* SPECIAL DAMAGES;
+* CONSEQUENTIAL DAMAGES;
+* EXEMPLARY DAMAGES;
+* PUNITIVE DAMAGES;
+* LOST PROFITS;
+* LOST REVENUE;
+* LOST BUSINESS;
+* LOST OPPORTUNITIES;
+* LOST DATA;
+* LOSS OF GOODWILL;
+* SERVICE INTERRUPTION;
+* SECURITY INCIDENT;
+* UNAUTHORIZED DISCLOSURE;
+* PROVIDER ACCOUNT SUSPENSION;
+* INVESTIGATION COST;
+* REMEDIATION COST; or
+* DAMAGE ARISING FROM RELIANCE ON VERA5 OUTPUT.
+
+This limitation applies regardless of whether the claim arises from:
+
+* contract;
+* warranty;
+* tort;
+* negligence;
+* strict liability;
+* statute; or
+* another legal theory,
+
+and even if Vera5 or Detektr LLC was advised that damages were possible.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL AGGREGATE LIABILITY OF VERA5 AND DETEKTR LLC FOR ALL CLAIMS ARISING OUT OF OR RELATING TO VERA5 WILL NOT EXCEED THE GREATER OF:
+
+1. THE AMOUNT YOU PAID DIRECTLY TO DETEKTR LLC FOR THE RELEVANT VERA5 SERVICE DURING THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM; OR
+2. ONE HUNDRED UNITED STATES DOLLARS.
+
+Because Vera5 is currently provided without charge, the applicable liability cap will ordinarily be one hundred United States dollars.
+
+Some jurisdictions do not allow certain exclusions or limitations of liability. In those jurisdictions, these limitations apply only to the extent permitted by law.
+
+## 29. Indemnification
+
+To the extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Vera5, Detektr LLC, and their owners, members, managers, officers, employees, contractors, contributors, maintainers, licensors, and service providers from claims, liabilities, damages, judgments, losses, costs, and expenses, including reasonable legal fees, arising from or relating to:
+
+* your unlawful use of Vera5-operated services;
+* your violation of these Terms;
+* your violation of another person’s rights;
+* your unauthorized security testing;
+* your submission of restricted information to a provider;
+* your misuse of third-party credentials;
+* your user content;
+* your modified or redistributed Vera5 build;
+* your false representation of affiliation with Vera5;
+* your violation of provider terms; or
+* your use of Vera5 on behalf of an organization without authority.
+
+This section does not require indemnification to the extent prohibited by applicable law.
+
+## 30. Release Concerning Third Parties
+
+To the maximum extent permitted by law, you release Vera5 and Detektr LLC from claims arising solely from:
+
+* third-party intelligence providers;
+* third-party websites;
+* browser stores;
+* local AI models;
+* self-hosted services;
+* external APIs;
+* external datasets;
+* browser vendors;
+* unofficial Vera5 builds; or
+* independently operated Vera5 deployments.
+
+This release does not apply to liability that cannot lawfully be excluded.
+
+## 31. Suspension or Termination
+
+Vera5 may restrict, suspend, or terminate access to Vera5-operated services if we reasonably believe that:
+
+* you violated these Terms;
+* you created a security risk;
+* you abused infrastructure;
+* you interfered with another user;
+* you impersonated Vera5;
+* you submitted malicious content;
+* continued access could expose Vera5 or another person to liability;
+* access must be restricted to comply with law; or
+* a service is being discontinued.
+
+Because Vera5 is open source, termination of access to official Vera5-operated services does not revoke rights already granted to open-source code under the applicable license.
+
+Upon termination, provisions that by their nature should survive will remain effective, including provisions concerning:
+
+* intellectual property;
+* feedback;
+* warranty disclaimers;
+* liability limitations;
+* indemnification;
+* governing law;
+* dispute resolution; and
+* interpretation.
+
+## 32. Export Controls and Sanctions
+
+You are responsible for complying with applicable export-control, import-control, trade-sanctions, and economic-sanctions laws.
+
+You may not use, export, re-export, transfer, or provide Vera5-operated services in violation of applicable law.
+
+You represent that you are not prohibited from receiving the relevant services under applicable sanctions or trade restrictions.
+
+This section does not expand or reduce rights granted by an applicable open-source license, but use and distribution of software remain subject to applicable law.
+
+## 33. Government Use
+
+Government users are responsible for determining whether Vera5 is suitable for their environment and whether its use complies with applicable:
+
+* procurement rules;
+* security requirements;
+* data-handling rules;
+* classification rules;
+* records-management rules;
+* accessibility requirements;
+* export-control requirements; and
+* agency policies.
+
+Vera5 does not represent that it has been authorized, certified, approved, or accredited for use with:
+
+* classified information;
+* controlled unclassified information;
+* federal information systems;
+* regulated government networks; or
+* mission-critical systems.
+
+Any such authorization must be separately established in writing.
+
+## 34. Paid Services
+
+Vera5 is currently offered as free and open-source software.
+
+Vera5 or Detektr LLC may later offer optional paid services, such as:
+
+* hosted infrastructure;
+* synchronization;
+* team collaboration;
+* enterprise support;
+* managed integrations;
+* consulting;
+* training;
+* custom development; or
+* other optional services.
+
+Paid services may be governed by:
+
+* additional terms;
+* an order form;
+* a subscription agreement;
+* a statement of work;
+* an enterprise agreement; or
+* separate pricing and refund terms.
+
+The introduction of an optional paid service does not automatically alter the license governing existing open-source code.
+
+No paid service is created merely by publishing these Terms.
+
+## 35. Changes to These Terms
+
+Vera5 may update these Terms to reflect:
+
+* product changes;
+* legal developments;
+* new integrations;
+* new services;
+* security requirements;
+* business changes; or
+* corrections and clarifications.
+
+Updated Terms will be posted with a revised **Last Updated** date.
+
+If a change materially affects users’ rights or obligations, Vera5 may provide additional notice through:
+
+* the Vera5 website;
+* the extension interface;
+* release notes;
+* the Chrome Web Store listing;
+* the official repository; or
+* another reasonable channel.
+
+Changes apply prospectively from their effective date unless applicable law requires otherwise.
+
+Your continued use of Vera5-operated services after updated Terms become effective constitutes acceptance of the updated Terms to the extent permitted by law.
+
+## 36. Governing Law
+
+These Terms and disputes arising from or relating to these Terms or Vera5-operated services will be governed by the laws of the State of Florida, without regard to conflict-of-law principles.
+
+The United Nations Convention on Contracts for the International Sale of Goods does not apply.
+
+The governing law for separate agreements, organizational deployments, or paid services may be specified in the applicable separate agreement.
+
+## 37. Venue and Jurisdiction
+
+Except where applicable law requires otherwise, any legal action arising from or relating to these Terms or Vera5-operated services must be brought exclusively in:
+
+* the state courts located in Miami-Dade County, Florida; or
+* the United States District Court having jurisdiction over Miami-Dade County, Florida.
+
+You and Vera5 consent to the personal jurisdiction of those courts.
+
+Nothing in these Terms prevents Vera5 or Detektr LLC from seeking temporary, preliminary, or emergency injunctive relief in a court of competent jurisdiction to protect intellectual property, confidential information, infrastructure, users, or security.
+
+## 38. Informal Dispute Resolution
+
+Before filing a legal claim, you and Vera5 agree to make a reasonable, good-faith effort to resolve the dispute informally.
+
+A written notice of dispute should include:
+
+* the sender’s name and contact information;
+* a description of the dispute;
+* relevant dates;
+* the requested resolution; and
+* supporting information reasonably necessary to evaluate the dispute.
+
+Notices should be sent to:
+
+**[Vera5io@proton.me](mailto:Vera5io@proton.me)**
+
+Use the subject line:
+
+**Legal Notice – Vera5**
+
+The parties should allow at least thirty days after receipt of a complete notice to attempt an informal resolution before initiating litigation, unless:
+
+* a claim is approaching an applicable limitation period;
+* emergency relief is reasonably necessary;
+* continued conduct creates a significant security risk; or
+* applicable law prohibits the delay.
+
+## 39. No Waiver
+
+Failure by Vera5 or Detektr LLC to enforce a provision of these Terms does not waive the right to enforce that provision later.
+
+A waiver is effective only if made in writing by an authorized representative of Detektr LLC.
+
+## 40. Severability
+
+If a court determines that any provision of these Terms is invalid, illegal, or unenforceable, the provision will be enforced to the maximum extent permitted by law.
+
+The remaining provisions will remain in effect.
+
+## 41. Assignment
+
+You may not assign or transfer your rights or obligations under these Terms concerning Vera5-operated services without prior written consent from Detektr LLC.
+
+Vera5 and Detektr LLC may assign these Terms in connection with:
+
+* a merger;
+* acquisition;
+* reorganization;
+* financing;
+* sale of assets;
+* transfer of the Vera5 project; or
+* similar transaction.
+
+Rights granted under an applicable open-source license remain governed by that license.
+
+## 42. Relationship of the Parties
+
+These Terms do not create:
+
+* an employment relationship;
+* an agency relationship;
+* a partnership;
+* a joint venture;
+* a fiduciary relationship;
+* a franchise; or
+* an exclusive relationship.
+
+Contributors, users, and community participants do not become employees, agents, or representatives of Vera5 or Detektr LLC merely through participation in the project.
+
+## 43. No Third-Party Beneficiaries
+
+Except where expressly stated, these Terms do not create rights for any person or entity other than you, Vera5, and Detektr LLC.
+
+## 44. Force Majeure
+
+Vera5 and Detektr LLC will not be responsible for delay, interruption, or failure caused by circumstances beyond reasonable control, including:
+
+* natural disasters;
+* severe weather;
+* power failures;
+* internet outages;
+* hosting failures;
+* cyberattacks;
+* labor disputes;
+* governmental action;
+* war;
+* terrorism;
+* civil unrest;
+* public-health emergencies;
+* provider outages;
+* browser-platform changes; or
+* failures of third-party infrastructure.
+
+## 45. Entire Agreement
+
+These Terms, together with the Vera5 Privacy Policy and any additional terms expressly applicable to a particular Vera5-operated service, constitute the entire agreement between you and Vera5 concerning the subject matter covered by these Terms.
+
+The applicable open-source license separately governs rights to covered open-source software.
+
+A separate signed agreement, order form, statement of work, or enterprise agreement may supplement or replace portions of these Terms for the services covered by that agreement.
+
+## 46. Interpretation
+
+Section headings are provided for convenience and do not limit the meaning of these Terms.
+
+Words such as “including” and “include” mean “including without limitation.”
+
+References to “writing” include email where legally sufficient.
+
+These Terms will not be interpreted against a party solely because that party drafted them.
+
+## 47. Contact Information
+
+Questions concerning these Terms may be directed to:
+
+**Vera5**
+**Operated by:** Detektr LLC
+**Email:** [Vera5io@proton.me](mailto:Vera5io@proton.me)
+**Website:** https://vera5.io
+
+For general legal questions, use the subject line:
+
+**Terms Question – Vera5**
+
+For formal legal notices, use the subject line:
+
+**Legal Notice – Vera5**
+
+## 48. Publication and Accessibility
+
+These Terms should remain reasonably accessible through:
+
+* the Vera5 website footer;
+* the official Vera5 source repository;
+* the Chrome Web Store listing;
+* the extension settings or About interface; and
+* any future Vera5-operated service governed by these Terms.

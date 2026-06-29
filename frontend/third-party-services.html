@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Third-Party Services Disclosure | Vera5</title>
+<meta name="description" content="Vera5 Third-Party Services Disclosure — when Vera5 communicates with external services and what information may be transmitted.">
+<meta name="theme-color" content="#0B0E11">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://vera5.io/third-party-services">
+
+<meta property="og:title" content="Third-Party Services Disclosure | Vera5">
+<meta property="og:description" content="Vera5 Third-Party Services Disclosure — when Vera5 communicates with external services and what information may be transmitted.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vera5.io/third-party-services">
+<meta property="og:site_name" content="Vera5">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vera5.io/assets/og-cover.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Third-Party Services Disclosure | Vera5">
+<meta name="twitter:description" content="Vera5 Third-Party Services Disclosure — when Vera5 communicates with external services and what information may be transmitted.">
+<meta name="twitter:image" content="https://vera5.io/assets/og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a class="brand" href="/" aria-label="Vera5 home">
+      <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="36" height="36">
+      <span class="brand-mark">Vera<span class="brand-5">5</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5/releases" rel="noopener" aria-label="Get the Vera5 browser extension">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.2 2.2 0 1 1 0 4.4H2V19a2 2 0 0 0 2 2h3.8v-1.5a2.2 2.2 0 1 1 4.4 0V21H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+        <span>Extension</span>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5" rel="noopener" aria-label="Vera5 on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.575.106.785-.25.785-.555 0-.274-.01-1-.015-1.965-3.197.695-3.872-1.54-3.872-1.54-.523-1.33-1.277-1.685-1.277-1.685-1.043-.713.08-.698.08-.698 1.153.08 1.76 1.184 1.76 1.184 1.026 1.758 2.692 1.25 3.348.955.104-.743.401-1.25.73-1.538-2.553-.29-5.236-1.276-5.236-5.68 0-1.255.448-2.28 1.183-3.085-.119-.29-.513-1.46.112-3.043 0 0 .965-.31 3.165 1.178a10.98 10.98 0 0 1 2.88-.388c.977.004 1.96.132 2.88.388 2.198-1.488 3.162-1.178 3.162-1.178.626 1.583.232 2.753.114 3.043.737.805 1.18 1.83 1.18 3.085 0 4.415-2.687 5.386-5.249 5.67.413.355.78 1.057.78 2.13 0 1.538-.014 2.778-.014 3.156 0 .308.207.667.79.554A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        <span>GitHub</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="legal">
+    <div class="container">
+      <div class="legal-hero">
+        <a class="legal-back" href="/">&larr; Back to Vera5</a>
+        <p class="legal-eyebrow">Legal</p>
+        <h1 class="legal-title">Vera5 Third-Party Services Disclosure</h1>
+        <div class="legal-meta">
+          <span>Effective Date: June 29, 2026</span>
+          <span>Last Updated: June 29, 2026</span>
+        </div>
+      </div>
+      <div class="legal-body">
+<p>Vera5 is an open-source, local-first browser extension that detects and enriches cybersecurity-related indicators within browser-based workflows.</p>
+<p>This Third-Party Services Disclosure explains:</p>
+<ul><li>when Vera5 communicates with external services;</li><li>what information may be transmitted;</li><li>which parties may receive that information;</li><li>how third-party enrichment providers operate;</li><li>how local and self-hosted services are treated;</li><li>what responsibilities remain with the user; and</li><li>which third-party activities Vera5 and Detektr LLC do not control.</li></ul>
+<p>In this disclosure, <strong>“Vera5,” “we,” “us,” and “our”</strong> refer to <strong>Vera5, operated by Detektr LLC</strong>.</p>
+<p>This disclosure supplements the Vera5 Privacy Policy and Vera5 Terms of Service. If there is a conflict concerning privacy practices, the Privacy Policy controls. If there is a conflict concerning contractual use of Vera5-operated services, the Terms of Service control.</p>
+<h2>1. Summary</h2>
+<p>Vera5 may communicate with third-party services when you:</p>
+<ul><li>request enrichment for an indicator;</li><li>enable automatic enrichment;</li><li>open an external pivot or provider page;</li><li>configure a local AI model;</li><li>configure a self-hosted service;</li><li>install or update Vera5 through a browser store;</li><li>access the Vera5 website;</li><li>access documentation or source code hosted by another platform; or</li><li>voluntarily contact Vera5 through email, GitHub, or another external platform.</li></ul>
+<p>Vera5 does not operate or control most of these third-party services.</p>
+<p>Your use of a third-party service is subject to that service’s own:</p>
+<ul><li>privacy policy;</li><li>terms of service;</li><li>API terms;</li><li>acceptable-use policy;</li><li>licensing rules;</li><li>account agreement;</li><li>rate limits;</li><li>retention practices;</li><li>security controls; and</li><li>applicable fees.</li></ul>
+<p>You should review the applicable third-party terms before enabling or using a service through Vera5.</p>
+<h2>2. Local Detection Versus External Enrichment</h2>
+<p>Vera5 separates local detection from external enrichment.</p>
+<h3>2.1 Local Detection</h3>
+<p>Vera5 may inspect permitted webpage content within your browser to identify supported cybersecurity artifacts, including:</p>
+<ul><li>IP addresses;</li><li>domains;</li><li>URLs;</li><li>file hashes;</li><li>vulnerability identifiers;</li><li>email addresses;</li><li>autonomous system numbers;</li><li>certificate or cryptographic information; and</li><li>other supported security-related artifacts.</li></ul>
+<p>This detection process is intended to occur locally within the browser.</p>
+<p>Detection alone does not necessarily transmit information to a third-party provider.</p>
+<h3>2.2 External Enrichment</h3>
+<p>When enrichment is requested or enabled, Vera5 may transmit a selected indicator to one or more third-party services.</p>
+<p>Examples include:</p>
+<ul><li>sending an IP address to an IP reputation service;</li><li>sending a domain to a threat-intelligence provider;</li><li>sending a file hash to a malware intelligence service;</li><li>sending a URL to a URL-analysis provider;</li><li>sending an autonomous system number to an infrastructure intelligence source; or</li><li>sending normalized findings to a user-configured local AI endpoint.</li></ul>
+<p>The specific services contacted depend on:</p>
+<ul><li>the Vera5 version;</li><li>the indicator type;</li><li>the user’s settings;</li><li>the providers enabled by the user;</li><li>the user’s API credentials;</li><li>provider availability; and</li><li>whether the requested function requires an external request.</li></ul>
+<h2>3. Information That May Be Sent to a Third Party</h2>
+<p>When Vera5 connects to a third-party service, the service may receive information including:</p>
+<ul><li>the selected indicator;</li><li>the indicator type;</li><li>the request date and time;</li><li>your IP address;</li><li>your API key or authentication credential;</li><li>HTTP headers;</li><li>browser or extension-related metadata;</li><li>network metadata;</li><li>service-specific query parameters;</li><li>provider account information associated with your API key; and</li><li>information normally transmitted as part of an HTTPS or network request.</li></ul>
+<p>Depending on the feature and provider, Vera5 may also transmit:</p>
+<ul><li>normalized enrichment results;</li><li>a user-selected note;</li><li>a user-selected investigation summary;</li><li>a user-selected export;</li><li>a selected portion of text;</li><li>a selected security artifact;</li><li>locally generated analytical context; or</li><li>other information necessary to perform a user-requested function.</li></ul>
+<p>Vera5 is not intended to transmit unrelated complete webpage contents, browser cookies, session tokens, account passwords, unrelated browsing history, or unrelated investigation data to a third-party enrichment provider.</p>
+<h2>4. Information Vera5 Does Not Intentionally Send to Third-Party Enrichment Providers</h2>
+<p>Unless a user knowingly configures or initiates a function requiring otherwise, Vera5 does not intend to send the following to third-party enrichment providers:</p>
+<ul><li>complete webpage contents;</li><li>complete email messages;</li><li>complete support tickets;</li><li>complete dashboards;</li><li>browser history;</li><li>browser cookies;</li><li>account passwords;</li><li>session tokens;</li><li>authentication cookies;</li><li>unrelated indicators;</li><li>unrelated analyst notes;</li><li>locally stored API keys for other providers;</li><li>complete investigation collections; or</li><li>information unrelated to the requested enrichment.</li></ul>
+<p>Vera5 attempts to minimize outbound information by limiting provider requests to the information required for the selected function.</p>
+<h2>5. Third-Party Threat-Intelligence and Security Providers</h2>
+<p>Vera5 may support integrations with external threat-intelligence, reputation, infrastructure, malware-analysis, vulnerability, or cybersecurity services.</p>
+<p>Depending on the installed Vera5 version, supported, planned, optional, or user-configured providers may include:</p>
+<ul><li>AlienVault Open Threat Exchange;</li><li>AbuseIPDB;</li><li>VirusTotal;</li><li>URLScan.io;</li><li>GreyNoise;</li><li>Shodan;</li><li>Censys;</li><li>ThreatFox;</li><li>MalwareBazaar;</li><li>URLhaus;</li><li>RDAP services;</li><li>WHOIS services;</li><li>MISP;</li><li>OpenCTI;</li><li>TheHive; and</li><li>other compatible providers or endpoints.</li></ul>
+<p>Inclusion in this disclosure does not mean that every listed provider is currently enabled, implemented, endorsed, sponsored, or available in every Vera5 release.</p>
+<p>Provider support may be:</p>
+<ul><li>added;</li><li>changed;</li><li>disabled;</li><li>removed;</li><li>limited to particular indicator types;</li><li>limited to users with eligible accounts;</li><li>limited by provider terms; or</li><li>unavailable due to technical or policy changes.</li></ul>
+<h2>6. Provider-Specific Data Practices</h2>
+<p>Each third-party provider determines how it handles requests submitted to its service.</p>
+<p>A provider may:</p>
+<ul><li>log submitted indicators;</li><li>retain search queries;</li><li>associate queries with your account;</li><li>associate queries with your IP address;</li><li>use queries for fraud or abuse prevention;</li><li>use queries to improve its services;</li><li>share information with affiliated services;</li><li>disclose information when legally required;</li><li>impose rate limits;</li><li>restrict commercial use;</li><li>restrict automated use;</li><li>prohibit certain submissions;</li><li>make submitted content visible to other users;</li><li>retain uploaded files or URLs;</li><li>classify submitted artifacts; or</li><li>suspend an account for suspected misuse.</li></ul>
+<p>Vera5 does not control these practices.</p>
+<p>The user is responsible for reviewing each provider’s current documentation, terms, privacy policy, and account settings before using the provider through Vera5.</p>
+<h2>7. Public Versus Private Provider Submissions</h2>
+<p>Some providers distinguish between:</p>
+<ul><li>public submissions;</li><li>community submissions;</li><li>private submissions;</li><li>enterprise submissions;</li><li>premium submissions;</li><li>restricted submissions; and</li><li>ephemeral or temporary analysis.</li></ul>
+<p>A public or community submission may become visible to:</p>
+<ul><li>the provider;</li><li>provider customers;</li><li>researchers;</li><li>security vendors;</li><li>community members;</li><li>automated systems; or</li><li>other authorized parties.</li></ul>
+<p>A provider’s standard or free API should not be assumed to provide private handling.</p>
+<p>You must confirm whether a provider treats submitted indicators, URLs, files, comments, or metadata as:</p>
+<ul><li>private;</li><li>public;</li><li>shared;</li><li>retained;</li><li>searchable; or</li><li>redistributable.</li></ul>
+<p>Do not submit confidential or sensitive information unless you understand and accept the provider’s handling model.</p>
+<h2>8. File and URL Submission Warning</h2>
+<p>Submitting a file, URL, domain, hash, or related artifact to a third-party analysis service may disclose sensitive information.</p>
+<p>Examples include:</p>
+<ul><li>internal hostnames;</li><li>private URLs;</li><li>authentication tokens contained in URLs;</li><li>customer names;</li><li>ticket identifiers;</li><li>document names;</li><li>internal file names;</li><li>malware samples from a restricted investigation;</li><li>confidential documents;</li><li>proprietary software;</li><li>personally identifiable information;</li><li>classified information;</li><li>controlled unclassified information;</li><li>export-controlled data; or</li><li>privileged investigation material.</li></ul>
+<p>Vera5 should not be used to submit an actual file or complete URL containing sensitive information unless:</p>
+<ul><li>the user is authorized to submit it;</li><li>the submission is lawful;</li><li>the provider is approved for that data;</li><li>the provider’s privacy model is understood;</li><li>the user’s organization permits the submission; and</li><li>the user has removed unnecessary secrets or sensitive parameters.</li></ul>
+<p>A hash lookup may be less revealing than uploading the underlying file, but a hash can still disclose that the user is investigating or possesses a particular artifact.</p>
+<h2>9. API Keys and Provider Accounts</h2>
+<p>Vera5 may allow users to supply their own API keys.</p>
+<p>When you enter a provider API key:</p>
+<ul><li>the key is intended to be stored locally or in a user-controlled service;</li><li>the key may be transmitted to the applicable provider for authentication;</li><li>the provider may associate requests with your account;</li><li>requests may count against your provider quota;</li><li>provider charges may apply;</li><li>provider account restrictions may apply; and</li><li>the provider may suspend or revoke the key.</li></ul>
+<p>Vera5 does not own or control user-supplied provider accounts.</p>
+<p>You are responsible for:</p>
+<ul><li>obtaining API keys lawfully;</li><li>protecting API keys;</li><li>complying with provider terms;</li><li>monitoring account usage;</li><li>reviewing usage charges;</li><li>rotating compromised credentials;</li><li>revoking unused credentials;</li><li>limiting key permissions where possible; and</li><li>avoiding unauthorized sharing.</li></ul>
+<p>You must not enter a credential that you are not authorized to use.</p>
+<h2>10. Rate Limits, Quotas, and Service Availability</h2>
+<p>Third-party providers may impose:</p>
+<ul><li>daily quotas;</li><li>monthly quotas;</li><li>per-minute limits;</li><li>concurrent-request limits;</li><li>data-access limitations;</li><li>commercial-use restrictions;</li><li>geographic restrictions;</li><li>subscription requirements; or</li><li>account-specific limitations.</li></ul>
+<p>Vera5 may use:</p>
+<ul><li>local caching;</li><li>request deduplication;</li><li>retry controls;</li><li>manual refresh controls;</li><li>provider backoff;</li><li>timeout handling; or</li><li>request sequencing</li></ul>
+<p>to reduce unnecessary requests and improve reliability.</p>
+<p>These measures do not guarantee that a provider request will succeed.</p>
+<p>Vera5 is not responsible for:</p>
+<ul><li>quota exhaustion;</li><li>rate limiting;</li><li>provider downtime;</li><li>account suspension;</li><li>unexpected charges;</li><li>API changes;</li><li>delayed results;</li><li>incomplete results; or</li><li>provider discontinuation.</li></ul>
+<h2>11. Accuracy of Third-Party Information</h2>
+<p>Third-party intelligence may be:</p>
+<ul><li>incomplete;</li><li>outdated;</li><li>contradictory;</li><li>incorrectly classified;</li><li>delayed;</li><li>based on automated analysis;</li><li>based on community reports;</li><li>missing relevant context; or</li><li>subject to provider-specific confidence levels.</li></ul>
+<p>A provider result does not independently establish that an indicator, person, organization, device, or activity is:</p>
+<ul><li>malicious;</li><li>benign;</li><li>compromised;</li><li>trustworthy;</li><li>criminal;</li><li>affiliated with a threat actor; or</li><li>responsible for a security event.</li></ul>
+<p>Vera5 may normalize or summarize provider results, but Vera5 does not independently guarantee the accuracy of the underlying provider data.</p>
+<p>Users should:</p>
+<ul><li>review original provider records;</li><li>compare multiple sources;</li><li>consider the age of the result;</li><li>evaluate environmental context;</li><li>verify indicators through authorized internal evidence; and</li><li>apply professional judgment.</li></ul>
+<h2>12. Provider Attribution</h2>
+<p>Vera5 may display:</p>
+<ul><li>provider names;</li><li>provider logos;</li><li>source labels;</li><li>timestamps;</li><li>scores;</li><li>summaries;</li><li>links;</li><li>classifications; or</li><li>excerpts of provider data.</li></ul>
+<p>Provider names, logos, trademarks, and service marks remain the property of their respective owners.</p>
+<p>Displaying a provider within Vera5 does not imply:</p>
+<ul><li>sponsorship;</li><li>endorsement;</li><li>partnership;</li><li>certification;</li><li>approval;</li><li>affiliation; or</li><li>warranty.</li></ul>
+<p>Vera5 may modify attribution displays to comply with provider requirements or improve source transparency.</p>
+<h2>13. External Pivot Links</h2>
+<p>Vera5 may provide links that open an indicator or related context in an external service.</p>
+<p>When you open an external link, the destination service may receive:</p>
+<ul><li>your IP address;</li><li>browser information;</li><li>request time;</li><li>referral information;</li><li>the indicator included in the URL;</li><li>URL parameters; and</li><li>information associated with your existing account or cookies on that service.</li></ul>
+<p>External pivot links are provided for convenience.</p>
+<p>Opening a link leaves the Vera5 environment and subjects the user to the destination service’s terms and privacy practices.</p>
+<p>Vera5 does not control:</p>
+<ul><li>destination content;</li><li>destination security;</li><li>tracking by the destination;</li><li>provider account behavior;</li><li>provider cookies;</li><li>provider availability; or</li><li>changes to the destination.</li></ul>
+<h2>14. Local AI Models</h2>
+<p>Vera5 may support connections to user-controlled local AI models or local inference servers, including services operating through:</p>
+<ul><li>localhost;</li><li>a private network;</li><li>llama.cpp;</li><li>another local language-model runtime; or</li><li>a user-configured compatible API.</li></ul>
+<p>A local endpoint is considered user-controlled unless Vera5 expressly states that it is operated by Vera5 or Detektr LLC.</p>
+<p>When a local AI feature is used, Vera5 may send information such as:</p>
+<ul><li>a selected indicator;</li><li>normalized enrichment results;</li><li>source findings;</li><li>analyst notes selected by the user;</li><li>a requested summary;</li><li>a requested report format;</li><li>a user prompt; or</li><li>other data required for the requested operation.</li></ul>
+<p>Even when an endpoint is local, it may:</p>
+<ul><li>write logs;</li><li>retain prompts;</li><li>retain outputs;</li><li>communicate with external services;</li><li>load remote resources;</li><li>expose a network port;</li><li>be accessible to other users on the device;</li><li>be accessible to other devices on the network; or</li><li>have vulnerabilities.</li></ul>
+<p>Users are responsible for reviewing and securing local AI services.</p>
+<h2>15. Self-Hosted and Organizational Services</h2>
+<p>Vera5 may support connections to self-hosted or organizational services, including:</p>
+<ul><li>internal threat-intelligence platforms;</li><li>MISP deployments;</li><li>OpenCTI deployments;</li><li>TheHive deployments;</li><li>internal APIs;</li><li>internal case-management systems;</li><li>private model servers;</li><li>security orchestration platforms; or</li><li>custom connectors.</li></ul>
+<p>The organization or individual operating the endpoint controls the associated processing.</p>
+<p>Vera5 and Detektr LLC are not responsible for:</p>
+<ul><li>endpoint security;</li><li>endpoint retention;</li><li>access controls;</li><li>authentication;</li><li>organizational monitoring;</li><li>data residency;</li><li>organizational policies;</li><li>endpoint logs;</li><li>administrator access; or</li><li>downstream sharing.</li></ul>
+<p>Users should obtain organizational approval before connecting Vera5 to an internal service.</p>
+<h2>16. Browser Stores</h2>
+<p>Official Vera5 builds may be distributed through browser stores, including the Chrome Web Store.</p>
+<p>Browser stores may independently process information such as:</p>
+<ul><li>installation events;</li><li>update events;</li><li>browser version;</li><li>extension version;</li><li>account information;</li><li>device information;</li><li>geographic information;</li><li>diagnostic information;</li><li>crash information;</li><li>store interactions; and</li><li>review or support activity.</li></ul>
+<p>Browser-store handling is governed by the store operator’s own terms and privacy policies.</p>
+<p>Vera5 does not control browser-store collection or retention.</p>
+<p>A browser store may:</p>
+<ul><li>review Vera5;</li><li>delay publication;</li><li>reject a release;</li><li>remove a release;</li><li>disable an extension;</li><li>distribute updates;</li><li>display user reviews; or</li><li>impose new technical or policy requirements.</li></ul>
+<h2>17. GitHub and Source-Code Hosting</h2>
+<p>Vera5 source code, documentation, issues, releases, and project discussions may be hosted through GitHub or another source-code platform.</p>
+<p>When you use such a platform, the platform may process:</p>
+<ul><li>account information;</li><li>usernames;</li><li>email addresses;</li><li>IP addresses;</li><li>repository activity;</li><li>issue submissions;</li><li>pull requests;</li><li>comments;</li><li>reactions;</li><li>downloads;</li><li>security reports; and</li><li>other platform interactions.</li></ul>
+<p>Public contributions may remain visible indefinitely and may be indexed, copied, archived, or redistributed.</p>
+<p>The source-code platform’s own terms and privacy policy govern its handling.</p>
+<h2>18. Website Hosting and Infrastructure</h2>
+<p>The Vera5 website may rely on third-party hosting, content-delivery, domain, certificate, security, or infrastructure providers.</p>
+<p>Our website hosting and infrastructure providers may process limited technical information necessary to deliver and secure the website.</p>
+<p>This may include:</p>
+<ul><li>IP address;</li><li>request time;</li><li>requested page;</li><li>browser type;</li><li>operating system;</li><li>response status;</li><li>approximate geographic information;</li><li>network information; and</li><li>abuse or security signals.</li></ul>
+<p>These providers operate under their own terms, retention practices, and legal obligations.</p>
+<h2>19. Email Provider</h2>
+<p>Communications sent to <strong><a href="mailto:Vera5io@proton.me">Vera5io@proton.me</a></strong> are processed through Vera5’s email provider.</p>
+<p>The email provider may process:</p>
+<ul><li>sender and recipient addresses;</li><li>message contents;</li><li>subject lines;</li><li>timestamps;</li><li>attachments;</li><li>delivery metadata;</li><li>IP-related metadata; and</li><li>security or spam signals.</li></ul>
+<p>Do not send:</p>
+<ul><li>API keys;</li><li>passwords;</li><li>session tokens;</li><li>classified information;</li><li>confidential customer information;</li><li>regulated data;</li><li>proprietary investigation evidence; or</li><li>unnecessary personal information</li></ul>
+<p>unless you have determined that email is an appropriate and authorized method of transmission.</p>
+<h2>20. Social Media and Community Platforms</h2>
+<p>Vera5 may maintain official accounts or communities on third-party platforms.</p>
+<p>Those platforms may process:</p>
+<ul><li>account information;</li><li>messages;</li><li>posts;</li><li>reactions;</li><li>profile data;</li><li>IP addresses;</li><li>device information;</li><li>behavioral information; and</li><li>advertising or analytics information.</li></ul>
+<p>Participation in a third-party platform is voluntary and governed by the platform’s own policies.</p>
+<p>Vera5 does not control the platform’s data practices.</p>
+<h2>21. No Responsibility for Independent Forks or Unofficial Builds</h2>
+<p>Vera5 is open-source software.</p>
+<p>Third parties may:</p>
+<ul><li>copy the source code;</li><li>modify it;</li><li>redistribute it;</li><li>publish unofficial builds;</li><li>add external services;</li><li>change data handling;</li><li>change requested permissions; or</li><li>operate their own infrastructure.</li></ul>
+<p>This disclosure applies only to official Vera5 websites, official Vera5 builds, and services operated by Vera5 or Detektr LLC.</p>
+<p>It does not apply to:</p>
+<ul><li>forks;</li><li>unofficial builds;</li><li>modified versions;</li><li>repackaged extensions;</li><li>independently hosted deployments; or</li><li>third-party distributions.</li></ul>
+<p>Users should verify the publisher and source before installing Vera5.</p>
+<h2>22. User Responsibility for Sensitive Indicators</h2>
+<p>Users are responsible for determining whether an indicator is appropriate to submit to a third-party service.</p>
+<p>Before enrichment, users should consider whether the indicator may reveal:</p>
+<ul><li>internal infrastructure;</li><li>an active investigation;</li><li>customer information;</li><li>a confidential incident;</li><li>a private hostname;</li><li>a restricted URL;</li><li>authentication data;</li><li>law-enforcement activity;</li><li>legal strategy;</li><li>proprietary research;</li><li>government information;</li><li>classified information; or</li><li>regulated data.</li></ul>
+<p>The presence of an enrichment button does not establish that submission is appropriate.</p>
+<p>When uncertain, users should:</p>
+<ul><li>use local detection only;</li><li>disable external providers;</li><li>use manual-only mode;</li><li>remove sensitive URL parameters;</li><li>use an approved private provider;</li><li>consult organizational policy; or</li><li>obtain authorization.</li></ul>
+<h2>23. User Controls</h2>
+<p>Depending on the installed version, Vera5 may provide controls to:</p>
+<ul><li>enable or disable providers;</li><li>require manual enrichment;</li><li>disable automatic enrichment;</li><li>clear stored API keys;</li><li>clear cached results;</li><li>restrict operation by domain;</li><li>prevent enrichment of private indicators;</li><li>use local-only functionality;</li><li>configure a self-hosted endpoint;</li><li>disable local AI;</li><li>review source attribution;</li><li>open original provider records; or</li><li>uninstall the extension.</li></ul>
+<p>Feature availability may vary by release.</p>
+<p>These controls reduce risk but do not replace appropriate user judgment and organizational approval.</p>
+<h2>24. Changes to Third-Party Services</h2>
+<p>Third-party providers may change their:</p>
+<ul><li>APIs;</li><li>authentication methods;</li><li>privacy policies;</li><li>terms;</li><li>pricing;</li><li>rate limits;</li><li>supported data;</li><li>response formats;</li><li>retention practices;</li><li>branding requirements;</li><li>availability; or</li><li>ownership.</li></ul>
+<p>Vera5 may update, suspend, or remove an integration in response to such changes.</p>
+<p>Vera5 does not guarantee continued support for any provider.</p>
+<h2>25. Changes to This Disclosure</h2>
+<p>Vera5 may update this Third-Party Services Disclosure when:</p>
+<ul><li>integrations are added or removed;</li><li>provider behavior changes;</li><li>Vera5 introduces new functionality;</li><li>local AI functionality changes;</li><li>hosted services are introduced;</li><li>paid services are introduced;</li><li>legal requirements change;</li><li>browser-store requirements change; or</li><li>clarification is necessary.</li></ul>
+<p>The updated version will be published with a revised <strong>Last Updated</strong> date.</p>
+<p>Material changes may also be communicated through:</p>
+<ul><li>the Vera5 website;</li><li>extension release notes;</li><li>the extension interface;</li><li>the official repository;</li><li>the Chrome Web Store listing; or</li><li>another reasonable channel.</li></ul>
+<h2>26. Contact Information</h2>
+<p>Questions or concerns regarding Vera5’s third-party integrations may be directed to:</p>
+<p><strong>Vera5</strong><br><strong>Operated by:</strong> Detektr LLC<br><strong>Email:</strong> <a href="mailto:Vera5io@proton.me">Vera5io@proton.me</a><br><strong>Website:</strong> https://vera5.io</p>
+<p>For privacy-related questions, use the subject line:</p>
+<p><strong>Privacy Request – Vera5</strong></p>
+<p>For security-related questions, use the subject line:</p>
+<p><strong>Security Report – Vera5</strong></p>
+<p>For questions about third-party integrations, use the subject line:</p>
+<p><strong>Third-Party Services Question – Vera5</strong></p>
+<h2>27. Publication and Accessibility</h2>
+<p>This Third-Party Services Disclosure should remain reasonably accessible through:</p>
+<ul><li>the Vera5 website footer;</li><li>the Vera5 Privacy Policy;</li><li>the Vera5 Terms of Service;</li><li>the official Vera5 repository;</li><li>the extension settings or About interface;</li><li>the Chrome Web Store listing; and</li><li>documentation describing supported integrations.</li></ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <img class="footer-logo" src="/assets/logo-mark.svg" alt="" width="56" height="56">
+          <h3>Vera<span class="brand-5">5</span></h3>
+        </div>
+        <p>Open-source analyst tooling for IOC enrichment.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="/#">Product Vision</a></li>
+          <li><a href="/#">Security Model</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/#product">Tool</a></li>
+          <li><a href="/#principles">Principles</a></li>
+          <li><a href="/#status">Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security-privacy">Security &amp; Privacy</a></li>
+          <li><a href="/third-party-services">Third-Party Services Disclosure</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>vera5.io</span>
+      <span>Open source &middot; MIT</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

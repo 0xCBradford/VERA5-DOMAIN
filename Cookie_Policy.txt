@@ -1,0 +1,92 @@
+# Vera5 Cookie Policy
+
+**Effective Date:** June 29, 2026
+**Last Updated:** June 29, 2026
+
+Vera5 does not intentionally use cookies on its website.
+
+The Vera5 website at **https://vera5.io** is a static informational website. It does not currently use cookies for:
+
+* advertising;
+* behavioral tracking;
+* analytics;
+* user accounts;
+* authentication;
+* preferences;
+* personalization;
+* payment processing; or
+* session management.
+
+Vera5 also does not intentionally use:
+
+* tracking pixels;
+* advertising identifiers;
+* browser fingerprinting;
+* session-replay tools;
+* cross-site tracking technologies; or
+* similar technologies used to monitor visitors across unrelated websites.
+
+Because the Vera5 website does not intentionally use nonessential cookies, Vera5 does not currently display a cookie-consent banner.
+
+## Website Hosting and Technical Records
+
+Our website hosting and infrastructure providers may process limited technical information necessary to deliver, secure, and maintain the website.
+
+This may include:
+
+* IP address;
+* request date and time;
+* requested page or file;
+* browser type;
+* operating system;
+* response status;
+* network information;
+* approximate geographic information; and
+* security or abuse-detection signals.
+
+This technical information may be processed through standard server logs or infrastructure systems. It is not intentionally used by Vera5 for advertising, behavioral profiling, or cross-site tracking.
+
+## External Websites
+
+The Vera5 website may contain links to third-party websites, including:
+
+* GitHub;
+* the Chrome Web Store;
+* threat-intelligence providers;
+* documentation services;
+* social-media platforms; and
+* other external resources.
+
+Those external websites may use their own cookies or tracking technologies.
+
+Vera5 does not control the cookie practices of third-party websites. Their use of cookies is governed by their own privacy policies and cookie policies.
+
+## Future Changes
+
+If Vera5 later introduces functionality that uses cookies or similar technologies, such as:
+
+* user accounts;
+* authentication;
+* analytics;
+* payment processing;
+* embedded media;
+* personalization;
+* cloud services; or
+* subscription features,
+
+this Cookie Policy will be updated before or when those technologies are introduced.
+
+Where required by applicable law, Vera5 will also implement appropriate notice, consent, or preference controls.
+
+## Contact Information
+
+Questions about this Cookie Policy may be directed to:
+
+**Vera5**
+**Operated by:** Detektr LLC
+**Email:** [Vera5io@proton.me](mailto:Vera5io@proton.me)
+**Website:** https://vera5.io
+
+Use the subject line:
+
+**Cookie Policy Question – Vera5**
