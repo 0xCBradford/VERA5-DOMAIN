@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Model | Vera5</title>
+<meta name="description" content="The Vera5 security model — local-first operation, bring-your-own-key enrichment, stacked trust gates, domain policy, and optional localhost-only backend and AI summary, with no default telemetry.">
+<meta name="theme-color" content="#0B0E11">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://vera5.io/security-model">
+
+<meta property="og:title" content="Security Model | Vera5">
+<meta property="og:description" content="The Vera5 security model — local-first operation, bring-your-own-key enrichment, stacked trust gates, domain policy, and optional localhost-only backend and AI summary, with no default telemetry.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vera5.io/security-model">
+<meta property="og:site_name" content="Vera5">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vera5.io/assets/og-cover.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security Model | Vera5">
+<meta name="twitter:description" content="The Vera5 security model — local-first operation, bring-your-own-key enrichment, stacked trust gates, domain policy, and optional localhost-only backend and AI summary, with no default telemetry.">
+<meta name="twitter:image" content="https://vera5.io/assets/og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a class="brand" href="/" aria-label="Vera5 home">
+      <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="36" height="36">
+      <span class="brand-mark">Vera<span class="brand-5">5</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-github" href="/how-to" aria-label="How to use Vera5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span>How-To</span>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5/releases" rel="noopener" aria-label="Get the Vera5 browser extension">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.2 2.2 0 1 1 0 4.4H2V19a2 2 0 0 0 2 2h3.8v-1.5a2.2 2.2 0 1 1 4.4 0V21H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+        <span>Extension</span>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5" rel="noopener" aria-label="Vera5 on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.575.106.785-.25.785-.555 0-.274-.01-1-.015-1.965-3.197.695-3.872-1.54-3.872-1.54-.523-1.33-1.277-1.685-1.277-1.685-1.043-.713.08-.698.08-.698 1.153.08 1.76 1.184 1.76 1.184 1.026 1.758 2.692 1.25 3.348.955.104-.743.401-1.25.73-1.538-2.553-.29-5.236-1.276-5.236-5.68 0-1.255.448-2.28 1.183-3.085-.119-.29-.513-1.46.112-3.043 0 0 .965-.31 3.165 1.178a10.98 10.98 0 0 1 2.88-.388c.977.004 1.96.132 2.88.388 2.198-1.488 3.162-1.178 3.162-1.178.626 1.583.232 2.753.114 3.043.737.805 1.18 1.83 1.18 3.085 0 4.415-2.687 5.386-5.249 5.67.413.355.78 1.057.78 2.13 0 1.538-.014 2.778-.014 3.156 0 .308.207.667.79.554A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        <span>GitHub</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="legal">
+    <div class="container">
+      <div class="legal-hero">
+        <a class="legal-back" href="/">&larr; Back to Vera5</a>
+        <p class="legal-eyebrow">Security Model</p>
+        <h1 class="legal-title">Vera5 Security Model</h1>
+        <div class="legal-meta">
+          <span>Local-first</span>
+          <span>No default telemetry</span>
+          <span>Analyst-owned keys</span>
+        </div>
+      </div>
+      <div class="legal-body">
+
+<p>Vera5 is <strong>local-first</strong>: enrichment uses API keys you configure, and indicator values are sent only to the vendors you enable&mdash;never to Vera5-operated infrastructure. This page summarizes how that trust model works in plain language.</p>
+<p>For the full permission rationale, outbound-network boundaries, regression checks, and threat scenarios, read the deeper documentation in the public repository: the <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/security-model.md" rel="noopener">security model</a> and <a href="https://github.com/0xCBradford/Vera5/blob/main/SECURITY.md" rel="noopener">SECURITY.md</a>. For the user-facing policy, see the <a href="/security-privacy">Security &amp; Privacy</a> overview, <a href="/privacy">Privacy Policy</a>, and <a href="/third-party-services">Third-Party Services Disclosure</a>.</p>
+
+<h2>What Vera5 can do on a page</h2>
+<p>On pages you open over HTTP/HTTPS, Vera5 can:</p>
+<ul>
+  <li>scan visible text (and, when explicitly enabled, allowlisted link attributes) for IOCs;</li>
+  <li>show on-page highlights and a workspace enrichment overlay;</li>
+  <li>enrich indicators when you configure API keys and take an explicit enrich action;</li>
+  <li>manage investigation sessions, collections, history, timelines, notebook fragments, and local correlation memory.</li>
+</ul>
+<p>Settings, API keys, enrichment cache, trust policy, and investigation data stay in local browser storage. There is no Vera5-operated enrichment backend and no default telemetry.</p>
+
+<h2>Data and trust boundaries</h2>
+<p>Vera5 keeps analyst data local by default. Only indicator values you choose to enrich leave the browser&mdash;and only to the vendors you configure.</p>
+<div class="legal-table-wrap">
+<table>
+  <thead><tr><th>Data</th><th>Stays local</th><th>May leave the browser (your choice)</th></tr></thead>
+  <tbody>
+    <tr><td>API keys</td><td>Stored in extension storage or an optional self-hosted <code>.env</code> you control</td><td>Sent only to vendor APIs you enable, over TLS, as each connector requires</td></tr>
+    <tr><td>Extension settings, sessions, collections, notebook, correlation</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Detected IOC values</td><td>Processed locally for display</td><td>Sent as indicator-only requests to configured threat-intel APIs</td></tr>
+    <tr><td>Normalized enrichment JSON for AI summary</td><td>Built locally from card fields</td><td>Sent only to your <code>http://127.0.0.1</code> LLM endpoint when summary is explicitly requested and enabled</td></tr>
+    <tr><td>Full page HTML, browsing history, tickets</td><td>Not uploaded to Vera5-operated services</td><td>Not sent to Vera5 by design</td></tr>
+    <tr><td>Investigation replay segments</td><td>Stored locally; read-only playback</td><td>No upload; markdown export is user-initiated only</td></tr>
+    <tr><td>Portable threat profiles and settings packs</td><td>Imported/exported as JSON without keys</td><td>No Vera5-hosted profile store</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>Bring-your-own keys / bring-your-own API:</strong> you create keys in vendor portals; Vera5 does not operate a required enrichment proxy or shared maintainer keys. <strong>Telemetry:</strong> no usage analytics or crash reporting to Vera5 by default.</p>
+
+<h2>Trust gates (stacked)</h2>
+<p>Live outbound enrichment passes through layered gates before any vendor call:</p>
+<div class="legal-table-wrap">
+<table>
+  <thead><tr><th>Gate</th><th>Behavior</th></tr></thead>
+  <tbody>
+    <tr><td>Manual-only enrichment (default)</td><td>Auto-fetch on hover stays off until you disable manual-only mode</td></tr>
+    <tr><td>Quiet mode (default off)</td><td>Blocks all live vendor calls; pivots, cached enrich display, and local detection remain available</td></tr>
+    <tr><td>Domain policy</td><td>Blocks live enrich on denylisted hostnames (and allowlist mode when configured) before pre-query disclosure</td></tr>
+    <tr><td>Internal asset lists</td><td>Blocks outbound enrich when the indicator value matches configured internal domains, IPv4 CIDR ranges, or vendor/SaaS hostname patterns</td></tr>
+    <tr><td>Known-good policy (optional)</td><td>When enabled, may skip vendor enrich for curated benign/internal matches; does not bypass domain deny or quiet mode</td></tr>
+    <tr><td>Pre-query disclosure</td><td>An inline notice names the enabled vendors and the indicator before the first vendor fetch when notices are on</td></tr>
+    <tr><td>Selection / context-menu enrich</td><td>Re-validates the selection as an exact IOC match; same page and indicator gates as hover enrich</td></tr>
+    <tr><td>Value sanitization</td><td>Rejects multi-line, oversized, or markup-bearing values before they reach the background worker</td></tr>
+    <tr><td>Host allowlist</td><td>Blocks any request before network I/O when the target host is not a declared connector API</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Pivot recipe links are navigation-only (no live fetch from the page context).</p>
+
+<h2>Domain policy and sensitive sites</h2>
+<p>Vera5 gates auto-scan and live enrichment on the hostname of the page you are viewing. Policy is stored locally. When the domain enrich gate is enabled (default), the same rules block vendor API calls before pre-query disclosure runs.</p>
+<div class="legal-table-wrap">
+<table>
+  <thead><tr><th>Mode</th><th>Behavior</th></tr></thead>
+  <tbody>
+    <tr><td>Allow by default (product default)</td><td>Auto-scan and enrichment run on all hosts except those on the denylist.</td></tr>
+    <tr><td>Deny by default (optional posture)</td><td>Auto-scan and enrichment run only on hosts in the allowlist.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Fresh installs use <strong>allow by default</strong>, and the denylist ships with <strong>sensitive webmail patterns</strong> (for example <code>mail.*</code>, <code>webmail.*</code>, and common provider webmail hosts) so those hosts are blocked for auto-scan and live enrichment without manual setup. A <strong>Sensitive sites</strong> preset can merge banking, patient-portal, and workforce-SaaS patterns into the denylist without removing custom entries. Lists are managed in Vera5 Settings under <strong>Trust &amp; consent</strong>.</p>
+<p>Separate from page-hostname policy, <strong>internal asset lists</strong> gate enrichment at the indicator level: live enrichment is blocked when the indicator value matches a configured internal domain, IPv4 CIDR range, or vendor/SaaS label&mdash;even on otherwise allowed SOC pages.</p>
+
+<h2>Opt-in attribute and href extraction</h2>
+<p><strong>Default: off.</strong> Vera5 does not scan link attributes unless you explicitly enable attribute/href extraction in Settings and confirm a first-enable consent dialog. When enabled, a conservative allowlisted attribute scan (for example <code>href</code>, <code>src</code>, <code>data-url</code>) merges with visible-text detection; password inputs and hidden subtrees are excluded, and attribute-sourced IOCs are labeled separately. The same domain policy, quiet mode, and enrich gates apply.</p>
+
+<h2>Quiet mode</h2>
+<p>Quiet mode is a global setting (default off) that blocks outbound vendor enrichment calls while preserving local IOC detection and highlighting, attributed pivot links, cached enrichment display with cached-vs-live labels, and export/sessions/collections/notebook workflows. Bulk enrich and macro enrich steps abort with clear messaging when quiet mode is active.</p>
+
+<h2>Optional local backend (127.0.0.1)</h2>
+<p>When enabled, the extension may send indicator-only enrich requests to a user-operated FastAPI service on localhost instead of calling vendors directly from the background worker.</p>
+<div class="legal-table-wrap">
+<table>
+  <thead><tr><th>Boundary</th><th>Behavior</th></tr></thead>
+  <tbody>
+    <tr><td>Listen address</td><td><code>127.0.0.1</code> only&mdash;not exposed on LAN by default</td></tr>
+    <tr><td>Default</td><td>Off; direct BYOK vendor calls remain the primary path</td></tr>
+    <tr><td>Credentials</td><td>May live in a local <code>.env</code> on your machine; never committed to git</td></tr>
+    <tr><td>Fallback</td><td>Extension falls back to in-browser connectors with honest UI when the backend is unreachable</td></tr>
+    <tr><td>CORS</td><td>Restricted to the extension origin and localhost</td></tr>
+    <tr><td>Logging</td><td>Backend request logs redact API keys and bulk IOC payloads</td></tr>
+    <tr><td>Vera5 cloud</td><td>The backend does not relay indicators or keys to Vera5-operated infrastructure</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Optional local AI summary (127.0.0.1)</h2>
+<p>The optional AI summary feature is <strong>default-off</strong>. When enabled, it sends <strong>normalized enrichment JSON only</strong> to a user-configured <code>http://127.0.0.1</code> endpoint. Forbidden inputs include API keys, full DOM, browsing history, raw vendor HTTP bodies, and credentials. Summary output is labeled <strong>AI summary (local, unverified)</strong> and does not replace the composite score or per-source attribution; guardrails reject claims not present in the input JSON.</p>
+
+<h2>Browser permissions</h2>
+<p>Vera5 requests a minimal Manifest V3 permission set, and each permission maps to a visible analyst capability:</p>
+<ul>
+  <li><strong>Local storage</strong> &mdash; persists your settings, masked API keys, source toggles, cache, and investigation data on your profile. It is never synced to Vera5 servers.</li>
+  <li><strong>Active tab</strong> &mdash; lets Vera5 operate on the tab you are viewing when you invoke it, without blanket access to every tab up front.</li>
+  <li><strong>Scripting</strong> &mdash; injects the detection and overlay UI on demand. All executable code ships inside the extension package; there is no remote code, <code>eval</code>, or maintainer-hosted scripts.</li>
+  <li><strong>Context menu</strong> &mdash; adds an <em>Enrich selection with Vera5</em> action that runs through the same trust gates as every other enrich path.</li>
+  <li><strong>Host access</strong> (<code>http://*/*</code>, <code>https://*/*</code>, and declared vendor API hosts) &mdash; page text is read for detection on origins you visit; only indicator values you enrich are sent to vendors. Any new permission or host pattern requires a documented update before release.</li>
+</ul>
+
+<h2>Treating the page as untrusted</h2>
+<p>Vera5 treats page content as untrusted input for detection display while keeping credentials, enrichment fetches, and vendor calls in extension-controlled contexts. Detection walks visible text nodes (skipping script, style, and form-field content), caps scan size per pass, and applies conservative regex with overlap deduplication. The on-page overlay is assembled by the extension and renders analyst-visible strings and vendor summaries as text&mdash;page-supplied markup is never executed as extension UI.</p>
+<p>The real extension UI appears only after you invoke Vera5 (toolbar, workspace, keyboard shortcut, context menu, or highlight). Treat unexpected enrich prompts that did not follow your action as suspicious.</p>
+
+<h2>Reporting a vulnerability</h2>
+<p>Security reports are welcome. Review the repository&rsquo;s <a href="https://github.com/0xCBradford/Vera5/blob/main/SECURITY.md" rel="noopener">SECURITY.md</a> for the threat model and reporting process, or contact <a href="mailto:Vera5io@proton.me">Vera5io@proton.me</a>. Please do not include API keys or full page content in reports.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <img class="footer-logo" src="/assets/logo-mark.svg" alt="" width="56" height="56">
+          <h3>Vera<span class="brand-5">5</span></h3>
+        </div>
+        <p>Open-source analyst tooling for IOC enrichment.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="/how-to">How-To</a></li>
+          <li><a href="/product-vision">Product Vision</a></li>
+          <li><a href="/security-model">Security Model</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/#product">Tool</a></li>
+          <li><a href="/#principles">Principles</a></li>
+          <li><a href="/#status">Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security-privacy">Security &amp; Privacy</a></li>
+          <li><a href="/third-party-services">Third-Party Services Disclosure</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>vera5.io</span>
+      <span>Open source &middot; MIT</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
