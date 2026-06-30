@@ -2103,6 +2103,179 @@ button:focus-visible {
 .legal-body tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.012); }
 
 /* ============================================================
+   How-To guide page
+   Two-column documentation: sticky table of contents + editorial
+   body. Reuses .legal-body typography; adds layout, TOC, and
+   callout treatments. Flat editorial surfaces, no product chrome.
+   ============================================================ */
+
+.howto {
+  padding: calc(var(--s-hero) + var(--s-md)) 0 var(--s-section);
+}
+
+.howto-hero {
+  margin: 0 auto var(--s-2xl);
+  padding-bottom: var(--s-lg);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.howto-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s-sm);
+}
+
+.howto-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: var(--s-md);
+}
+
+.howto-intro {
+  max-width: 720px;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 var(--s-sm);
+}
+
+.howto-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: var(--s-2xl);
+  align-items: start;
+}
+
+.howto-body {
+  max-width: 760px;
+  margin: 0;
+}
+
+.howto-section { scroll-margin-top: 88px; }
+.howto-section:first-child > h2 { margin-top: 0; }
+
+.howto-body h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin: var(--s-lg) 0 var(--s-sm);
+}
+
+/* Table of contents — collapsible disclosure on mobile, forced-open
+   sticky sidebar on desktop. */
+.howto-toc {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  background: var(--surface-1);
+  box-shadow: var(--bezel-edge);
+}
+.howto-toc > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-sm);
+  padding: 12px var(--s-md);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.howto-toc > summary::-webkit-details-marker { display: none; }
+.howto-toc-chev {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform var(--t-hover) var(--ease-out);
+}
+.howto-toc[open] > summary .howto-toc-chev { transform: rotate(180deg); }
+
+.howto-toc-nav { padding: 0 var(--s-sm) var(--s-sm); }
+.howto-toc-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.howto-toc-nav a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: var(--r-sm);
+  border-left: 2px solid transparent;
+  color: var(--text-low);
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-decoration: none;
+  transition:
+    color var(--t-hover) var(--ease-out),
+    background var(--t-hover) var(--ease-out),
+    border-color var(--t-hover) var(--ease-out);
+}
+.howto-toc-nav a:hover {
+  color: var(--text-primary);
+  background: var(--surface-2);
+}
+.howto-toc-nav a.is-active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-weak);
+}
+
+@media (min-width: 901px) {
+  .howto-toc {
+    position: sticky;
+    top: 88px;
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+  }
+  .howto-toc > summary { cursor: default; pointer-events: none; }
+  .howto-toc > summary .howto-toc-chev { display: none; }
+}
+
+/* Callouts — "you need this / optional / safe default / warning" */
+.callout {
+  margin: 0 0 var(--s-md);
+  padding: var(--s-md) var(--s-lg);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  background: var(--surface-1);
+}
+.callout > *:last-child { margin-bottom: 0; }
+.callout-title {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--s-sm);
+}
+.callout-safe { border-left-color: var(--terminal-teal); }
+.callout-safe .callout-title { color: var(--terminal-teal); }
+.callout-optional { border-left-color: var(--deep-violet); }
+.callout-optional .callout-title { color: var(--deep-violet); }
+.callout-warn { border-left-color: var(--signal-red); }
+.callout-warn .callout-title { color: var(--signal-red); }
+
+@media (max-width: 900px) {
+  .howto-layout { grid-template-columns: 1fr; gap: var(--s-lg); }
+  .howto-body { max-width: 100%; }
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 
@@ -2134,7 +2307,7 @@ button:focus-visible {
   .container { padding: 0 var(--s-md); }
   .workflows { grid-template-columns: 1fr; gap: var(--s-lg); }
   .nav-container { gap: var(--s-md); }
-  .primary-nav { gap: var(--s-md); font-size: 13.5px; }
+  .primary-nav { gap: var(--s-md); font-size: 13.5px; flex-wrap: wrap; justify-content: flex-end; row-gap: var(--s-sm); }
   .nav-github { padding: 7px 12px; }
   .nav-divider { display: none; }
   .hero-actions { width: 100%; }

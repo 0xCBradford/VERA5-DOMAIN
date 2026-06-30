@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Vera5 | Local-First IOC Enrichment</title>
+<meta name="description" content="Learn how to install, configure, and use Vera5 for local-first IOC detection, source-attributed enrichment, investigation sessions, collections, exports, and optional local AI.">
+<meta name="theme-color" content="#0B0E11">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://vera5.io/how-to">
+
+<meta property="og:title" content="How to Use Vera5 | Local-First IOC Enrichment">
+<meta property="og:description" content="Learn how to install, configure, and use Vera5 for local-first IOC detection, source-attributed enrichment, investigation sessions, collections, exports, and optional local AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vera5.io/how-to">
+<meta property="og:site_name" content="Vera5">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vera5.io/assets/og-cover.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Use Vera5 | Local-First IOC Enrichment">
+<meta name="twitter:description" content="Learn how to install, configure, and use Vera5 for local-first IOC detection, source-attributed enrichment, investigation sessions, collections, exports, and optional local AI.">
+<meta name="twitter:image" content="https://vera5.io/assets/og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a class="brand" href="/" aria-label="Vera5 home">
+      <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="36" height="36">
+      <span class="brand-mark">Vera<span class="brand-5">5</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-github" href="/how-to" aria-current="page" aria-label="How to use Vera5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span>How-To</span>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5/releases" rel="noopener" aria-label="Get the Vera5 browser extension">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.2 2.2 0 1 1 0 4.4H2V19a2 2 0 0 0 2 2h3.8v-1.5a2.2 2.2 0 1 1 4.4 0V21H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+        <span>Extension</span>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-github" href="https://github.com/0xCBradford/Vera5" rel="noopener" aria-label="Vera5 on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.575.106.785-.25.785-.555 0-.274-.01-1-.015-1.965-3.197.695-3.872-1.54-3.872-1.54-.523-1.33-1.277-1.685-1.277-1.685-1.043-.713.08-.698.08-.698 1.153.08 1.76 1.184 1.76 1.184 1.026 1.758 2.692 1.25 3.348.955.104-.743.401-1.25.73-1.538-2.553-.29-5.236-1.276-5.236-5.68 0-1.255.448-2.28 1.183-3.085-.119-.29-.513-1.46.112-3.043 0 0 .965-.31 3.165 1.178a10.98 10.98 0 0 1 2.88-.388c.977.004 1.96.132 2.88.388 2.198-1.488 3.162-1.178 3.162-1.178.626 1.583.232 2.753.114 3.043.737.805 1.18 1.83 1.18 3.085 0 4.415-2.687 5.386-5.249 5.67.413.355.78 1.057.78 2.13 0 1.538-.014 2.778-.014 3.156 0 .308.207.667.79.554A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        <span>GitHub</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="howto">
+    <div class="container">
+
+      <div class="howto-hero">
+        <a class="legal-back" href="/">&larr; Back to Vera5</a>
+        <p class="howto-eyebrow">Guide</p>
+        <h1 class="howto-title">How to Use Vera5</h1>
+        <p class="howto-intro">Vera5 brings indicator detection, threat-intelligence enrichment, investigation tools, and analyst-ready exports directly into your browser.</p>
+        <p class="howto-intro">This guide walks you through installing Vera5, configuring your intelligence sources, completing your first enrichment, and using Vera5 during real SOC, CTI, DFIR, email-security, phishing, and MDR workflows.</p>
+      </div>
+
+      <div class="howto-layout">
+
+        <details class="howto-toc" id="toc" open>
+          <summary>
+            <span>On this page</span>
+            <svg class="howto-toc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <nav class="howto-toc-nav" aria-label="On this page">
+            <ul>
+              <li><a href="#before-you-begin">Before you begin</a></li>
+              <li><a href="#install-vera5">Install Vera5</a></li>
+              <li><a href="#first-run-setup">Complete first-run setup</a></li>
+              <li><a href="#first-enrichment">Run your first enrichment</a></li>
+              <li><a href="#understand-results">Understand the results</a></li>
+              <li><a href="#indicator-tray">Use the indicator tray</a></li>
+              <li><a href="#selection-enrichment">Enrich selected text</a></li>
+              <li><a href="#investigation-sessions">Work with investigation sessions</a></li>
+              <li><a href="#ioc-collections">Save indicators to collections</a></li>
+              <li><a href="#export-findings">Export your findings</a></li>
+              <li><a href="#power-user-tools">Use command and bulk workflows</a></li>
+              <li><a href="#local-backend">Use the optional local backend</a></li>
+              <li><a href="#local-ai">Use optional local AI summaries</a></li>
+              <li><a href="#security-and-privacy">Understand security and privacy</a></li>
+              <li><a href="#troubleshooting">Troubleshoot common problems</a></li>
+              <li><a href="#current-limitations">Current limitations</a></li>
+              <li><a href="#next-steps">Where to go next</a></li>
+            </ul>
+          </nav>
+        </details>
+
+        <div class="legal-body howto-body">
+
+          <section class="howto-section" id="before-you-begin">
+            <h2>Before you begin</h2>
+            <p>Vera5 is built for analysts who work with indicators inside browser-based tools and reports.</p>
+            <p>Typical users include:</p>
+            <ul>
+              <li>SOC analysts</li>
+              <li>CTI analysts</li>
+              <li>DFIR analysts</li>
+              <li>threat hunters</li>
+              <li>email-security analysts</li>
+              <li>phishing analysts</li>
+              <li>MDR analysts</li>
+              <li>malware researchers</li>
+              <li>incident responders</li>
+            </ul>
+            <p>You can use Vera5 on alert pages, tickets, security blogs, webmail, dashboard exports, intelligence reports, case queues, sandbox reports, and other pages containing supported indicators.</p>
+
+            <h3>What you need</h3>
+            <p>You need:</p>
+            <ul>
+              <li>a supported Chromium-based browser or Firefox;</li>
+              <li>the Vera5 extension;</li>
+              <li>at least one API key from a supported intelligence provider for live enrichment; and</li>
+              <li>a webpage containing supported indicators.</li>
+            </ul>
+            <p>You do not need:</p>
+            <ul>
+              <li>a Vera5 account;</li>
+              <li>a Vera5 cloud login;</li>
+              <li>a paid Vera5 subscription;</li>
+              <li>Vera5-hosted API credentials; or</li>
+              <li>a Vera5-operated enrichment server.</li>
+            </ul>
+            <p>Vera5 uses a bring-your-own-key model. You choose the intelligence providers, obtain your own credentials, and control which providers are enabled.</p>
+
+            <h3>Supported indicator types</h3>
+            <p>Vera5 can detect supported security artifacts including:</p>
+            <ul>
+              <li>IPv4 addresses</li>
+              <li>domains</li>
+              <li>URLs</li>
+              <li>MD5 hashes</li>
+              <li>SHA-1 hashes</li>
+              <li>SHA-256 hashes</li>
+              <li>CVE identifiers</li>
+              <li>email addresses</li>
+              <li>autonomous system numbers</li>
+              <li>CIDR ranges</li>
+              <li>onion domains</li>
+              <li>conservatively detected file paths</li>
+              <li>defanged forms such as <code>hxxp</code> and <code>[.]</code></li>
+            </ul>
+            <p>Provider support varies by indicator type. A source that enriches an IP address may not support a file hash, email address, or CVE.</p>
+          </section>
+
+          <section class="howto-section" id="install-vera5">
+            <h2>Install Vera5</h2>
+
+            <h3>Chromium-based browsers</h3>
+            <p>Until the official browser-store listing is available, install Vera5 using the <a href="https://github.com/0xCBradford/Vera5/releases" rel="noopener">current release</a> or unpacked-extension instructions provided in the Vera5 <a href="https://github.com/0xCBradford/Vera5/blob/main/README.md" rel="noopener">GitHub repository</a>.</p>
+            <p>The general process is:</p>
+            <ol>
+              <li>Download or build the current Vera5 extension package.</li>
+              <li>Open your browser&rsquo;s extension-management page.</li>
+              <li>Enable developer mode when required.</li>
+              <li>Select <strong>Load unpacked</strong>.</li>
+              <li>Choose the Vera5 extension build directory.</li>
+              <li>Pin Vera5 to the browser toolbar.</li>
+            </ol>
+            <p>Use the exact installation path documented in the current Vera5 release and README. Do not load the source directory unless the documentation specifically identifies it as the correct unpacked build.</p>
+
+            <h3>Firefox</h3>
+            <p>Vera5 also supports a Firefox Manifest V3 build.</p>
+            <p>For local or development use, Firefox may require the extension to be loaded as a temporary add-on. Temporary add-ons may need to be loaded again after a full Firefox restart.</p>
+            <p>Review the current <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/browser-support.md" rel="noopener">browser-support documentation</a> for the exact Firefox build and temporary-installation procedure.</p>
+
+            <h3>Confirm the installation</h3>
+            <p>After installation:</p>
+            <ol>
+              <li>Select the Vera5 icon in the browser toolbar.</li>
+              <li>Confirm that the popup opens without an error.</li>
+              <li>Open <strong>Settings</strong>.</li>
+              <li>Verify that the options page loads.</li>
+              <li>Return to a normal webpage before attempting a scan.</li>
+            </ol>
+            <p>Browser-internal pages, extension stores, and certain protected browser pages may prevent extensions from running.</p>
+          </section>
+
+          <section class="howto-section" id="first-run-setup">
+            <h2>Complete first-run setup</h2>
+            <p>Vera5 includes onboarding and settings designed to keep external requests under your control.</p>
+
+            <h3>Add an intelligence-provider API key</h3>
+            <p>Start with at least one supported provider.</p>
+            <p>Common starting sources include:</p>
+            <ul>
+              <li>AbuseIPDB</li>
+              <li>AlienVault OTX</li>
+              <li>URLScan.io</li>
+              <li>GreyNoise</li>
+            </ul>
+            <p>Additional supported sources may include:</p>
+            <ul>
+              <li>VirusTotal</li>
+              <li>Shodan</li>
+              <li>Censys</li>
+            </ul>
+            <p>To configure a source:</p>
+            <ol>
+              <li>Open the Vera5 popup.</li>
+              <li>Select <strong>Settings</strong>.</li>
+              <li>Find the provider under the enrichment-source settings.</li>
+              <li>Enter your API key or credential.</li>
+              <li>Save the credential.</li>
+              <li>Enable the provider.</li>
+            </ol>
+            <p>API keys are masked after saving. Vera5 should never display a saved credential in full.</p>
+            <p>Entering a key and enabling a source are separate actions. A stored key does not necessarily mean the provider is active. For the full source list and per-provider notes, see the <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/api-integrations.md" rel="noopener">API integrations documentation</a>.</p>
+
+            <h3>Review safe operating defaults</h3>
+            <p>Before using live enrichment, review:</p>
+            <ul>
+              <li>extension enabled or disabled;</li>
+              <li>indicator highlighting;</li>
+              <li>automatic scanning;</li>
+              <li>manual-only enrichment;</li>
+              <li>pre-query notices;</li>
+              <li>domain allowlist and denylist;</li>
+              <li>private IPv4 handling;</li>
+              <li>enabled indicator types;</li>
+              <li>cache duration;</li>
+              <li>enabled providers; and</li>
+              <li>analyst-mode preset.</li>
+            </ul>
+            <div class="callout callout-safe">
+              <p class="callout-title">For the most deliberate workflow</p>
+              <ul>
+                <li>keep automatic scanning disabled until you are comfortable with the behavior;</li>
+                <li>use manual enrichment;</li>
+                <li>keep pre-query notices enabled;</li>
+                <li>enable only providers you intend to query; and</li>
+                <li>review sensitive-domain rules before using Vera5 in webmail or internal tools.</li>
+              </ul>
+            </div>
+
+            <h3>Analyst presets</h3>
+            <p>Vera5 may provide presets for workflows such as:</p>
+            <ul>
+              <li>SOC</li>
+              <li>CTI</li>
+              <li>DFIR</li>
+            </ul>
+            <p>A preset can apply sensible defaults for source behavior, pivots, export templates, and workflow emphasis.</p>
+            <p>Presets are optional. You can configure each setting manually.</p>
+          </section>
+
+          <section class="howto-section" id="first-enrichment">
+            <h2>Run your first enrichment</h2>
+            <p>This walkthrough covers the core Vera5 workflow.</p>
+
+            <h3>Step 1: Open a page containing indicators</h3>
+            <p>Open:</p>
+            <ul>
+              <li>a security alert;</li>
+              <li>a CTI report;</li>
+              <li>a phishing ticket;</li>
+              <li>a malware-analysis article;</li>
+              <li>a supported dashboard export; or</li>
+              <li>one of the sample pages included with Vera5.</li>
+            </ul>
+            <div class="callout callout-safe">
+              <p class="callout-title">Practice safely</p>
+              <p>For a first test, use a controlled sample page rather than a sensitive production system.</p>
+            </div>
+
+            <h3>Step 2: Scan the page</h3>
+            <p>Open the Vera5 popup and select <strong>Scan Page</strong>.</p>
+            <p>You can also use the configured scan-page keyboard shortcut:</p>
+            <ul>
+              <li><code>Ctrl+Shift+Y</code> on Windows or Linux</li>
+              <li><code>Cmd+Shift+Y</code> on macOS</li>
+            </ul>
+            <p>Vera5 examines permitted visible page content locally and identifies supported indicators.</p>
+
+            <h3>Step 3: Review the scan result</h3>
+            <p>After the scan, Vera5 may:</p>
+            <ul>
+              <li>highlight detected indicators on the page;</li>
+              <li>display the number of detected indicators;</li>
+              <li>populate the popup indicator tray;</li>
+              <li>group indicators by type; and</li>
+              <li>begin or update the active investigation session.</li>
+            </ul>
+            <p>Detection alone does not necessarily send an indicator to an external provider.</p>
+
+            <h3>Step 4: Open an indicator</h3>
+            <p>Select a highlighted indicator on the page.</p>
+            <p>Vera5 opens its on-page analysis overlay near the selected value.</p>
+            <p>The overlay may show:</p>
+            <ul>
+              <li>indicator value;</li>
+              <li>indicator type;</li>
+              <li>detection explanation;</li>
+              <li>defanged and refanged forms;</li>
+              <li>source rows;</li>
+              <li>current enrichment state;</li>
+              <li>copy actions;</li>
+              <li>pivot actions;</li>
+              <li>risk information;</li>
+              <li>analyst notes; and</li>
+              <li>save or export actions.</li>
+            </ul>
+
+            <h3>Step 5: Start enrichment</h3>
+            <p>Use the manual enrichment control in the overlay.</p>
+            <p>When pre-query notices are enabled, Vera5 shows which indicator and providers are about to be queried.</p>
+            <p>Review the notice, then approve the request.</p>
+            <p>Only providers that are:</p>
+            <ul>
+              <li>enabled;</li>
+              <li>configured;</li>
+              <li>compatible with the indicator type; and</li>
+              <li>permitted by the current trust policy</li>
+            </ul>
+            <p>should receive a request.</p>
+
+            <h3>Step 6: Read the results</h3>
+            <p>Vera5 displays provider results inside the overlay.</p>
+            <p>A result may be labeled:</p>
+            <ul>
+              <li><strong>Live</strong>: returned through a new provider request;</li>
+              <li><strong>Cached</strong>: returned from Vera5&rsquo;s local cache;</li>
+              <li><strong>Error</strong>: the provider request failed;</li>
+              <li><strong>Skipped</strong>: the provider was disabled, unsupported, blocked, or unavailable.</li>
+            </ul>
+            <p>Each result remains associated with its source.</p>
+
+            <h3>Step 7: Continue the investigation</h3>
+            <p>From the overlay, you may:</p>
+            <ul>
+              <li>copy the indicator;</li>
+              <li>copy a defanged or refanged version;</li>
+              <li>open an attributed provider pivot;</li>
+              <li>inspect normalized provider information;</li>
+              <li>inspect available raw response details;</li>
+              <li>add an analyst note;</li>
+              <li>save the indicator to a collection;</li>
+              <li>pin or label the indicator;</li>
+              <li>export the result; or</li>
+              <li>move to another detected indicator.</li>
+            </ul>
+            <p>Use <code>Esc</code> or the overlay close control to dismiss the current card.</p>
+          </section>
+
+          <section class="howto-section" id="understand-results">
+            <h2>Understand the results</h2>
+            <p>Vera5 combines information from multiple sources without hiding where the information came from.</p>
+
+            <h3>Source attribution</h3>
+            <p>Every enrichment result should remain associated with the provider that produced it.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>AbuseIPDB</li>
+              <li>AlienVault OTX</li>
+              <li>URLScan.io</li>
+              <li>GreyNoise</li>
+              <li>VirusTotal</li>
+              <li>Shodan</li>
+              <li>Censys</li>
+            </ul>
+            <p>Providers may disagree. Vera5 keeps that disagreement visible rather than silently turning conflicting results into a single unexplained verdict.</p>
+
+            <h3>Composite risk score</h3>
+            <p>Vera5 may show an explainable composite label such as:</p>
+            <ul>
+              <li>Unknown</li>
+              <li>Low</li>
+              <li>Suspicious</li>
+              <li>High</li>
+              <li>Critical</li>
+            </ul>
+            <p>The score is an analyst aid, not a final verdict.</p>
+            <p>Review:</p>
+            <ul>
+              <li>the contributing sources;</li>
+              <li>the age of the information;</li>
+              <li>conflicting provider results;</li>
+              <li>provider-specific context;</li>
+              <li>the indicator&rsquo;s role in your environment; and</li>
+              <li>internal evidence.</li>
+            </ul>
+            <p>A high score does not prove malicious activity. A low or unknown score does not prove that an indicator is safe.</p>
+
+            <h3>Explain-this-IOC reasoning</h3>
+            <p>Vera5 may display a deterministic explanation of why a score or label was produced.</p>
+            <p>This explanation is based on normalized source results and documented scoring rules. It is separate from optional AI-generated summaries.</p>
+
+            <h3>Live and cached data</h3>
+            <p>Vera5 caches enrichment results locally to reduce repeat calls and protect vendor quotas.</p>
+            <p>A cached result should display:</p>
+            <ul>
+              <li>that it is cached;</li>
+              <li>the last update time; and</li>
+              <li>the relevant source.</li>
+            </ul>
+            <p>Use manual refresh when you need current provider data. Refreshing may consume provider quota.</p>
+
+            <h3>Raw response inspection</h3>
+            <p>Where supported, Vera5 can provide an expandable raw-response view.</p>
+            <p>Use it when:</p>
+            <ul>
+              <li>the normalized result does not contain enough detail;</li>
+              <li>you need to verify field mapping;</li>
+              <li>sources disagree; or</li>
+              <li>you need the original provider context.</li>
+            </ul>
+            <p>Credentials and secrets should be redacted.</p>
+          </section>
+
+          <section class="howto-section" id="indicator-tray">
+            <h2>Use the indicator tray</h2>
+            <p>The popup indicator tray provides an alert-wide view of the current page.</p>
+            <p>It can help you avoid opening indicators one at a time.</p>
+            <p>The tray may provide:</p>
+            <ul>
+              <li>total indicator count;</li>
+              <li>count by indicator type;</li>
+              <li>type filters;</li>
+              <li>copy-all;</li>
+              <li>copy-filtered;</li>
+              <li>selected-indicator export;</li>
+              <li>enrichment-status hints;</li>
+              <li>jump-to-highlight;</li>
+              <li>multi-select;</li>
+              <li>bulk enrichment; and</li>
+              <li>save-to-collection actions.</li>
+            </ul>
+
+            <h3>Jump to an indicator</h3>
+            <p>Select an indicator row in the tray.</p>
+            <p>Vera5 attempts to:</p>
+            <ol>
+              <li>scroll to the matching highlight;</li>
+              <li>focus the detected value; and</li>
+              <li>open the corresponding overlay.</li>
+            </ol>
+            <p>If the page changed after the scan, the stored highlight may be stale. Rescan the page to rebuild the indicator map.</p>
+
+            <h3>Filter the tray</h3>
+            <p>Use type filters when a page contains many artifacts.</p>
+            <p>For example, you can narrow the tray to:</p>
+            <ul>
+              <li>domains;</li>
+              <li>IP addresses;</li>
+              <li>URLs;</li>
+              <li>hashes; or</li>
+              <li>CVEs.</li>
+            </ul>
+            <p>Filtered selections can then be copied or exported.</p>
+          </section>
+
+          <section class="howto-section" id="selection-enrichment">
+            <h2>Enrich selected text</h2>
+            <p>You do not always need to scan an entire page.</p>
+            <p>For a single visible indicator:</p>
+            <ol>
+              <li>Select the text with your mouse.</li>
+              <li>Right-click the selection.</li>
+              <li>Choose <strong>Enrich selection with Vera5</strong> or the current Vera5 selection command.</li>
+              <li>Confirm the detected indicator.</li>
+              <li>Approve the provider request when required.</li>
+            </ol>
+            <p>You can also use the popup or command palette to enrich a current selection.</p>
+            <p>Selection-based enrichment is useful for:</p>
+            <ul>
+              <li>dense dashboards;</li>
+              <li>long reports;</li>
+              <li>webmail;</li>
+              <li>ticket comments;</li>
+              <li>chat transcripts;</li>
+              <li>tables; and</li>
+              <li>pages where full-page scanning is unnecessary.</li>
+            </ul>
+            <p>Trust controls and domain policy still apply.</p>
+          </section>
+
+          <section class="howto-section" id="investigation-sessions">
+            <h2>Work with investigation sessions</h2>
+            <p>An investigation session is a named, local workspace for one investigation.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>Phishing Investigation</li>
+              <li>Suspicious Login Review</li>
+              <li>Malware Campaign Analysis</li>
+              <li>Customer Alert Triage</li>
+              <li>Threat Hunt Follow-Up</li>
+            </ul>
+            <p>A session may be created on the first scan or through an explicit <strong>New Session</strong> action.</p>
+
+            <h3>Session contents</h3>
+            <p>A session may contain:</p>
+            <ul>
+              <li>title;</li>
+              <li>source page;</li>
+              <li>creation and update times;</li>
+              <li>detected indicators;</li>
+              <li>per-type indicator counts;</li>
+              <li>enrichment history;</li>
+              <li>export events;</li>
+              <li>analyst notes;</li>
+              <li>labels;</li>
+              <li>pinned indicators; and</li>
+              <li>source-attributed findings.</li>
+            </ul>
+
+            <h3>Manage sessions</h3>
+            <p>From the Vera5 interface, you may be able to:</p>
+            <ul>
+              <li>rename a session;</li>
+              <li>reopen a recent session;</li>
+              <li>archive a session;</li>
+              <li>delete a session;</li>
+              <li>add notes;</li>
+              <li>review indicator counts; and</li>
+              <li>export the complete session.</li>
+            </ul>
+            <p>Sessions are stored locally. They are not shared through a Vera5 cloud account.</p>
+
+            <h3>Session labels</h3>
+            <p>An indicator may be labeled as:</p>
+            <ul>
+              <li>benign;</li>
+              <li>internal;</li>
+              <li>suppressed false positive; or</li>
+              <li>case-important.</li>
+            </ul>
+            <p>Labels help organize the investigation but do not replace provider evidence or analyst judgment.</p>
+          </section>
+
+          <section class="howto-section" id="ioc-collections">
+            <h2>Save indicators to collections</h2>
+            <p>Collections are persistent local groupings of indicators.</p>
+            <p>A session represents an individual investigation workflow. A collection represents a reusable group of indicators that may span multiple sessions.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>APT29 Research</li>
+              <li>Qakbot Infrastructure</li>
+              <li>Phishing Campaign</li>
+              <li>Internal Scanner Addresses</li>
+              <li>Known Customer Domains</li>
+            </ul>
+
+            <h3>Add an indicator to a collection</h3>
+            <p>You may add indicators from:</p>
+            <ul>
+              <li>the on-page overlay;</li>
+              <li>the popup tray;</li>
+              <li>the active session; or</li>
+              <li>a filtered tray selection.</li>
+            </ul>
+            <p>Choose <strong>Save to collection</strong>, select an existing collection, or create a new one.</p>
+            <p>Vera5 deduplicates matching normalized indicators within the same collection.</p>
+
+            <h3>Promote a session</h3>
+            <p>Where available, promote the indicators from an investigation session into a new collection.</p>
+            <p>This is useful when a single case becomes part of a longer-running hunt or campaign.</p>
+
+            <h3>Manage collections</h3>
+            <p>You may be able to:</p>
+            <ul>
+              <li>rename a collection;</li>
+              <li>edit its description;</li>
+              <li>view members;</li>
+              <li>remove members;</li>
+              <li>delete the collection;</li>
+              <li>export the collection; and</li>
+              <li>navigate to a matching indicator on the active page.</li>
+            </ul>
+            <p>Collections remain local unless you explicitly export them.</p>
+          </section>
+
+          <section class="howto-section" id="export-findings">
+            <h2>Export your findings</h2>
+            <p>Vera5 can create analyst-ready artifacts from normalized enrichment data.</p>
+
+            <h3>Available export formats</h3>
+            <p>Depending on the selected workflow, Vera5 may support:</p>
+            <ul>
+              <li>Markdown</li>
+              <li>JSON</li>
+              <li>CSV</li>
+              <li>Jira comment</li>
+              <li>TheHive case note</li>
+              <li>Obsidian note</li>
+              <li>plain-text analyst update</li>
+              <li>Markdown report</li>
+            </ul>
+
+            <h3>Export an individual indicator</h3>
+            <p>An indicator export may include:</p>
+            <ul>
+              <li>indicator value and type;</li>
+              <li>composite score;</li>
+              <li>disagreement notice;</li>
+              <li>source-attributed findings;</li>
+              <li>cache status;</li>
+              <li>timestamps;</li>
+              <li>analyst notes;</li>
+              <li>pivot suggestions; and</li>
+              <li>export schema version.</li>
+            </ul>
+
+            <h3>Export a tray selection</h3>
+            <p>Use the indicator tray to export:</p>
+            <ul>
+              <li>all detected indicators;</li>
+              <li>indicators matching a type filter; or</li>
+              <li>manually selected indicators.</li>
+            </ul>
+
+            <h3>Export a session</h3>
+            <p>Session exports may include:</p>
+            <ul>
+              <li>session summary;</li>
+              <li>page information;</li>
+              <li>indicator counts;</li>
+              <li>complete indicator table;</li>
+              <li>enrichment snippets;</li>
+              <li>source attribution;</li>
+              <li>analyst notes; and</li>
+              <li>activity history.</li>
+            </ul>
+            <p>Supported session formats may include Markdown, JSON, and CSV.</p>
+
+            <h3>Export a collection</h3>
+            <p>Collection exports may include:</p>
+            <ul>
+              <li>collection metadata;</li>
+              <li>member indicators;</li>
+              <li>indicator types;</li>
+              <li>cached enrichment where available; and</li>
+              <li>source attribution.</li>
+            </ul>
+            <div class="callout callout-warn">
+              <p class="callout-title">Important</p>
+              <p>API keys and provider secrets must not be included in exports.</p>
+            </div>
+
+            <h3>Use exports responsibly</h3>
+            <p>Before pasting an export into a ticket, wiki, or chat:</p>
+            <ul>
+              <li>verify the destination is authorized;</li>
+              <li>review sensitive indicators;</li>
+              <li>remove unnecessary internal context;</li>
+              <li>confirm source timestamps;</li>
+              <li>verify the score explanation; and</li>
+              <li>make sure no restricted information is included.</li>
+            </ul>
+          </section>
+
+          <section class="howto-section" id="power-user-tools">
+            <h2>Use command and bulk workflows</h2>
+            <p>These capabilities are useful after you understand the basic scan-and-enrich workflow.</p>
+
+            <h3>Command palette</h3>
+            <p>Open the Vera5 command palette using:</p>
+            <ul>
+              <li><code>Ctrl+Shift+K</code> on Windows or Linux</li>
+              <li><code>Cmd+Shift+K</code> on macOS</li>
+            </ul>
+            <p>Available commands may include:</p>
+            <ul>
+              <li>scan page;</li>
+              <li>enrich selection;</li>
+              <li>copy Markdown;</li>
+              <li>export tray selection;</li>
+              <li>clear highlights;</li>
+              <li>open settings; and</li>
+              <li>open supported operator surfaces.</li>
+            </ul>
+            <p>Command availability may depend on the active page and current Vera5 version.</p>
+
+            <h3>Keyboard navigation</h3>
+            <p>Vera5 supports keyboard-oriented investigation workflows.</p>
+            <p>Depending on the active surface, you may be able to:</p>
+            <ul>
+              <li>move between detected indicators;</li>
+              <li>open an indicator;</li>
+              <li>close the overlay;</li>
+              <li>scan the page;</li>
+              <li>open the command palette; and</li>
+              <li>trigger copy or export actions.</li>
+            </ul>
+
+            <h3>Bulk enrichment</h3>
+            <p>The tray can support selecting multiple indicators for a controlled enrichment queue.</p>
+            <p>Before starting the queue, Vera5 should show a warning concerning:</p>
+            <ul>
+              <li>provider quota;</li>
+              <li>request count;</li>
+              <li>rate limits; and</li>
+              <li>enabled sources.</li>
+            </ul>
+            <p>Bulk enrichment is sequential and capped. It is not intended to silently enrich every indicator on a page.</p>
+            <p>You can cancel an active queue.</p>
+            <p>Domain restrictions, pre-query controls, missing credentials, provider rate limits, and other trust policies still apply.</p>
+
+            <h3>Source operations</h3>
+            <p>Vera5 can expose operational information such as:</p>
+            <ul>
+              <li>recent source status;</li>
+              <li>previous provider errors;</li>
+              <li>HTTP 429 cooldown;</li>
+              <li>cache entry count; and</li>
+              <li>last cache-clear time.</li>
+            </ul>
+            <p>Use these details when a source appears unavailable or stops returning live results.</p>
+          </section>
+
+          <section class="howto-section" id="local-backend">
+            <h2>Use the optional local backend</h2>
+            <div class="callout callout-optional">
+              <p class="callout-title">Optional</p>
+              <p>The local backend is disabled by default and is not required for standard extension operation.</p>
+            </div>
+            <p>Vera5 can operate without a backend.</p>
+            <p>The optional local backend is intended for users who want a locally operated enrichment service, centralized local caching, or local rate-limit handling.</p>
+            <p>It runs on a localhost address such as:</p>
+            <pre><code>http://127.0.0.1:&lt;port&gt;</code></pre>
+
+            <h3>When to use it</h3>
+            <p>The local backend may be useful when you want:</p>
+            <ul>
+              <li>centralized cache behavior;</li>
+              <li>backend-managed provider configuration;</li>
+              <li>consistent rate-limit handling;</li>
+              <li>a local integration point; or</li>
+              <li>separation between the browser extension and certain provider credentials.</li>
+            </ul>
+
+            <h3>Important characteristics</h3>
+            <p>The local backend is:</p>
+            <ul>
+              <li>optional;</li>
+              <li>disabled by default;</li>
+              <li>user-operated;</li>
+              <li>designed for localhost or self-hosted use;</li>
+              <li>not a Vera5 cloud service; and</li>
+              <li>not required for standard extension operation.</li>
+            </ul>
+            <p>Follow the current <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/local-mode.md" rel="noopener">local-mode documentation</a> for installation, environment configuration, startup, and extension settings.</p>
+            <p>Keep the service bound to localhost unless you deliberately secure and operate it for another approved environment.</p>
+          </section>
+
+          <section class="howto-section" id="local-ai">
+            <h2>Use optional local AI summaries</h2>
+            <div class="callout callout-optional">
+              <p class="callout-title">Optional</p>
+              <p>Local AI is optional and disabled by default.</p>
+            </div>
+            <p>Vera5 can connect to a user-operated local AI endpoint, including compatible llama.cpp services.</p>
+
+            <h3>What the model receives</h3>
+            <p>A typical summary request may include:</p>
+            <ul>
+              <li>selected indicator;</li>
+              <li>normalized enrichment results;</li>
+              <li>source attribution;</li>
+              <li>score explanation;</li>
+              <li>analyst-selected notes; and</li>
+              <li>requested output format.</li>
+            </ul>
+            <p>The intended input is normalized investigation context, not the complete webpage.</p>
+
+            <h3>What the model should not receive</h3>
+            <p>Vera5 should not intentionally send:</p>
+            <ul>
+              <li>API keys;</li>
+              <li>browser cookies;</li>
+              <li>passwords;</li>
+              <li>authentication tokens;</li>
+              <li>unrelated browsing history;</li>
+              <li>unrelated complete page contents; or</li>
+              <li>provider credentials.</li>
+            </ul>
+
+            <h3>Configure a local endpoint</h3>
+            <p>Use the local AI settings to enter the compatible localhost endpoint.</p>
+            <p>The service may resemble:</p>
+            <pre><code>http://127.0.0.1:8080</code></pre>
+            <p>The exact endpoint, route, model, and request format depend on your local runtime. See the <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/ai-summary.md" rel="noopener">local AI summary documentation</a> for details.</p>
+
+            <h3>Generate a summary</h3>
+            <p>After enrichment:</p>
+            <ol>
+              <li>Open the indicator overlay.</li>
+              <li>Select <strong>Generate Summary</strong> or the current local-AI action.</li>
+              <li>Wait for the local model response.</li>
+              <li>Review the result against the source findings.</li>
+            </ol>
+            <p>Local AI summaries should be visibly labeled:</p>
+            <blockquote>
+              <p>AI summary &mdash; local, unverified</p>
+            </blockquote>
+            <div class="callout callout-warn">
+              <p class="callout-title">AI output is not a verdict</p>
+              <p>AI output can be wrong, incomplete, or overly confident. It does not replace the source-attributed score, original provider records, or analyst judgment.</p>
+            </div>
+          </section>
+
+          <section class="howto-section" id="security-and-privacy">
+            <h2>Understand security and privacy</h2>
+            <p>Vera5 is designed around local-first analysis and user-controlled enrichment.</p>
+
+            <h3>What stays local</h3>
+            <p>Vera5 is designed to keep the following on your device:</p>
+            <ul>
+              <li>page detection;</li>
+              <li>extension settings;</li>
+              <li>API keys;</li>
+              <li>cached enrichment;</li>
+              <li>sessions;</li>
+              <li>collections;</li>
+              <li>analyst notes;</li>
+              <li>export preferences;</li>
+              <li>local AI settings; and</li>
+              <li>investigation history.</li>
+            </ul>
+
+            <h3>What may leave your device</h3>
+            <p>When you approve or trigger enrichment, the enabled provider may receive:</p>
+            <ul>
+              <li>the selected indicator;</li>
+              <li>your provider API credential;</li>
+              <li>your IP address;</li>
+              <li>request time;</li>
+              <li>ordinary network metadata; and</li>
+              <li>provider-specific request parameters.</li>
+            </ul>
+            <p>The provider handles that information under its own terms and privacy policy.</p>
+
+            <h3>No full-page upload</h3>
+            <p>Vera5 is not designed to upload complete webpages to Vera5 infrastructure.</p>
+            <p>Detection occurs locally.</p>
+            <p>External intelligence providers receive the indicator required for the requested lookup, not the complete page.</p>
+
+            <h3>Sensitive indicators</h3>
+            <p>An indicator can reveal sensitive operational information.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>internal IP addresses;</li>
+              <li>private domains;</li>
+              <li>internal hostnames;</li>
+              <li>customer assets;</li>
+              <li>investigation targets;</li>
+              <li>URLs containing authentication parameters;</li>
+              <li>confidential campaign infrastructure;</li>
+              <li>classified or controlled information.</li>
+            </ul>
+            <p>Before enrichment, determine whether the indicator is authorized for submission to the selected provider.</p>
+
+            <h3>Domain policy</h3>
+            <p>Vera5 may block scanning or enrichment on sensitive domains based on its domain policy.</p>
+            <p>This may include webmail, internal systems, banking sites, health systems, or user-configured restricted domains.</p>
+            <p>If enrichment is blocked:</p>
+            <ol>
+              <li>verify that the page is appropriate for Vera5;</li>
+              <li>review the domain policy;</li>
+              <li>inspect the allowlist and denylist;</li>
+              <li>confirm organizational authorization; and</li>
+              <li>change the policy only when appropriate.</li>
+            </ol>
+
+            <h3>External pivots</h3>
+            <p>Opening a provider pivot takes you to an external service.</p>
+            <p>The destination may receive:</p>
+            <ul>
+              <li>the indicator in the URL;</li>
+              <li>your IP address;</li>
+              <li>browser information;</li>
+              <li>cookies already associated with that service; and</li>
+              <li>ordinary request metadata.</li>
+            </ul>
+            <p>Defanged URL handling may display a warning before Vera5 opens a live destination.</p>
+
+            <h3>Shared machines</h3>
+            <p>On a shared computer:</p>
+            <ul>
+              <li>remove provider credentials after use;</li>
+              <li>clear local caches when necessary;</li>
+              <li>review browser synchronization;</li>
+              <li>export only approved investigation data;</li>
+              <li>delete sessions or collections that should not remain; and</li>
+              <li>secure the browser profile.</li>
+            </ul>
+            <p>For the full security model, review Vera5&rsquo;s <a href="/security-privacy">Security &amp; Privacy</a> page, <a href="/privacy">Privacy Policy</a>, <a href="/third-party-services">Third-Party Services Disclosure</a>, and public <a href="https://github.com/0xCBradford/Vera5/blob/main/SECURITY.md" rel="noopener">security documentation</a>.</p>
+          </section>
+
+          <section class="howto-section" id="troubleshooting">
+            <h2>Troubleshoot common problems</h2>
+
+            <h3>No indicators are highlighted</h3>
+            <p>Possible causes:</p>
+            <ul>
+              <li>Vera5 is disabled;</li>
+              <li>highlighting is disabled;</li>
+              <li>the page has not been scanned;</li>
+              <li>the relevant indicator type is disabled;</li>
+              <li>no supported indicators appear in visible text;</li>
+              <li>the page is restricted by domain policy;</li>
+              <li>the browser prevents extension execution on that page.</li>
+            </ul>
+            <p>Try:</p>
+            <ol>
+              <li>Confirm Vera5 is enabled.</li>
+              <li>Confirm highlighting is enabled.</li>
+              <li>Select <strong>Scan Page</strong>.</li>
+              <li>Review enabled indicator types.</li>
+              <li>Try a Vera5 sample page.</li>
+              <li>Check domain policy.</li>
+              <li>Reload the page and scan again.</li>
+            </ol>
+
+            <h3>The popup shows no detected indicators</h3>
+            <p>The current tab may not have been scanned, or the page may have changed since the previous scan.</p>
+            <p>Select <strong>Scan Page</strong> and reopen the popup.</p>
+
+            <h3>The overlay says an API key is missing</h3>
+            <p>The provider is enabled but no valid credential is saved.</p>
+            <p>Open <strong>Settings</strong>, add the provider credential, save it, and retry.</p>
+
+            <h3>A provider returns 401 or 403</h3>
+            <p>The key may be:</p>
+            <ul>
+              <li>incorrect;</li>
+              <li>expired;</li>
+              <li>revoked;</li>
+              <li>missing required permission;</li>
+              <li>associated with the wrong account tier; or</li>
+              <li>entered in the wrong field.</li>
+            </ul>
+            <p>Verify the credential in the provider portal.</p>
+
+            <h3>A provider returns HTTP 429</h3>
+            <p>The provider rate limit or quota was reached.</p>
+            <p>Try:</p>
+            <ul>
+              <li>waiting for the displayed cooldown;</li>
+              <li>using cached data;</li>
+              <li>reducing bulk requests;</li>
+              <li>enabling manual-only enrichment;</li>
+              <li>disabling unnecessary providers; or</li>
+              <li>reviewing your provider plan.</li>
+            </ul>
+            <p>Do not repeatedly bypass or retry provider limits.</p>
+
+            <h3>Enrichment is blocked on the current website</h3>
+            <p>The page may match a domain denylist or sensitive-domain policy.</p>
+            <p>Review <strong>Settings &rarr; Trust and consent</strong> or the corresponding domain-policy area.</p>
+            <p>Only permit enrichment when doing so is authorized.</p>
+
+            <h3>A provider says the indicator type is unsupported</h3>
+            <p>Not every source supports every indicator type.</p>
+            <p>Enable another compatible provider or use the available static pivots.</p>
+
+            <h3>The tray does not jump to the indicator</h3>
+            <p>The page DOM may have changed after the scan.</p>
+            <p>Rescan the page and try again.</p>
+
+            <h3>The overlay appears in the wrong place</h3>
+            <p>The page layout may have moved, changed, or loaded additional content.</p>
+            <p>Close the overlay, rescan if necessary, and reopen the indicator.</p>
+
+            <h3>Cached data appears instead of a live result</h3>
+            <p>The local cache entry is still valid.</p>
+            <p>Use manual refresh to bypass the cache when current data is required. This may consume provider quota.</p>
+
+            <h3>Bulk enrichment stops early</h3>
+            <p>Possible causes:</p>
+            <ul>
+              <li>provider rate limit;</li>
+              <li>trust policy;</li>
+              <li>missing key;</li>
+              <li>unsupported indicator type;</li>
+              <li>user cancellation;</li>
+              <li>network timeout;</li>
+              <li>source cooldown.</li>
+            </ul>
+            <p>Review the per-source status and queue message.</p>
+
+            <h3>The local backend cannot be reached</h3>
+            <p>Verify:</p>
+            <ul>
+              <li>the backend is running;</li>
+              <li>the host and port match Vera5 settings;</li>
+              <li>the service is listening on localhost;</li>
+              <li>local firewall rules permit the request;</li>
+              <li>CORS and extension-origin settings are correct; and</li>
+              <li>the backend health endpoint responds.</li>
+            </ul>
+            <p>Vera5 may fall back to direct extension connectors when configured to do so.</p>
+
+            <h3>The local AI summary fails</h3>
+            <p>Verify:</p>
+            <ul>
+              <li>the local model server is running;</li>
+              <li>the endpoint is correct;</li>
+              <li>the selected model is loaded;</li>
+              <li>the API format is compatible;</li>
+              <li>local AI is enabled;</li>
+              <li>the request did not time out; and</li>
+              <li>the service accepts requests from the extension.</li>
+            </ul>
+
+            <h3>The Firefox extension disappeared</h3>
+            <p>A temporarily loaded Firefox add-on may be removed after a full browser restart.</p>
+            <p>Load the Firefox extension again using the current temporary add-on instructions.</p>
+
+            <h3>Settings appear missing after an update</h3>
+            <p>Check:</p>
+            <ul>
+              <li>the active browser profile;</li>
+              <li>whether you switched between Chrome and Firefox;</li>
+              <li>whether browser storage was cleared;</li>
+              <li>whether a different extension build was installed; and</li>
+              <li>whether the extension identifier changed.</li>
+            </ul>
+            <p>Do not import an old settings file unless you trust the source and have reviewed its contents.</p>
+
+            <h3>You found a bug</h3>
+            <p>Report reproducible bugs through the <a href="https://github.com/0xCBradford/Vera5/issues" rel="noopener">official Vera5 GitHub repository</a>.</p>
+            <p>Include:</p>
+            <ul>
+              <li>Vera5 version;</li>
+              <li>browser and version;</li>
+              <li>operating system;</li>
+              <li>exact steps;</li>
+              <li>expected behavior;</li>
+              <li>observed behavior; and</li>
+              <li>sanitized screenshots or logs.</li>
+            </ul>
+            <p>Never include API keys, passwords, customer data, restricted indicators, or confidential investigation records in a public issue.</p>
+          </section>
+
+          <section class="howto-section" id="current-limitations">
+            <h2>Current limitations</h2>
+            <p>Vera5 remains under active development.</p>
+            <p>Current limitations may include:</p>
+            <ul>
+              <li>official browser-store listings may not yet be available;</li>
+              <li>some installations may require loading an unpacked extension;</li>
+              <li>Firefox installation may use a temporary add-on workflow;</li>
+              <li>provider availability depends on your credentials and provider plan;</li>
+              <li>not every provider supports every IOC type;</li>
+              <li>third-party APIs may change without notice;</li>
+              <li>local AI requires a separately installed and configured model server;</li>
+              <li>the optional backend requires local setup;</li>
+              <li>provider results may be incomplete, stale, or contradictory;</li>
+              <li>some protected browser pages do not permit extension execution;</li>
+              <li>page changes can invalidate stored highlight positions; and</li>
+              <li>Vera5 does not replace SIEM, SOAR, EDR, sandbox, case-management, or threat-intelligence platforms.</li>
+            </ul>
+            <p>Vera5 assists investigations. It does not produce definitive malicious or benign verdicts.</p>
+          </section>
+
+          <section class="howto-section" id="next-steps">
+            <h2>Where to go next</h2>
+            <p>After completing your first enrichment:</p>
+            <ul>
+              <li>review the Vera5 <a href="https://github.com/0xCBradford/Vera5/blob/main/README.md" rel="noopener">GitHub README</a>;</li>
+              <li>explore the <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/analyst-workflows.md" rel="noopener">analyst-workflow documentation</a>;</li>
+              <li>read the <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/security-model.md" rel="noopener">security model</a>;</li>
+              <li>review supported <a href="https://github.com/0xCBradford/Vera5/blob/main/docs/api-integrations.md" rel="noopener">API integrations</a>;</li>
+              <li>configure additional providers;</li>
+              <li>create an investigation session;</li>
+              <li>save recurring indicators to a collection;</li>
+              <li>test the local backend;</li>
+              <li>test a local AI summary;</li>
+              <li>report issues or contribute through <a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a>.</li>
+            </ul>
+            <p>Vera5 is open source. You can inspect how it detects indicators, stores settings, performs enrichment, calculates scores, and communicates with providers.</p>
+
+            <h3 id="quick-reference">Quick-reference workflow</h3>
+            <pre><code>Open investigation page
+        &darr;
+Scan page or select an indicator
+        &darr;
+Open the Vera5 overlay
+        &darr;
+Review the indicator and provider list
+        &darr;
+Approve enrichment
+        &darr;
+Compare source-attributed results
+        &darr;
+Review score and disagreement
+        &darr;
+Pivot, label, save, or export
+        &darr;
+Continue the investigation</code></pre>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <img class="footer-logo" src="/assets/logo-mark.svg" alt="" width="56" height="56">
+          <h3>Vera<span class="brand-5">5</span></h3>
+        </div>
+        <p>Open-source analyst tooling for IOC enrichment.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/0xCBradford/Vera5" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="/how-to">How-To</a></li>
+          <li><a href="/#">Product Vision</a></li>
+          <li><a href="/#">Security Model</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/#product">Tool</a></li>
+          <li><a href="/#principles">Principles</a></li>
+          <li><a href="/#status">Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/security-privacy">Security &amp; Privacy</a></li>
+          <li><a href="/third-party-services">Third-Party Services Disclosure</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>vera5.io</span>
+      <span>Open source &middot; MIT</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Vera5 How-To — first-party scroll-spy for the table of contents.
+   Highlights the section currently in view. The page is fully usable
+   without it; anchors and the sticky TOC work with JS disabled. */
+(function () {
+  "use strict";
+
+  /* Collapse the table of contents on small screens. Without JS it
+     stays open and reads as an inline list at the top of the page. */
+  var toc = document.getElementById("toc");
+  if (toc && window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
+    toc.open = false;
+  }
+
+  if (!("IntersectionObserver" in window)) return;
+
+  var links = Array.prototype.slice.call(
+    document.querySelectorAll(".howto-toc-nav a[href^='#']")
+  );
+  if (!links.length) return;
+
+  var linkFor = new Map();
+  links.forEach(function (link) {
+    var id = link.getAttribute("href").slice(1);
+    var section = id && document.getElementById(id);
+    if (section) linkFor.set(section, link);
+  });
+  if (!linkFor.size) return;
+
+  function setActive(link) {
+    links.forEach(function (l) {
+      l.classList.remove("is-active");
+      l.removeAttribute("aria-current");
+    });
+    if (link) {
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "true");
+    }
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(linkFor.get(entry.target));
+      });
+    },
+    { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+  );
+
+  linkFor.forEach(function (link, section) {
+    observer.observe(section);
+  });
+})();
+</script>
+</body>
+</html>
