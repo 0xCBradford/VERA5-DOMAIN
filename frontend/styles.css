@@ -2290,7 +2290,7 @@ button:focus-visible {
   font-size: 10.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-low);
+  color: var(--accent);
   transition: color var(--t-hover) var(--ease-out);
 }
 .howto-toc-nav .howto-toc-group:first-child { margin-top: 0; }
