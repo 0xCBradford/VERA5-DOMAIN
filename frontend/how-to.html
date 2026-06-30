@@ -83,29 +83,50 @@
             <svg class="howto-toc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <nav class="howto-toc-nav" aria-label="On this page">
-            <ul>
+            <p class="howto-toc-group" id="toc-getting-started">Getting Started</p>
+            <ul aria-labelledby="toc-getting-started">
               <li><a href="#before-you-begin">Before you begin</a></li>
               <li><a href="#install-vera5">Install Vera5</a></li>
               <li><a href="#first-run-setup">Complete first-run setup</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-core-workflows">Core Workflows</p>
+            <ul aria-labelledby="toc-core-workflows">
               <li><a href="#first-enrichment">Run your first enrichment</a></li>
               <li><a href="#understand-results">Understand the results</a></li>
               <li><a href="#indicator-tray">Use the indicator tray</a></li>
               <li><a href="#selection-enrichment">Enrich selected text</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-investigations">Investigations</p>
+            <ul aria-labelledby="toc-investigations">
               <li><a href="#investigation-sessions">Work with investigation sessions</a></li>
               <li><a href="#ioc-collections">Save indicators to collections</a></li>
               <li><a href="#export-findings">Export your findings</a></li>
               <li><a href="#power-user-tools">Use command and bulk workflows</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-advanced-features">Advanced Features</p>
+            <ul aria-labelledby="toc-advanced-features">
               <li><a href="#local-backend">Use the optional local backend</a></li>
               <li><a href="#local-ai">Use optional local AI summaries</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-privacy-security">Privacy &amp; Security</p>
+            <ul aria-labelledby="toc-privacy-security">
               <li><a href="#security-and-privacy">Understand security and privacy</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-troubleshooting">Troubleshooting</p>
+            <ul aria-labelledby="toc-troubleshooting">
               <li><a href="#troubleshooting">Troubleshoot common problems</a></li>
               <li><a href="#current-limitations">Current limitations</a></li>
+            </ul>
+            <p class="howto-toc-group" id="toc-next-steps">Next Steps</p>
+            <ul aria-labelledby="toc-next-steps">
               <li><a href="#next-steps">Where to go next</a></li>
             </ul>
           </nav>
         </details>
 
         <div class="legal-body howto-body">
+
+          <h2 class="howto-group" id="group-getting-started">Getting Started</h2>
 
           <section class="howto-section" id="before-you-begin">
             <h2>Before you begin</h2>
@@ -262,6 +283,8 @@
             <p>A preset can apply sensible defaults for source behavior, pivots, export templates, and workflow emphasis.</p>
             <p>Presets are optional. You can configure each setting manually.</p>
           </section>
+
+          <h2 class="howto-group" id="group-core-workflows">Core Workflows</h2>
 
           <section class="howto-section" id="first-enrichment">
             <h2>Run your first enrichment</h2>
@@ -492,6 +515,8 @@
             </ul>
             <p>Trust controls and domain policy still apply.</p>
           </section>
+
+          <h2 class="howto-group" id="group-investigations">Investigations</h2>
 
           <section class="howto-section" id="investigation-sessions">
             <h2>Work with investigation sessions</h2>
@@ -726,6 +751,8 @@
             <p>Use these details when a source appears unavailable or stops returning live results.</p>
           </section>
 
+          <h2 class="howto-group" id="group-advanced-features">Advanced Features</h2>
+
           <section class="howto-section" id="local-backend">
             <h2>Use the optional local backend</h2>
             <div class="callout callout-optional">
@@ -817,6 +844,8 @@
             </div>
           </section>
 
+          <h2 class="howto-group" id="group-privacy-security">Privacy &amp; Security</h2>
+
           <section class="howto-section" id="security-and-privacy">
             <h2>Understand security and privacy</h2>
             <p>Vera5 is designed around local-first analysis and user-controlled enrichment.</p>
@@ -904,6 +933,8 @@
             </ul>
             <p>For the full security model, review Vera5&rsquo;s <a href="/security-privacy">Security &amp; Privacy</a> page, <a href="/privacy">Privacy Policy</a>, <a href="/third-party-services">Third-Party Services Disclosure</a>, and public <a href="https://github.com/0xCBradford/Vera5/blob/main/SECURITY.md" rel="noopener">security documentation</a>.</p>
           </section>
+
+          <h2 class="howto-group" id="group-troubleshooting">Troubleshooting</h2>
 
           <section class="howto-section" id="troubleshooting">
             <h2>Troubleshoot common problems</h2>
@@ -1072,6 +1103,8 @@
             <p>Vera5 assists investigations. It does not produce definitive malicious or benign verdicts.</p>
           </section>
 
+          <h2 class="howto-group" id="group-next-steps">Next Steps</h2>
+
           <section class="howto-section" id="next-steps">
             <h2>Where to go next</h2>
             <p>After completing your first enrichment:</p>
@@ -1167,57 +1200,223 @@ Continue the investigation</code></pre>
 </footer>
 
 <script>
-/* Vera5 How-To — first-party scroll-spy for the table of contents.
-   Highlights the section currently in view. The page is fully usable
-   without it; anchors and the sticky TOC work with JS disabled. */
+/* Vera5 How-To — documentation UX. Grouped table-of-contents scroll-spy,
+   GitHub-style heading anchors with copy-to-clipboard + toast, and
+   deep-link smooth scroll with a brief gold confirmation glow. This is a
+   progressive enhancement: the page, the sticky TOC, and every section
+   anchor work with JavaScript disabled. */
 (function () {
   "use strict";
 
-  /* Collapse the table of contents on small screens. Without JS it
-     stays open and reads as an inline list at the top of the page. */
   var toc = document.getElementById("toc");
-  if (toc && window.matchMedia && window.matchMedia("(max-width: 900px)").matches) {
-    toc.open = false;
+  function isMobile() {
+    return window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+  }
+  if (toc && isMobile()) toc.open = false;
+
+  var body = document.querySelector(".howto-body");
+  if (!body) return;
+
+  var reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- stable ids + GitHub-style heading anchors ---------- */
+  var usedIds = {};
+  Array.prototype.forEach.call(document.querySelectorAll("[id]"), function (el) {
+    usedIds[el.id] = true;
+  });
+  function slugify(t) {
+    return (t || "")
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+  function uniqueId(base) {
+    var id = base || "section";
+    var n = 2;
+    while (usedIds[id]) { id = (base || "section") + "-" + n; n++; }
+    usedIds[id] = true;
+    return id;
   }
 
-  if (!("IntersectionObserver" in window)) return;
+  var ANCHOR_SVG =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
 
+  Array.prototype.forEach.call(body.querySelectorAll("h2, h3"), function (h) {
+    var id = null;
+    if (h.tagName === "H2" && !h.classList.contains("howto-group")) {
+      var sec = h.closest(".howto-section");
+      if (sec && sec.id) id = sec.id;
+    }
+    if (!id) {
+      id = h.id || uniqueId(slugify(h.textContent));
+      h.id = id;
+    }
+    var a = document.createElement("a");
+    a.className = "howto-anchor";
+    a.href = "#" + id;
+    a.setAttribute(
+      "aria-label",
+      "Copy link to \u201C" + (h.textContent || "").trim() + "\u201D"
+    );
+    a.innerHTML = ANCHOR_SVG;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      copyText(location.origin + location.pathname + "#" + id);
+      if (history.replaceState) history.replaceState(null, "", "#" + id);
+      else location.hash = id;
+      flashTarget(id);
+      showToast("Link copied");
+    });
+    h.appendChild(a);
+  });
+
+  /* ---------- clipboard ---------- */
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)["catch"](function () {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl = null;
+  var toastTimer = null;
+  function showToast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.className = "howto-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(toastEl);
+    }
+    toastEl.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span></span>';
+    toastEl.querySelector("span").textContent = msg;
+    void toastEl.offsetWidth;
+    toastEl.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove("is-visible");
+    }, 1800);
+  }
+
+  /* ---------- deep-link confirmation glow ---------- */
+  var flashEl = null;
+  var flashTimer = null;
+  function flashTarget(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (flashEl) flashEl.classList.remove("howto-flash");
+    clearTimeout(flashTimer);
+    void el.offsetWidth;
+    el.classList.add("howto-flash");
+    flashEl = el;
+    flashTimer = setTimeout(function () {
+      el.classList.remove("howto-flash");
+    }, reduceMotion ? 1200 : 2100);
+  }
+
+  /* ---------- grouped scroll-spy ---------- */
   var links = Array.prototype.slice.call(
     document.querySelectorAll(".howto-toc-nav a[href^='#']")
   );
-  if (!links.length) return;
-
   var linkFor = new Map();
   links.forEach(function (link) {
     var id = link.getAttribute("href").slice(1);
     var section = id && document.getElementById(id);
     if (section) linkFor.set(section, link);
   });
-  if (!linkFor.size) return;
+
+  function groupForLink(link) {
+    var ul = link.closest("ul");
+    var prev = ul && ul.previousElementSibling;
+    while (prev && !prev.classList.contains("howto-toc-group")) {
+      prev = prev.previousElementSibling;
+    }
+    return prev;
+  }
 
   function setActive(link) {
     links.forEach(function (l) {
       l.classList.remove("is-active");
       l.removeAttribute("aria-current");
     });
-    if (link) {
-      link.classList.add("is-active");
-      link.setAttribute("aria-current", "true");
-    }
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".howto-toc-group.is-active"),
+      function (g) { g.classList.remove("is-active"); }
+    );
+    if (!link) return;
+    link.classList.add("is-active");
+    link.setAttribute("aria-current", "true");
+    var g = groupForLink(link);
+    if (g) g.classList.add("is-active");
   }
 
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(linkFor.get(entry.target));
-      });
-    },
-    { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
-  );
+  if ("IntersectionObserver" in window && linkFor.size) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(linkFor.get(entry.target));
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
+    linkFor.forEach(function (link, section) { observer.observe(section); });
+  }
 
-  linkFor.forEach(function (link, section) {
-    observer.observe(section);
+  /* ---------- smooth navigation + deep links ---------- */
+  function go(id, push) {
+    var el = document.getElementById(id);
+    if (!el) return false;
+    if (push && history.pushState) history.pushState(null, "", "#" + id);
+    el.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start"
+    });
+    flashTarget(id);
+    var sec = el.classList.contains("howto-section")
+      ? el
+      : (el.closest ? el.closest(".howto-section") : null);
+    if (sec && linkFor.get(sec)) setActive(linkFor.get(sec));
+    return true;
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var id = link.getAttribute("href").slice(1);
+      if (!document.getElementById(id)) return;
+      e.preventDefault();
+      go(id, true);
+      if (toc && isMobile()) toc.open = false;
+    });
   });
+
+  window.addEventListener("hashchange", function () {
+    if (location.hash) go(location.hash.slice(1), false);
+  });
+
+  if (location.hash) {
+    setTimeout(function () { go(location.hash.slice(1), false); }, 60);
+  }
 })();
 </script>
 </body>
