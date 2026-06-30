@@ -2220,9 +2220,9 @@ button:focus-visible {
   line-height: 1.35;
   text-decoration: none;
   transition:
-    color var(--t-hover) var(--ease-out),
-    background var(--t-hover) var(--ease-out),
-    border-color var(--t-hover) var(--ease-out);
+    color 225ms var(--ease-out),
+    background 225ms var(--ease-out),
+    border-color 225ms var(--ease-out);
 }
 .howto-toc-nav a:hover {
   color: var(--text-primary);
@@ -2282,6 +2282,17 @@ button:focus-visible {
    ============================================================ */
 
 /* Sidebar category labels — non-interactive grouping headers */
+.howto-toc-section {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.howto-toc-section > summary {
+  list-style: none;
+  cursor: default;
+  pointer-events: none;
+}
+.howto-toc-section > summary::-webkit-details-marker { display: none; }
 .howto-toc-nav .howto-toc-group {
   margin: var(--s-md) 0 4px;
   padding: 0 10px;
@@ -2291,9 +2302,9 @@ button:focus-visible {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  transition: color var(--t-hover) var(--ease-out);
+  transition: color 225ms var(--ease-out);
 }
-.howto-toc-nav .howto-toc-group:first-child { margin-top: 0; }
+.howto-toc-nav .howto-toc-section:first-child .howto-toc-group { margin-top: 0; }
 .howto-toc-nav .howto-toc-group.is-active { color: var(--accent); }
 .howto-toc-nav ul { margin: 0 0 2px; }
 

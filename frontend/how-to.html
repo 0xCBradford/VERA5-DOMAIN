@@ -83,44 +83,58 @@
             <svg class="howto-toc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <nav class="howto-toc-nav" aria-label="On this page">
-            <p class="howto-toc-group" id="toc-getting-started">Getting Started</p>
-            <ul aria-labelledby="toc-getting-started">
-              <li><a href="#before-you-begin">Before you begin</a></li>
-              <li><a href="#install-vera5">Install Vera5</a></li>
-              <li><a href="#first-run-setup">Complete first-run setup</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-core-workflows">Core Workflows</p>
-            <ul aria-labelledby="toc-core-workflows">
-              <li><a href="#first-enrichment">Run your first enrichment</a></li>
-              <li><a href="#understand-results">Understand the results</a></li>
-              <li><a href="#indicator-tray">Use the indicator tray</a></li>
-              <li><a href="#selection-enrichment">Enrich selected text</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-investigations">Investigations</p>
-            <ul aria-labelledby="toc-investigations">
-              <li><a href="#investigation-sessions">Work with investigation sessions</a></li>
-              <li><a href="#ioc-collections">Save indicators to collections</a></li>
-              <li><a href="#export-findings">Export your findings</a></li>
-              <li><a href="#power-user-tools">Use command and bulk workflows</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-advanced-features">Advanced Features</p>
-            <ul aria-labelledby="toc-advanced-features">
-              <li><a href="#local-backend">Use the optional local backend</a></li>
-              <li><a href="#local-ai">Use optional local AI summaries</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-privacy-security">Privacy &amp; Security</p>
-            <ul aria-labelledby="toc-privacy-security">
-              <li><a href="#security-and-privacy">Understand security and privacy</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-troubleshooting">Troubleshooting</p>
-            <ul aria-labelledby="toc-troubleshooting">
-              <li><a href="#troubleshooting">Troubleshoot common problems</a></li>
-              <li><a href="#current-limitations">Current limitations</a></li>
-            </ul>
-            <p class="howto-toc-group" id="toc-next-steps">Next Steps</p>
-            <ul aria-labelledby="toc-next-steps">
-              <li><a href="#next-steps">Where to go next</a></li>
-            </ul>
+            <details class="howto-toc-section" data-group="getting-started" open>
+              <summary class="howto-toc-group" id="toc-getting-started">Getting Started</summary>
+              <ul aria-labelledby="toc-getting-started">
+                <li><a href="#before-you-begin">Before you begin</a></li>
+                <li><a href="#install-vera5">Install Vera5</a></li>
+                <li><a href="#first-run-setup">Complete first-run setup</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="core-workflows" open>
+              <summary class="howto-toc-group" id="toc-core-workflows">Core Workflows</summary>
+              <ul aria-labelledby="toc-core-workflows">
+                <li><a href="#first-enrichment">Run your first enrichment</a></li>
+                <li><a href="#understand-results">Understand the results</a></li>
+                <li><a href="#indicator-tray">Use the indicator tray</a></li>
+                <li><a href="#selection-enrichment">Enrich selected text</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="investigations" open>
+              <summary class="howto-toc-group" id="toc-investigations">Investigations</summary>
+              <ul aria-labelledby="toc-investigations">
+                <li><a href="#investigation-sessions">Work with investigation sessions</a></li>
+                <li><a href="#ioc-collections">Save indicators to collections</a></li>
+                <li><a href="#export-findings">Export your findings</a></li>
+                <li><a href="#power-user-tools">Use command and bulk workflows</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="advanced-features" open>
+              <summary class="howto-toc-group" id="toc-advanced-features">Advanced Features</summary>
+              <ul aria-labelledby="toc-advanced-features">
+                <li><a href="#local-backend">Use the optional local backend</a></li>
+                <li><a href="#local-ai">Use optional local AI summaries</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="privacy-security" open>
+              <summary class="howto-toc-group" id="toc-privacy-security">Privacy &amp; Security</summary>
+              <ul aria-labelledby="toc-privacy-security">
+                <li><a href="#security-and-privacy">Understand security and privacy</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="troubleshooting" open>
+              <summary class="howto-toc-group" id="toc-troubleshooting">Troubleshooting</summary>
+              <ul aria-labelledby="toc-troubleshooting">
+                <li><a href="#troubleshooting">Troubleshoot common problems</a></li>
+                <li><a href="#current-limitations">Current limitations</a></li>
+              </ul>
+            </details>
+            <details class="howto-toc-section" data-group="next-steps" open>
+              <summary class="howto-toc-group" id="toc-next-steps">Next Steps</summary>
+              <ul aria-labelledby="toc-next-steps">
+                <li><a href="#next-steps">Where to go next</a></li>
+              </ul>
+            </details>
           </nav>
         </details>
 
@@ -1340,19 +1354,28 @@ Continue the investigation</code></pre>
     document.querySelectorAll(".howto-toc-nav a[href^='#']")
   );
   var linkFor = new Map();
+  var sections = [];
   links.forEach(function (link) {
     var id = link.getAttribute("href").slice(1);
     var section = id && document.getElementById(id);
-    if (section) linkFor.set(section, link);
+    if (section) {
+      linkFor.set(section, link);
+      sections.push(section);
+    }
   });
 
+  /* Activation line: section becomes active when its top crosses ~27.5%
+     from the viewport top (between 25–30% per spec). */
+  var ACTIVATION_RATIO = 0.275;
+
   function groupForLink(link) {
-    var ul = link.closest("ul");
-    var prev = ul && ul.previousElementSibling;
-    while (prev && !prev.classList.contains("howto-toc-group")) {
-      prev = prev.previousElementSibling;
-    }
-    return prev;
+    var group = link.closest(".howto-toc-section");
+    return group && group.querySelector(".howto-toc-group");
+  }
+
+  function openNavGroup(link) {
+    var group = link && link.closest(".howto-toc-section");
+    if (group) group.setAttribute("open", "");
   }
 
   function setActive(link) {
@@ -1364,23 +1387,56 @@ Continue the investigation</code></pre>
       document.querySelectorAll(".howto-toc-group.is-active"),
       function (g) { g.classList.remove("is-active"); }
     );
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".howto-toc-section.has-active"),
+      function (g) { g.classList.remove("has-active"); }
+    );
     if (!link) return;
     link.classList.add("is-active");
     link.setAttribute("aria-current", "true");
-    var g = groupForLink(link);
-    if (g) g.classList.add("is-active");
+    openNavGroup(link);
+    var navGroup = groupForLink(link);
+    if (navGroup) {
+      navGroup.classList.add("is-active");
+      var section = navGroup.closest(".howto-toc-section");
+      if (section) section.classList.add("has-active");
+    }
   }
 
-  if ("IntersectionObserver" in window && linkFor.size) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) setActive(linkFor.get(entry.target));
-        });
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
-    );
-    linkFor.forEach(function (link, section) { observer.observe(section); });
+  function pickActiveSection() {
+    if (!sections.length) return null;
+    var line = window.innerHeight * ACTIVATION_RATIO;
+    var active = sections[0];
+    var i;
+    for (i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top <= line + 2) {
+        active = sections[i];
+      } else {
+        break;
+      }
+    }
+    var doc = document.documentElement;
+    if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) {
+      active = sections[sections.length - 1];
+    }
+    return active;
+  }
+
+  var scrollTicking = false;
+  function onScrollSpy() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(function () {
+      scrollTicking = false;
+      var active = pickActiveSection();
+      if (active) setActive(linkFor.get(active));
+    });
+  }
+
+  if (linkFor.size) {
+    window.addEventListener("scroll", onScrollSpy, { passive: true });
+    window.addEventListener("resize", onScrollSpy, { passive: true });
+    onScrollSpy();
   }
 
   /* ---------- smooth navigation + deep links ---------- */
